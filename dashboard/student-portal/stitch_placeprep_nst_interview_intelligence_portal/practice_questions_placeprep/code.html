@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice - PlacePrep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .material-symbols-outlined {
+                font-family: 'Material Symbols Outlined';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 20px; /* Standardizing icon size slightly for the UI */
+                display: inline-block;
+                line-height: 1;
+                text-transform: none;
+                letter-spacing: normal;
+                word-wrap: normal;
+                white-space: nowrap;
+                direction: ltr;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e1e3e4",
+                      "on-secondary-container": "#fefcff",
+                      "tertiary-fixed": "#ffddb8",
+                      "tertiary": "#000000",
+                      "on-primary-fixed": "#141b2b",
+                      "on-primary-container": "#7d8497",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#2a1700",
+                      "secondary": "#0058be",
+                      "surface-container-low": "#f3f4f5",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#004395",
+                      "primary-fixed": "#dce2f7",
+                      "surface": "#f8f9fa",
+                      "on-tertiary-container": "#b87500",
+                      "outline-variant": "#c6c6cd",
+                      "primary-container": "#141b2b",
+                      "inverse-on-surface": "#f0f1f2",
+                      "primary": "#000000",
+                      "secondary-container": "#2170e4",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#c0c6db",
+                      "on-surface-variant": "#45464c",
+                      "inverse-surface": "#2e3132",
+                      "on-error-container": "#93000a",
+                      "outline": "#76777d",
+                      "on-surface": "#191c1d",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "surface-container": "#edeeef",
+                      "on-tertiary-fixed": "#2a1700",
+                      "secondary-fixed": "#d8e2ff",
+                      "surface-tint": "#575e70",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d9dadb",
+                      "inverse-primary": "#c0c6db",
+                      "on-secondary-fixed": "#001a42",
+                      "on-background": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#e1e3e4",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-bright": "#f8f9fa",
+                      "on-primary-fixed-variant": "#404758",
+                      "background": "#f8f9fa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container_padding": "24px",
+                      "sidebar_width": "216px",
+                      "gutter": "16px",
+                      "right_panel_width": "280px",
+                      "navbar_height": "56px"
+              },
+              "fontFamily": {
+                      "h1": ["Inter"],
+                      "card-title": ["Inter"],
+                      "table-header": ["Inter"],
+                      "ui-medium": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "subheading": ["Inter"]
+              },
+              "fontSize": {
+                      "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "card-title": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "table-header": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "ui-medium": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "subheading": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface h-screen flex overflow-hidden font-ui-medium">
+<!-- SideNavBar (from JSON) -->
+<aside class="bg-surface-container-lowest dark:bg-surface border-r border-outline-variant dark:border-outline fixed left-0 top-0 h-screen flex flex-col p-4 z-40 w-[216px]">
+<!-- Header -->
+<div class="flex flex-col mb-8 px-3">
+<h1 class="font-h1 text-h1 text-primary dark:text-on-surface mb-1">PlacePrep</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Interview Intelligence</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col gap-1">
+<!-- Home -->
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary transition-colors" data-icon="home">home</span>
+<span class="font-ui-medium text-ui-medium">Home</span>
+</a>
+<!-- Roadmap -->
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary transition-colors" data-icon="map">map</span>
+<span class="font-ui-medium text-ui-medium">Roadmap</span>
+</a>
+<!-- Companies -->
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary transition-colors" data-icon="business">business</span>
+<span class="font-ui-medium text-ui-medium">Companies</span>
+</a>
+<!-- Practice (ACTIVE) -->
+<a class="bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg flex items-center h-10 px-3 transition-all Active: scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mr-3 text-on-secondary-fixed-variant" data-icon="exercise" data-weight="fill" style="font-variation-settings: 'FILL' 1;">exercise</span>
+<span class="font-ui-medium text-ui-medium font-bold">Practice</span>
+</a>
+<!-- Progress -->
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary transition-colors" data-icon="trending_up">trending_up</span>
+<span class="font-ui-medium text-ui-medium">Progress</span>
+</a>
+<!-- Leaderboard -->
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary transition-colors" data-icon="leaderboard">leaderboard</span>
+<span class="font-ui-medium text-ui-medium">Leaderboard</span>
+</a>
+<!-- Submit Experience -->
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary transition-colors" data-icon="rate_review">rate_review</span>
+<span class="font-ui-medium text-ui-medium">Submit Experience</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center h-10 px-4 bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors rounded-lg border border-outline-variant">
+<span class="font-ui-medium text-ui-medium">Share a Concern</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[216px] flex-1 h-full overflow-y-auto bg-surface flex flex-col">
+<div class="max-w-[1200px] w-full mx-auto px-container_padding py-8 flex flex-col gap-8">
+<!-- Page Header Section -->
+<header class="flex justify-between items-start w-full">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface mb-2">Practice Questions</h2>
+<p class="font-subheading text-subheading text-on-surface-variant">Finish your pending practice to improve your placement score.</p>
+</div>
+<!-- Circular Progress -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-3 rounded-lg border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+<div class="relative w-12 h-12">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<!-- Progress Circle (14%) -->
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="14, 100" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-table-header text-table-header text-on-surface">14%</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-ui-medium text-ui-medium text-on-surface">45/320 Solved</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Total Progress</span>
+</div>
+</div>
+</header>
+<!-- Filter Bar -->
+<section class="flex flex-wrap items-center gap-4 w-full">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow placeholder-on-surface-variant" placeholder="Search questions..." type="text"/>
+</div>
+<!-- Company Dropdown (Mock) -->
+<div class="relative w-40 cursor-pointer group">
+<div class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-lg flex items-center justify-between group-hover:bg-surface-container-low transition-colors">
+<span class="font-ui-medium text-ui-medium text-on-surface-variant">Company</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Topic Dropdown (Mock) -->
+<div class="relative w-40 cursor-pointer group">
+<div class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-lg flex items-center justify-between group-hover:bg-surface-container-low transition-colors">
+<span class="font-ui-medium text-ui-medium text-on-surface-variant">Topic</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Difficulty Toggles -->
+<div class="flex items-center bg-surface-container-highest rounded-lg p-1 h-10 border border-outline-variant">
+<button class="px-4 h-full rounded flex items-center justify-center font-ui-medium text-ui-medium text-on-surface hover:bg-surface-container transition-colors">Easy</button>
+<div class="w-px h-4 bg-outline-variant mx-1"></div>
+<button class="px-4 h-full rounded flex items-center justify-center font-ui-medium text-ui-medium bg-surface-container-lowest shadow-[0_1px_2px_rgba(0,0,0,0.1)] text-primary">Medium</button>
+<div class="w-px h-4 bg-outline-variant mx-1"></div>
+<button class="px-4 h-full rounded flex items-center justify-center font-ui-medium text-ui-medium text-on-surface hover:bg-surface-container transition-colors">Hard</button>
+</div>
+<!-- Round Type Dropdown (Mock) -->
+<div class="relative w-40 cursor-pointer group">
+<div class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-lg flex items-center justify-between group-hover:bg-surface-container-low transition-colors">
+<span class="font-ui-medium text-ui-medium text-on-surface-variant">Round Type</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Main Table Section (Athena Style) -->
+<section class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.05)] overflow-hidden w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest">
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant uppercase w-[35%]">Question</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant uppercase w-[15%]">Company</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant uppercase w-[15%]">Difficulty</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant uppercase w-[15%]">Topic</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant uppercase w-[10%]">XP</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant uppercase w-[10%] text-center">Status</th>
+</tr>
+</thead>
+<tbody class="font-ui-medium text-ui-medium text-on-surface">
+<!-- Row 1: Completed -->
+<tr class="h-[48px] border-b border-surface-container-highest hover:bg-surface-bright transition-colors cursor-pointer">
+<td class="px-4 font-semibold text-primary">Reverse a Linked List</td>
+<td class="px-4 text-on-surface-variant">Google</td>
+<td class="px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-surface-container text-on-surface-variant border border-outline-variant">Easy</span>
+</td>
+<td class="px-4 text-on-surface-variant">Linked List</td>
+<td class="px-4">
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="monetization_on">monetization_on</span>
+<span class="text-[12px] font-bold">10</span>
+</div>
+</td>
+<td class="px-4 text-center">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<!-- Row 2: Missed -->
+<tr class="h-[48px] border-b border-surface-container-highest hover:bg-surface-bright transition-colors cursor-pointer">
+<td class="px-4 font-semibold text-primary">LRU Cache Implementation</td>
+<td class="px-4 text-on-surface-variant">Amazon</td>
+<td class="px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-primary-fixed text-on-primary-fixed border border-primary-fixed-dim">Medium</span>
+</td>
+<td class="px-4 text-on-surface-variant">Design</td>
+<td class="px-4">
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="monetization_on">monetization_on</span>
+<span class="text-[12px] font-bold">25</span>
+</div>
+</td>
+<td class="px-4 text-center">
+<span class="material-symbols-outlined text-error" data-icon="cancel" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</td>
+</tr>
+<!-- Row 3: Pending -->
+<tr class="h-[48px] border-b border-surface-container-highest hover:bg-surface-bright transition-colors cursor-pointer">
+<td class="px-4 font-semibold text-primary">Merge K Sorted Lists</td>
+<td class="px-4 text-on-surface-variant">Microsoft</td>
+<td class="px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-surface-tint text-on-primary border border-surface-tint">Hard</span>
+</td>
+<td class="px-4 text-on-surface-variant">Heaps</td>
+<td class="px-4">
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="monetization_on">monetization_on</span>
+<span class="text-[12px] font-bold">40</span>
+</div>
+</td>
+<td class="px-4 text-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="remove">remove</span>
+</td>
+</tr>
+<!-- Row 4: Pending -->
+<tr class="h-[48px] border-b border-surface-container-highest hover:bg-surface-bright transition-colors cursor-pointer">
+<td class="px-4 font-semibold text-primary">Valid Parentheses</td>
+<td class="px-4 text-on-surface-variant">Meta</td>
+<td class="px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-surface-container text-on-surface-variant border border-outline-variant">Easy</span>
+</td>
+<td class="px-4 text-on-surface-variant">Stacks</td>
+<td class="px-4">
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="monetization_on">monetization_on</span>
+<span class="text-[12px] font-bold">10</span>
+</div>
+</td>
+<td class="px-4 text-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="remove">remove</span>
+</td>
+</tr>
+<!-- Row 5: Completed -->
+<tr class="h-[48px] border-b border-surface-container-highest hover:bg-surface-bright transition-colors cursor-pointer">
+<td class="px-4 font-semibold text-primary">Find Median from Data Stream</td>
+<td class="px-4 text-on-surface-variant">Apple</td>
+<td class="px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-surface-tint text-on-primary border border-surface-tint">Hard</span>
+</td>
+<td class="px-4 text-on-surface-variant">Heaps</td>
+<td class="px-4">
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="monetization_on">monetization_on</span>
+<span class="text-[12px] font-bold">40</span>
+</div>
+</td>
+<td class="px-4 text-center">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<!-- Row 6: Pending -->
+<tr class="h-[48px] hover:bg-surface-bright transition-colors cursor-pointer">
+<td class="px-4 font-semibold text-primary">Binary Tree Level Order Traversal</td>
+<td class="px-4 text-on-surface-variant">Netflix</td>
+<td class="px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[12px] font-medium bg-primary-fixed text-on-primary-fixed border border-primary-fixed-dim">Medium</span>
+</td>
+<td class="px-4 text-on-surface-variant">Trees</td>
+<td class="px-4">
+<div class="inline-flex items-center gap-1 bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="monetization_on">monetization_on</span>
+<span class="text-[12px] font-bold">25</span>
+</div>
+</td>
+<td class="px-4 text-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="remove">remove</span>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination / Footer area of table -->
+<div class="px-4 py-3 border-t border-outline-variant bg-surface-container-lowest flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 6 of 45 entries</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded font-ui-medium text-ui-medium text-on-surface-variant hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 border border-outline-variant rounded font-ui-medium text-ui-medium text-on-surface hover:bg-surface-container-low transition-colors">Next</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

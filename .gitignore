@@ -1,0 +1,10 @@
+.DS_Store
+**/.DS_Store
+**/._*
+**/.venv
+**/node_modules
+**/dist
+**/build
+**/.next
+.env
+*.env.local

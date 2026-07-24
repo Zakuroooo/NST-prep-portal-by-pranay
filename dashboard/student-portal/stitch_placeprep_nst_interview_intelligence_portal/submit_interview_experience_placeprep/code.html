@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Submit Interview Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary": "#000000",
+                        "on-primary-fixed": "#141b2b",
+                        "on-primary-container": "#7d8497",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2a1700",
+                        "secondary": "#0058be",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#004395",
+                        "primary-fixed": "#dce2f7",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-container": "#b87500",
+                        "outline-variant": "#c6c6cd",
+                        "primary-container": "#141b2b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#000000",
+                        "secondary-container": "#2170e4",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c0c6db",
+                        "on-surface-variant": "#45464c",
+                        "inverse-surface": "#2e3132",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "on-surface": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-tint": "#575e70",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c0c6db",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#404758",
+                        "background": "#f8f9fa"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        container_padding: "24px",
+                        sidebar_width: "216px",
+                        gutter: "16px",
+                        right_panel_width: "280px",
+                        navbar_height: "56px"
+                    },
+                    fontFamily: {
+                        "h1": ["Inter"],
+                        "card-title": ["Inter"],
+                        "table-header": ["Inter"],
+                        "ui-medium": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "subheading": ["Inter"]
+                    },
+                    fontSize: {
+                        "h1": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "card-title": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "table-header": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "ui-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                        "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+                        "subheading": ["14px", { lineHeight: "20px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .star-rating .material-symbols-outlined:hover ~ .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0;
+            color: #d1d5db;
+        }
+        .star-rating .material-symbols-outlined:hover {
+            font-variation-settings: 'FILL' 1;
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-sm min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface-container-lowest border-r border-outline-variant fixed left-0 top-0 h-screen flex-col p-4 z-40 w-sidebar_width">
+<div class="mb-8">
+<h1 class="font-h1 text-h1 text-primary">PlacePrep</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Interview Intelligence</p>
+</div>
+<div class="flex-1 space-y-2">
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="home">home</span>
+<span class="font-ui-medium text-ui-medium">Home</span>
+</a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="map">map</span>
+<span class="font-ui-medium text-ui-medium">Roadmap</span>
+</a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="business">business</span>
+<span class="font-ui-medium text-ui-medium">Companies</span>
+</a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="exercise">exercise</span>
+<span class="font-ui-medium text-ui-medium">Practice</span>
+</a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="trending_up">trending_up</span>
+<span class="font-ui-medium text-ui-medium">Progress</span>
+</a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="leaderboard">leaderboard</span>
+<span class="font-ui-medium text-ui-medium">Leaderboard</span>
+</a>
+<a class="bg-secondary-fixed text-on-secondary-fixed-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="rate_review">rate_review</span>
+<span class="font-ui-medium text-ui-medium">Submit Experience</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full py-2 px-4 border border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-ui-medium text-ui-medium flex items-center justify-center">
+                Share a Concern
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-sidebar_width flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest border-b border-outline-variant h-navbar_height flex justify-between items-center px-container_padding w-full sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<span class="md:hidden font-h1 text-h1 text-primary">NST</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="monetization_on">monetization_on</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="bolt">bolt</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="notifications">notifications</span>
+<img alt="User profile" class="w-8 h-8 rounded-full cursor-pointer hover:opacity-80 border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC25dnhQgPoXP2O_L9MZo7CwehLUevMVR9tOQ6eATJWWJtndT800dSqdYNnWCNfdXwSkIA2xo_6dr6TzpQtbJSqf9R1JCx34nPTuaDN2QXcOUvHYM1W0esA2Dsr4YWE8t1pmLw2_qUHGGaAKW2GlbxxVV-gwf-959TpPn4NdP51vWrvIJRUoKcWlTivH4lyf3v9E6qimADUoHAoYzqZSqTrZJ46cCKWdQNqSfwbhgIJuP5zSNZbd4Sl_-mIGTsYUOCSODqfF3aOIYEg"/>
+</div>
+</header>
+<div class="p-container_padding flex-1 max-w-4xl mx-auto w-full">
+<h2 class="font-h1 text-h1 text-primary mb-6">Share Your Interview Experience</h2>
+<!-- XP Incentive Banner -->
+<div class="bg-[#FEF3C7] border border-[#F59E0B] rounded-lg p-4 flex items-center mb-8">
+<div class="bg-[#F97316] rounded-full p-1 mr-4 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-sm" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="font-ui-medium text-ui-medium text-[#92400E]">Earn 50 XP for your first submission this week</p>
+<p class="font-body-sm text-body-sm text-[#B45309]">Help others by sharing detailed insights.</p>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm mb-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div>
+<label class="block font-ui-medium text-ui-medium text-on-surface mb-2">Company</label>
+<div class="relative">
+<input class="w-full px-4 py-2 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow" placeholder="Search company..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant" data-icon="search">search</span>
+</div>
+</div>
+<div>
+<label class="block font-ui-medium text-ui-medium text-on-surface mb-2">Role / Level</label>
+<select class="w-full px-4 py-2 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow">
+<option>Software Engineer (L3)</option>
+<option>Senior Software Engineer (L4)</option>
+<option>Data Scientist</option>
+<option>Product Manager</option>
+</select>
+</div>
+<div>
+<label class="block font-ui-medium text-ui-medium text-on-surface mb-2">Interview Date</label>
+<input class="w-full px-4 py-2 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow" type="date"/>
+</div>
+<div>
+<label class="block font-ui-medium text-ui-medium text-on-surface mb-2">Overall Difficulty</label>
+<div class="flex items-center gap-1 star-rating cursor-pointer h-[42px]">
+<span class="material-symbols-outlined text-gray-300 hover:text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-amber-500">star</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-amber-500">star</span>
+</div>
+</div>
+</div>
+<div class="mb-8 border-t border-outline-variant pt-6">
+<label class="block font-ui-medium text-ui-medium text-on-surface mb-3">Outcome</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full border border-green-200 bg-green-50 text-green-700 hover:bg-green-100 font-ui-medium text-ui-medium transition-colors flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            Offer Received
+                        </button>
+<button class="px-6 py-2 rounded-full border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 font-ui-medium text-ui-medium transition-colors flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            Rejected
+                        </button>
+<button class="px-6 py-2 rounded-full border border-yellow-200 bg-yellow-50 text-yellow-700 hover:bg-yellow-100 font-ui-medium text-ui-medium transition-colors flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                            Waiting
+                        </button>
+</div>
+</div>
+<div class="mb-8 border-t border-outline-variant pt-6">
+<h3 class="font-card-title text-card-title text-primary mb-4">Interview Rounds</h3>
+<!-- Round Card 1 -->
+<div class="border border-outline-variant rounded-lg p-5 mb-4 bg-surface relative">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Round Type</label>
+<select class="w-full px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow">
+<option>Technical Screen (Phone)</option>
+<option>Onsite - Coding</option>
+<option>Onsite - System Design</option>
+<option>Behavioral</option>
+</select>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Round Outcome</label>
+<select class="w-full px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow">
+<option>Passed</option>
+<option>Failed</option>
+<option>Unknown</option>
+</select>
+</div>
+</div>
+<div class="mb-4">
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Topics Asked</label>
+<div class="flex flex-wrap gap-2 p-2 border border-outline-variant rounded-lg bg-surface-container-lowest min-h-[42px] items-center">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface rounded flex items-center gap-1 text-xs">Arrays <span class="material-symbols-outlined text-[14px] cursor-pointer" data-icon="close">close</span></span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface rounded flex items-center gap-1 text-xs">Hash Maps <span class="material-symbols-outlined text-[14px] cursor-pointer" data-icon="close">close</span></span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm p-0" placeholder="Add topic..." type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm text-on-surface-variant mb-1">Questions Asked / Details</label>
+<textarea class="w-full px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow placeholder-outline" placeholder="Describe the specific questions or problems given..." rows="3"></textarea>
+</div>
+</div>
+<button class="w-full py-3 border-2 border-dashed border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:border-outline transition-colors font-ui-medium text-ui-medium flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Add Another Round
+                    </button>
+</div>
+<div class="mb-8 border-t border-outline-variant pt-6">
+<label class="block font-ui-medium text-ui-medium text-on-surface mb-2">Any Surprises or Additional Tips?</label>
+<textarea class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-shadow placeholder-outline" placeholder="Were there any unexpected behavioral questions? How was the interviewer's tone?" rows="4"></textarea>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-ui-medium text-ui-medium hover:bg-gray-800 transition-colors shadow-sm">
+                    Submit Interview Experience
+                </button>
+</div>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant">Your submission will be reviewed before appearing on the public leaderboard. Anonymity is preserved.</p>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-16 pb-safe z-40">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-secondary" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="rate_review" style="font-variation-settings: 'FILL' 1;">rate_review</span>
+<span class="text-[10px] font-medium font-bold">Submit</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-medium">Rankings</span>
+</a>
+</nav>
+</body></html>

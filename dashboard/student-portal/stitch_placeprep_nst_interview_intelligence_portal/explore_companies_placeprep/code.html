@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Companies - PlacePrep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary": "#000000",
+                        "on-primary-fixed": "#141b2b",
+                        "on-primary-container": "#7d8497",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2a1700",
+                        "secondary": "#0058be",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#004395",
+                        "primary-fixed": "#dce2f7",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-container": "#b87500",
+                        "outline-variant": "#c6c6cd",
+                        "primary-container": "#141b2b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#000000",
+                        "secondary-container": "#2170e4",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c0c6db",
+                        "on-surface-variant": "#45464c",
+                        "inverse-surface": "#2e3132",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "on-surface": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-tint": "#575e70",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c0c6db",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#404758",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container_padding": "24px",
+                        "sidebar_width": "216px",
+                        "gutter": "16px",
+                        "right_panel_width": "280px",
+                        "navbar_height": "56px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "card-title": ["Inter"],
+                        "table-header": ["Inter"],
+                        "ui-medium": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "subheading": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "card-title": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "table-header": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "ui-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "subheading": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f8f9fa; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid #e1e3e4; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex h-screen overflow-hidden font-h1">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface-container-lowest text-secondary docked left-0 h-full w-[216px] border-r border-outline-variant flex-col p-4 z-40 fixed left-0 top-0 h-screen transition-all">
+<div class="mb-8 flex flex-col gap-1 items-start">
+<span class="font-h1 text-h1 text-primary">PlacePrep</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Interview Intelligence</span>
+</div>
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3">home</span>
+<span class="font-ui-medium text-ui-medium">Home</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3">map</span>
+<span class="font-ui-medium text-ui-medium">Roadmap</span>
+</a>
+</li>
+<li>
+<a class="bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg flex items-center h-10 px-3 hover:bg-surface-container-low transition-all transform scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">business</span>
+<span class="font-ui-medium text-ui-medium font-bold">Companies</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3">exercise</span>
+<span class="font-ui-medium text-ui-medium">Practice</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3">trending_up</span>
+<span class="font-ui-medium text-ui-medium">Progress</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3">leaderboard</span>
+<span class="font-ui-medium text-ui-medium">Leaderboard</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center h-10 px-3 rounded-lg hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined mr-3">rate_review</span>
+<span class="font-ui-medium text-ui-medium">Submit Experience</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full bg-surface-container-low text-on-surface-variant font-ui-medium text-ui-medium h-10 rounded-lg border border-outline-variant hover:bg-surface-container-highest transition-colors">
+                Share a Concern
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-[216px] h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest text-secondary docked full-width top-0 h-[56px] border-b border-outline-variant flex justify-between items-center px-container_padding w-full shrink-0 z-30">
+<div class="flex items-center gap-4 w-full max-w-md">
+<!-- Search bar on left as per JSON -->
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">monetization_on</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors cursor-pointer active:opacity-80 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant ml-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBFa7e82OhGTb65Ofbwyz8811cKxW8zxuDNGrlwbvLRJW4uOsUtqvCrDyuVi4aZ5uUksSVY-h-sUoFA1bdy0Lok6lYWoPDiBmjuWo8HScAD1_w4PBqwyqsJ1gaprzt1-rx4ilHBDZsMDfFi3KDl6UAL63F705Xs6XaqmPo7w8Gk1SeZf9hMMad9rqHNH4m1Wygu7YlsVvrH1takM6ZNpkslLzUOSI_DmICHCX_Dej3iCpzom8EgV38ijH7fyGkiOQGEraoHLdEKUqV"/>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-container_padding">
+<div class="max-w-7xl mx-auto space-y-6">
+<!-- Header -->
+<div>
+<h1 class="font-h1 text-h1 text-primary">Explore Companies</h1>
+<p class="font-subheading text-subheading text-on-surface-variant mt-1">Discover insights, interview questions, and prep materials.</p>
+</div>
+<!-- Search & Filters -->
+<div class="space-y-4">
+<!-- High Contrast Search -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm focus:ring-2 focus:ring-secondary-container focus:border-secondary-container font-ui-medium text-ui-medium text-on-surface transition-all" placeholder="Search for a company..." type="text"/>
+</div>
+<!-- Filter Chips & Sort -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full font-ui-medium text-ui-medium">All</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-full font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">Product</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-full font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">Service</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-full font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">Startup</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-full font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">FAANG</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-full font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">Indian</button>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant text-on-surface-variant py-2 pl-4 pr-10 rounded-lg font-ui-medium text-ui-medium focus:ring-2 focus:ring-secondary-container">
+<option>Sort by: Popularity</option>
+<option>Sort by: Name (A-Z)</option>
+<option>Sort by: Most Questions</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Company Grid (4 Column) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card rounded-xl p-5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-[#ef4444] text-white flex items-center justify-center font-h1 text-h1 shadow-sm">G</div>
+<!-- Readiness Ring -->
+<div class="relative w-10 h-10">
+<svg class="w-10 h-10 transform -rotate-90">
+<circle class="text-surface-variant" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-dasharray="100" stroke-dashoffset="25" stroke-width="3"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-table-header text-table-header text-secondary-container">75%</span>
+</div>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-1">Google</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">500+ Questions</p>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">Graphs</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">DP</span>
+</div>
+<button class="w-full py-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">View Intel</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-xl p-5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-[#3b82f6] text-white flex items-center justify-center font-h1 text-h1 shadow-sm">M</div>
+<div class="relative w-10 h-10">
+<svg class="w-10 h-10 transform -rotate-90">
+<circle class="text-surface-variant" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-dasharray="100" stroke-dashoffset="60" stroke-width="3"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-table-header text-table-header text-secondary-container">40%</span>
+</div>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-1">Microsoft</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">350+ Questions</p>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">Arrays</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">Strings</span>
+</div>
+<button class="w-full py-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">View Intel</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-xl p-5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-[#f59e0b] text-white flex items-center justify-center font-h1 text-h1 shadow-sm">A</div>
+<div class="relative w-10 h-10">
+<svg class="w-10 h-10 transform -rotate-90">
+<circle class="text-surface-variant" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-dasharray="100" stroke-dashoffset="10" stroke-width="3"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-table-header text-table-header text-secondary-container">90%</span>
+</div>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-1">Amazon</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">420+ Questions</p>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">Trees</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">OOD</span>
+</div>
+<button class="w-full py-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">View Intel</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-xl p-5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-[#10b981] text-white flex items-center justify-center font-h1 text-h1 shadow-sm">M</div>
+<div class="relative w-10 h-10">
+<svg class="w-10 h-10 transform -rotate-90">
+<circle class="text-surface-variant" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="20" cy="20" fill="transparent" r="16" stroke="currentColor" stroke-dasharray="100" stroke-dashoffset="90" stroke-width="3"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-table-header text-table-header text-secondary-container">10%</span>
+</div>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-1">Meta</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">380+ Questions</p>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">Hash Map</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant rounded font-body-sm text-body-sm border border-outline-variant">System</span>
+</div>
+<button class="w-full py-2 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors">View Intel</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

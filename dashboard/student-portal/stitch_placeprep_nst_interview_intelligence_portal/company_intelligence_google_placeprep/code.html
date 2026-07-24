@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PlacePrep - Google Company Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary": "#000000",
+                        "on-primary-fixed": "#141b2b",
+                        "on-primary-container": "#7d8497",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2a1700",
+                        "secondary": "#0058be",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#004395",
+                        "primary-fixed": "#dce2f7",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-container": "#b87500",
+                        "outline-variant": "#c6c6cd",
+                        "primary-container": "#141b2b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#000000",
+                        "secondary-container": "#2170e4",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c0c6db",
+                        "on-surface-variant": "#45464c",
+                        "inverse-surface": "#2e3132",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "on-surface": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-tint": "#575e70",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c0c6db",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#404758",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container_padding": "24px",
+                        "sidebar_width": "216px",
+                        "gutter": "16px",
+                        "right_panel_width": "280px",
+                        "navbar_height": "56px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "card-title": ["Inter"],
+                        "table-header": ["Inter"],
+                        "ui-medium": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "subheading": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "card-title": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "table-header": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "ui-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "subheading": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e1e3e4;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c6c6cd;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans h-screen overflow-hidden flex flex-col md:flex-row">
+<!-- Mobile Top Navigation (Hidden on Desktop) -->
+<header class="md:hidden flex justify-between items-center px-container_padding w-full h-navbar_height bg-surface-container-lowest border-b border-outline-variant flex-shrink-0 z-50">
+<div class="flex items-center gap-3">
+<span class="font-h1 text-h1 text-primary">PlacePrep</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (Desktop only) -->
+<nav class="hidden md:flex flex-col p-4 z-40 bg-surface-container-lowest border-r border-outline-variant docked left-0 h-full w-[216px] flex-shrink-0">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="font-bold text-white text-sm">P</span>
+</div>
+<div>
+<h1 class="font-h1 text-h1 text-primary text-base leading-tight">PlacePrep</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Interview Intelligence</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-1 overflow-y-auto">
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all rounded-lg font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">home</span>
+                Home
+            </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all rounded-lg font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">map</span>
+                Roadmap
+            </a>
+<a class="bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg flex items-center h-10 px-3 scale-95 duration-150 font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] fill-icon">business</span>
+                Companies
+            </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all rounded-lg font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">exercise</span>
+                Practice
+            </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all rounded-lg font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">trending_up</span>
+                Progress
+            </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all rounded-lg font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">leaderboard</span>
+                Leaderboard
+            </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all rounded-lg font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">rate_review</span>
+                Submit Experience
+            </a>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<button class="w-full flex items-center justify-center gap-2 h-10 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-low transition-colors font-ui-medium text-ui-medium">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+                Share a Concern
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Desktop Top App Bar (Hidden on Mobile) -->
+<header class="hidden md:flex justify-between items-center px-container_padding w-full h-navbar_height bg-surface-container-lowest border-b border-outline-variant flex-shrink-0 z-30">
+<div class="flex items-center gap-2 text-on-surface-variant font-ui-medium text-ui-medium">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Companies</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-semibold">Google</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">monetization_on</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close up portrait of a professional looking individual against a neutral, high key light background. The subject is well lit, suggesting a clean, modern, and trustworthy corporate environment. The image is cropped tightly as a small avatar circle, fitting perfectly into a highly structured data dashboard UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiX6L0WPW1BfFiimokvY0HIZ4WmIfVKThh0FuCX-eXjQT2DFWSubMjn8ukX1yCiWOdJHlQ0Semm8N3NmEQY4afz96Q5L1Naf_Y70W3GsYqoHd05zkJh_og3qc_CW8JForormTTJe8RJtur6GCIkZSJrf_yPIhJvvIql3fDBIZwK2Yo2uodum6eLu-Tdw6ljnDNKONbYZ7Ewhuhu9is4m6cjmEAxLrBy7Ydg00AO8omguAfc2Q7rS368N9Ga8DyzgeINh5EMSOB9Tuo"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Canvas -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Hero Section (Bento style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Main Identity Card -->
+<div class="md:col-span-2 bg-white rounded-xl border border-outline-variant p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)] flex flex-col justify-between relative overflow-hidden">
+<!-- Abstract decorative background -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 bg-[#4285F4] rounded-xl flex items-center justify-center shadow-sm">
+<span class="text-white text-3xl font-bold font-h1">G</span>
+</div>
+<div>
+<h2 class="text-[28px] font-bold text-primary tracking-tight leading-tight mb-1">Google</h2>
+<p class="text-on-surface-variant font-subheading text-subheading">Software Engineering Intelligence</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="relative">
+<select class="appearance-none bg-surface border border-outline-variant text-primary font-ui-medium text-ui-medium py-2 pl-4 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/50 cursor-pointer">
+<option>SDE-1 (L3)</option>
+<option>SDE-2 (L4)</option>
+<option>Senior SDE (L5)</option>
+<option>Staff SDE (L6)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">Updated: Oct 24, 2023</span>
+</div>
+</div>
+<div class="mt-8 flex gap-3 relative z-10">
+<button class="bg-primary text-white font-ui-medium text-ui-medium px-5 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                Start Mock Interview
+                            </button>
+<button class="bg-white border border-outline-variant text-primary font-ui-medium text-ui-medium px-5 py-2 rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+                                Save Target
+                            </button>
+</div>
+</div>
+<!-- Quick Insights (Right column of hero bento) -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)] flex flex-col">
+<h3 class="font-card-title text-card-title text-primary mb-4">Hiring Pulse</h3>
+<div class="flex-1 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+<span class="font-subheading text-subheading">Current Trend</span>
+</div>
+<span class="bg-[#ECFDF5] text-[#059669] px-2 py-0.5 rounded text-[12px] font-semibold">Active Hiring</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-subheading text-subheading">Avg. Process</span>
+</div>
+<span class="font-ui-medium text-ui-medium text-primary">4-6 Weeks</span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<p class="text-[12px] text-on-surface-variant leading-relaxed">
+                                    "Google has recently increased hiring for L3/L4 roles, specifically targeting cloud infrastructure and applied AI backgrounds."
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 Stat Cards Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-white p-5 rounded-xl border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span class="font-table-header text-table-header uppercase">Success Rate</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold text-primary">18.4%</span>
+<span class="text-[12px] text-[#059669] font-medium mb-1 flex items-center"><span class="material-symbols-outlined text-[12px]">arrow_upward</span> 2.1%</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-table-header text-table-header uppercase">Avg. Salary (L3)</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold text-primary">$190k</span>
+<span class="text-[12px] text-on-surface-variant font-medium mb-1">TC</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+<span class="font-table-header text-table-header uppercase">Difficulty</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold text-primary">8.5</span>
+<span class="text-[12px] text-[#ba1a1a] font-medium mb-1">/10</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">library_books</span>
+<span class="font-table-header text-table-header uppercase">Total Questions</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold text-primary">1,240</span>
+<span class="text-[12px] text-on-surface-variant font-medium mb-1">tagged</span>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="border-b border-outline-variant mb-6">
+<nav aria-label="Tabs" class="-mb-px flex gap-6">
+<a class="border-secondary text-secondary whitespace-nowrap py-3 px-1 border-b-2 font-ui-medium text-ui-medium" href="#">
+                            Overview
+                        </a>
+<a class="border-transparent text-on-surface-variant hover:text-primary hover:border-outline whitespace-nowrap py-3 px-1 border-b-2 font-ui-medium text-ui-medium transition-colors" href="#">
+                            Questions
+                            <span class="ml-2 bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full text-[10px]">1.2k</span>
+</a>
+<a class="border-transparent text-on-surface-variant hover:text-primary hover:border-outline whitespace-nowrap py-3 px-1 border-b-2 font-ui-medium text-ui-medium transition-colors" href="#">
+                            Experiences
+                        </a>
+<a class="border-transparent text-on-surface-variant hover:text-primary hover:border-outline whitespace-nowrap py-3 px-1 border-b-2 font-ui-medium text-ui-medium transition-colors" href="#">
+                            Trends
+                        </a>
+</nav>
+</div>
+<!-- Overview Tab Content (Bento Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-20">
+<!-- Round Structure (Full Width in its row) -->
+<div class="md:col-span-3 bg-white rounded-xl border border-outline-variant p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+<h3 class="font-card-title text-card-title text-primary mb-6">Standard Round Structure</h3>
+<div class="flex flex-col md:flex-row items-center gap-4 relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-high -translate-y-1/2 z-0"></div>
+<!-- Round Cards -->
+<div class="bg-surface relative z-10 border border-outline-variant rounded-lg p-4 flex-1 w-full flex flex-col items-center text-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-bold text-sm mb-2">1</div>
+<h4 class="font-ui-medium text-ui-medium text-primary mb-1">Phone Screen</h4>
+<p class="text-[12px] text-on-surface-variant">45 mins • Coding</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant md:hidden">arrow_downward</span>
+<div class="bg-surface relative z-10 border border-outline-variant rounded-lg p-4 flex-1 w-full flex flex-col items-center text-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-bold text-sm mb-2">2</div>
+<h4 class="font-ui-medium text-ui-medium text-primary mb-1">Onsite: Coding 1</h4>
+<p class="text-[12px] text-on-surface-variant">45 mins • DSA</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant md:hidden">arrow_downward</span>
+<div class="bg-surface relative z-10 border border-outline-variant rounded-lg p-4 flex-1 w-full flex flex-col items-center text-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-bold text-sm mb-2">3</div>
+<h4 class="font-ui-medium text-ui-medium text-primary mb-1">Onsite: Coding 2</h4>
+<p class="text-[12px] text-on-surface-variant">45 mins • DSA</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant md:hidden">arrow_downward</span>
+<div class="bg-surface relative z-10 border border-outline-variant rounded-lg p-4 flex-1 w-full flex flex-col items-center text-center shadow-sm">
+<div class="w-8 h-8 rounded-full bg-[#ffddb8] text-[#2a1700] flex items-center justify-center font-bold text-sm mb-2">4</div>
+<h4 class="font-ui-medium text-ui-medium text-primary mb-1">Onsite: Googlyness</h4>
+<p class="text-[12px] text-on-surface-variant">45 mins • Behavioral</p>
+</div>
+</div>
+</div>
+<!-- Interview DNA -->
+<div class="md:col-span-1 bg-white rounded-xl border border-outline-variant p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)] flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-card-title text-card-title text-primary">Interview DNA</h3>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]" title="Weightage of different evaluation areas">info</span>
+</div>
+<div class="flex-1 flex flex-col justify-center gap-6">
+<!-- Fake Stacked Bar Chart -->
+<div class="h-6 w-full rounded-full overflow-hidden flex shadow-inner">
+<div class="h-full bg-secondary" style="width: 55%;" title="DSA (55%)"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 25%;" title="System Design (25%)"></div>
+<div class="h-full bg-[#10B981]" style="width: 15%;" title="Behavioral (15%)"></div>
+<div class="h-full bg-outline-variant" style="width: 5%;" title="Domain (5%)"></div>
+</div>
+<div class="grid grid-cols-2 gap-y-3 gap-x-2 text-[12px] font-medium text-on-surface-variant">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-secondary"></div> DSA (55%)</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-tertiary-fixed-dim"></div> Sys Design (25%)</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-[#10B981]"></div> Behavioral (15%)</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-outline-variant"></div> Domain (5%)</div>
+</div>
+</div>
+</div>
+<!-- Top Topics -->
+<div class="md:col-span-1 bg-white rounded-xl border border-outline-variant p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+<h3 class="font-card-title text-card-title text-primary mb-4">Top Topics</h3>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-primary">Dynamic Programming</span>
+<span class="text-on-surface-variant">28%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-primary">Graphs / DFS</span>
+<span class="text-on-surface-variant">22%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full opacity-80" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-primary">Trees</span>
+<span class="text-on-surface-variant">18%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full opacity-60" style="width: 50%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[12px] font-medium mb-1">
+<span class="text-primary">Arrays &amp; Strings</span>
+<span class="text-on-surface-variant">15%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full opacity-40" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Difficulty Split -->
+<div class="md:col-span-1 bg-white rounded-xl border border-outline-variant p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)] flex flex-col">
+<h3 class="font-card-title text-card-title text-primary mb-4">Question Difficulty</h3>
+<div class="flex-1 flex items-center justify-center relative">
+<!-- CSS Donut Chart approximation -->
+<div class="w-32 h-32 rounded-full border-[16px] border-surface-container-high relative" style="border-right-color: #ef4444; border-top-color: #f59e0b; border-left-color: #f59e0b; transform: rotate(-45deg);">
+<div class="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white flex flex-col items-center justify-center" style="transform: rotate(45deg);">
+<span class="font-bold text-xl text-primary">Hard</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider">Majority</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-4 mt-4 text-[12px] font-medium">
+<span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#10b981]"></div> Easy (5%)</span>
+<span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#f59e0b]"></div> Med (40%)</span>
+<span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-[#ef4444]"></div> Hard (55%)</span>
+</div>
+</div>
+<!-- Sample Questions Table -->
+<div class="md:col-span-3 bg-white rounded-xl border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h3 class="font-card-title text-card-title text-primary">Recent Sample Questions</h3>
+<button class="text-secondary font-ui-medium text-ui-medium hover:underline text-sm">View All 1.2k</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest">
+<th class="py-3 px-6 font-table-header text-table-header text-on-surface-variant uppercase">Title</th>
+<th class="py-3 px-6 font-table-header text-table-header text-on-surface-variant uppercase">Difficulty</th>
+<th class="py-3 px-6 font-table-header text-table-header text-on-surface-variant uppercase">Frequency</th>
+<th class="py-3 px-6 font-table-header text-table-header text-on-surface-variant uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-sm font-subheading">
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-6 text-primary font-medium">Find the Longest Valid Obstacle Course at Each Position</td>
+<td class="py-3 px-6"><span class="bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded text-[11px] font-semibold">Hard</span></td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="w-[90%] h-full bg-[#f59e0b]"></div></div>
+<span class="text-[11px]">High</span>
+</div>
+</td>
+<td class="py-3 px-6 text-right"><button class="text-secondary hover:bg-secondary/10 p-1 rounded"><span class="material-symbols-outlined text-[18px]">code</span></button></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-6 text-primary font-medium">Step-By-Step Directions From a Binary Tree Node to Another</td>
+<td class="py-3 px-6"><span class="bg-orange-50 text-orange-700 border border-orange-200 px-2 py-0.5 rounded text-[11px] font-semibold">Medium</span></td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="w-[85%] h-full bg-[#f59e0b]"></div></div>
+<span class="text-[11px]">High</span>
+</div>
+</td>
+<td class="py-3 px-6 text-right"><button class="text-secondary hover:bg-secondary/10 p-1 rounded"><span class="material-symbols-outlined text-[18px]">code</span></button></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-6 text-primary font-medium">Minimum Number of Days to Disconnect Island</td>
+<td class="py-3 px-6"><span class="bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded text-[11px] font-semibold">Hard</span></td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="w-[70%] h-full bg-[#f59e0b]"></div></div>
+<span class="text-[11px]">Med</span>
+</div>
+</td>
+<td class="py-3 px-6 text-right"><button class="text-secondary hover:bg-secondary/10 p-1 rounded"><span class="material-symbols-outlined text-[18px]">code</span></button></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-6 text-primary font-medium">Detect Squares</td>
+<td class="py-3 px-6"><span class="bg-orange-50 text-orange-700 border border-orange-200 px-2 py-0.5 rounded text-[11px] font-semibold">Medium</span></td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="w-[65%] h-full bg-[#f59e0b]"></div></div>
+<span class="text-[11px]">Med</span>
+</div>
+</td>
+<td class="py-3 px-6 text-right"><button class="text-secondary hover:bg-secondary/10 p-1 rounded"><span class="material-symbols-outlined text-[18px]">code</span></button></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-6 text-primary font-medium">Logger Rate Limiter</td>
+<td class="py-3 px-6"><span class="bg-green-50 text-green-700 border border-green-200 px-2 py-0.5 rounded text-[11px] font-semibold">Easy</span></td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="w-[50%] h-full bg-outline-variant"></div></div>
+<span class="text-[11px]">Low</span>
+</div>
+</td>
+<td class="py-3 px-6 text-right"><button class="text-secondary hover:bg-secondary/10 p-1 rounded"><span class="material-symbols-outlined text-[18px]">code</span></button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div> <!-- End Bento Grid -->
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation (Hidden on Desktop) -->
+<nav class="md:hidden flex justify-around items-center w-full h-[64px] bg-surface-container-lowest border-t border-outline-variant pb-safe flex-shrink-0 z-50">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-secondary" href="#">
+<span class="material-symbols-outlined mb-1 fill-icon">business</span>
+<span class="text-[10px] font-medium">Companies</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1">exercise</span>
+<span class="text-[10px] font-medium">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

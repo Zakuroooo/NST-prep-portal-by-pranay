@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - PlacePrep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary": "#000000",
+                        "on-primary-fixed": "#141b2b",
+                        "on-primary-container": "#7d8497",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2a1700",
+                        "secondary": "#0058be",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#004395",
+                        "primary-fixed": "#dce2f7",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-container": "#b87500",
+                        "outline-variant": "#c6c6cd",
+                        "primary-container": "#141b2b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#000000",
+                        "secondary-container": "#2170e4",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c0c6db",
+                        "on-surface-variant": "#45464c",
+                        "inverse-surface": "#2e3132",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "on-surface": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-tint": "#575e70",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c0c6db",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#404758",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container_padding": "24px",
+                        "sidebar_width": "216px",
+                        "gutter": "16px",
+                        "right_panel_width": "280px",
+                        "navbar_height": "56px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "card-title": ["Inter"],
+                        "table-header": ["Inter"],
+                        "ui-medium": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "subheading": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "card-title": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "table-header": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "ui-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "subheading": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-[#F9FAFB] min-h-screen flex items-center justify-center p-4">
+<!-- Center Card -->
+<div class="w-full max-w-[400px] bg-surface-container-lowest rounded-xl border border-outline-variant custom-shadow p-8 flex flex-col">
+<!-- Header Section -->
+<div class="flex flex-col items-center mb-8">
+<h1 class="font-h1 text-h1 text-primary mb-2">NST</h1>
+<h2 class="font-card-title text-card-title text-on-surface mb-1">Join PlacePrep</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Start your placement journey today</p>
+</div>
+<!-- Form Section -->
+<form class="flex flex-col gap-4">
+<!-- Full Name -->
+<div>
+<label class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase" for="fullName">Full Name</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-transparent transition-shadow" id="fullName" placeholder="John Doe" type="text"/>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase" for="email">NST Email</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-transparent transition-shadow" id="email" placeholder="john.doe@nst.edu.in" type="email"/>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase" for="password">Password</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-transparent transition-shadow" id="password" placeholder="••••••••" type="password"/>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase" for="confirmPassword">Confirm Password</label>
+<input class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-transparent transition-shadow" id="confirmPassword" placeholder="••••••••" type="password"/>
+</div>
+<!-- Batch & Branch Row -->
+<div class="flex gap-4">
+<!-- Batch Year -->
+<div class="flex-1">
+<label class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase" for="batchYear">Batch Year</label>
+<select class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-transparent appearance-none" id="batchYear">
+<option disabled="" selected="" value="">Select</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+</select>
+</div>
+<!-- Branch -->
+<div class="flex-1">
+<label class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase" for="branch">Branch</label>
+<select class="w-full h-10 px-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-ui-medium text-ui-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-transparent appearance-none" id="branch">
+<option disabled="" selected="" value="">Select</option>
+<option value="cs">CS</option>
+<option value="cs-ai">CS-AI</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<!-- Create Account Button -->
+<button class="w-full h-10 mt-2 bg-primary text-on-primary font-ui-medium text-ui-medium rounded-xl hover:bg-surface-tint transition-colors flex items-center justify-center" type="submit">
+                Create Account
+            </button>
+</form>
+<!-- Footer -->
+<div class="mt-6 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Already registered? 
+                <a class="text-secondary-container hover:underline font-ui-medium" href="#">Login</a>
+</p>
+</div>
+</div>
+</body></html>

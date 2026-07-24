@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PlacePrep - Profile &amp; Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-container": "#fefcff",
+                    "tertiary-fixed": "#ffddb8",
+                    "tertiary": "#000000",
+                    "on-primary-fixed": "#141b2b",
+                    "on-primary-container": "#7d8497",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#2a1700",
+                    "secondary": "#0058be",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#004395",
+                    "primary-fixed": "#dce2f7",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-container": "#b87500",
+                    "outline-variant": "#c6c6cd",
+                    "primary-container": "#141b2b",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary": "#000000",
+                    "secondary-container": "#2170e4",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c0c6db",
+                    "on-surface-variant": "#45464c",
+                    "inverse-surface": "#2e3132",
+                    "on-error-container": "#93000a",
+                    "outline": "#76777d",
+                    "on-surface": "#191c1d",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-fixed": "#2a1700",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-tint": "#575e70",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d9dadb",
+                    "inverse-primary": "#c0c6db",
+                    "on-secondary-fixed": "#001a42",
+                    "on-background": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-bright": "#f8f9fa",
+                    "on-primary-fixed-variant": "#404758",
+                    "background": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container_padding": "24px",
+                    "sidebar_width": "216px",
+                    "gutter": "16px",
+                    "right_panel_width": "280px",
+                    "navbar_height": "56px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "card-title": ["Inter"],
+                    "table-header": ["Inter"],
+                    "ui-medium": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "subheading": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "card-title": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "table-header": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "ui-medium": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "subheading": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #0058be;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #0058be;
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: #e5e7eb;
+            transition: all 0.3s;
+        }
+        .toggle-label {
+            background-color: #e5e7eb;
+            transition: all 0.3s;
+        }
+        
+        /* Sidebar suppression logic applied: 
+           As a "Settings/Profile" screen, this might arguably fall under a dedicated tab if one existed, 
+           but based on the available tabs ["Home", "Roadmap", "Companies", "Practice", "Progress", "Leaderboard", "Submit Experience"],
+           none perfectly match "Profile" or "Settings". However, typically Profile is accessible globally via TopNav. 
+           We will suppress the SideNav to prioritize the canvas, adhering to: "If designing a user settings page... suppress the navigation to prioritize the content canvas" if it implies a temporary departure, or map it.
+           Actually, the rules say: "If designing a user settings page, "Profile" is active" (if Profile exists). Since "Profile" doesn't exist in the tab_labels array, we suppress the navigation shell to prioritize the content canvas as it's a focused journey/settings page.
+           Wait, TopNavBar component JSON provided: TopNavBar, SideNavBar. 
+           I will include TopNavBar with no active state, and SideNavBar suppressed.
+        */
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-sm min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest text-secondary docked full-width top-0 h-[56px] border-b border-outline-variant flat no shadows flex justify-between items-center px-container_padding w-full h-navbar_height z-50 fixed">
+<div class="flex items-center gap-4">
+<span class="text-h1 font-h1 text-primary">NST</span>
+<!-- Search Bar placeholder -->
+<div class="ml-4 relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border border-outline-variant rounded-lg text-ui-medium font-ui-medium focus:outline-none focus:border-secondary transition-colors w-64" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="monetization_on">monetization_on</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="bolt">bolt</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="notifications">notifications</span>
+<div class="h-8 w-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-ui-medium text-ui-medium ml-2 cursor-pointer border border-outline-variant">
+                AJ
+            </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-[56px] p-6 md:p-8 max-w-6xl mx-auto w-full">
+<div class="mb-8">
+<h1 class="font-h1 text-h1 text-on-background mb-2">Profile &amp; Settings</h1>
+<p class="font-subheading text-subheading text-on-surface-variant">Manage your account preferences and career goals.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Profile Card -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-surface-container-high border-2 border-outline-variant flex items-center justify-center mb-4 relative">
+<span class="font-h1 text-[32px] font-semibold text-on-surface-variant">AJ</span>
+<div class="absolute bottom-0 right-0 bg-secondary text-on-secondary w-8 h-8 rounded-full flex items-center justify-center border-2 border-surface-container-lowest cursor-pointer hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</div>
+</div>
+<h2 class="font-card-title text-card-title text-on-background mb-1">Alex Johnson</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">alex.johnson@nst.edu</p>
+<div class="w-full grid grid-cols-2 gap-4 mb-6 pt-4 border-t border-outline-variant text-left">
+<div>
+<span class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase">Batch</span>
+<span class="font-ui-medium text-ui-medium text-on-background">2023</span>
+</div>
+<div>
+<span class="block font-table-header text-table-header text-on-surface-variant mb-1 uppercase">Branch</span>
+<span class="font-ui-medium text-ui-medium text-on-background">CS-AI</span>
+</div>
+</div>
+<button class="w-full py-2 px-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-ui-medium text-ui-medium text-on-surface hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                        Edit Full Profile
+                    </button>
+</div>
+<!-- Quick Stats Mini Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<h3 class="font-card-title text-card-title text-on-background mb-4">Performance Summary</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Global Rank</span>
+<span class="font-ui-medium text-ui-medium text-secondary">#42</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Problems Solved</span>
+<span class="font-ui-medium text-ui-medium text-on-background">128</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Current Streak</span>
+<span class="font-ui-medium text-ui-medium text-on-tertiary-container bg-tertiary-fixed-dim px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> 14 Days
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Settings -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Target Companies -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-card-title text-card-title text-on-background">Target Companies</h3>
+<button class="text-secondary font-ui-medium text-ui-medium hover:underline text-sm">Edit</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Select companies to tailor your roadmap and practice sets.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-high border border-outline-variant rounded-full font-ui-medium text-ui-medium text-on-surface flex items-center gap-2">
+                            Google <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="px-3 py-1.5 bg-surface-container-high border border-outline-variant rounded-full font-ui-medium text-ui-medium text-on-surface flex items-center gap-2">
+                            Microsoft <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="px-3 py-1.5 bg-surface-container-high border border-outline-variant rounded-full font-ui-medium text-ui-medium text-on-surface flex items-center gap-2">
+                            Amazon <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="px-3 py-1.5 border border-dashed border-outline rounded-full font-ui-medium text-ui-medium text-on-surface-variant flex items-center gap-1 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span> Add Company
+                        </span>
+</div>
+</div>
+<!-- Domain Preferences -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<h3 class="font-card-title text-card-title text-on-background mb-4">Domain Preferences</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors">
+<input checked="" class="form-checkbox h-5 w-5 text-secondary border-outline-variant rounded" type="checkbox"/>
+<span class="font-ui-medium text-ui-medium text-on-surface">Data Structures &amp; Algorithms</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors">
+<input checked="" class="form-checkbox h-5 w-5 text-secondary border-outline-variant rounded" type="checkbox"/>
+<span class="font-ui-medium text-ui-medium text-on-surface">System Design</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors">
+<input class="form-checkbox h-5 w-5 text-secondary border-outline-variant rounded" type="checkbox"/>
+<span class="font-ui-medium text-ui-medium text-on-surface">Frontend Development</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer p-3 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors">
+<input class="form-checkbox h-5 w-5 text-secondary border-outline-variant rounded" type="checkbox"/>
+<span class="font-ui-medium text-ui-medium text-on-surface">Backend Development</span>
+</label>
+</div>
+</div>
+<!-- Notification & Privacy Settings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Notifications -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<h3 class="font-card-title text-card-title text-on-background mb-6">Notifications</h3>
+<div class="space-y-5">
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-ui-medium text-ui-medium text-on-surface">Daily Reminders</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Practice prompts</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-ui-medium text-ui-medium text-on-surface">New Companies</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">When added to DB</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-ui-medium text-ui-medium text-on-surface">Marketing Emails</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">News and offers</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle3" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer" for="toggle3"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Privacy -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<h3 class="font-card-title text-card-title text-on-background mb-6">Privacy</h3>
+<div class="space-y-5">
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-ui-medium text-ui-medium text-on-surface">Public Profile</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visible to recruiters</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle4" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer" for="toggle4"></label>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-ui-medium text-ui-medium text-on-surface">Show on Leaderboard</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Display rank to peers</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle5" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer" for="toggle5"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="bg-error-container border border-[#ffb4ab] rounded-xl p-6 shadow-sm mt-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-error">warning</span>
+<h3 class="font-card-title text-card-title text-error">Danger Zone</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Irreversible actions regarding your account data and progress.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 py-2.5 px-4 bg-surface-container-lowest border border-error text-error rounded-lg font-ui-medium text-ui-medium hover:bg-[#ffdad6] transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+                            Retake Assessment
+                        </button>
+<button class="flex-1 py-2.5 px-4 bg-error text-on-error rounded-lg font-ui-medium text-ui-medium hover:bg-[#93000a] transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+                            Reset Roadmap
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple toggle logic enhancement if needed, CSS handles the visual state
+        document.querySelectorAll('.toggle-checkbox').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                if(this.checked) {
+                    this.nextElementSibling.style.backgroundColor = '#0058be';
+                } else {
+                    this.nextElementSibling.style.backgroundColor = '#e5e7eb';
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PlacePrep Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-highest": "#e1e3e4",
+                "on-secondary-container": "#fefcff",
+                "tertiary-fixed": "#ffddb8",
+                "tertiary": "#000000",
+                "on-primary-fixed": "#141b2b",
+                "on-primary-container": "#7d8497",
+                "on-secondary": "#ffffff",
+                "tertiary-container": "#2a1700",
+                "secondary": "#0058be",
+                "surface-container-low": "#f3f4f5",
+                "tertiary-fixed-dim": "#ffb95f",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-fixed-variant": "#004395",
+                "primary-fixed": "#dce2f7",
+                "surface": "#f8f9fa",
+                "on-tertiary-container": "#b87500",
+                "outline-variant": "#c6c6cd",
+                "primary-container": "#141b2b",
+                "inverse-on-surface": "#f0f1f2",
+                "primary": "#000000",
+                "secondary-container": "#2170e4",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#c0c6db",
+                "on-surface-variant": "#45464c",
+                "inverse-surface": "#2e3132",
+                "on-error-container": "#93000a",
+                "outline": "#76777d",
+                "on-surface": "#191c1d",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed-variant": "#653e00",
+                "surface-container": "#edeeef",
+                "on-tertiary-fixed": "#2a1700",
+                "secondary-fixed": "#d8e2ff",
+                "surface-tint": "#575e70",
+                "on-primary": "#ffffff",
+                "surface-dim": "#d9dadb",
+                "inverse-primary": "#c0c6db",
+                "on-secondary-fixed": "#001a42",
+                "on-background": "#191c1d",
+                "error-container": "#ffdad6",
+                "error": "#ba1a1a",
+                "surface-variant": "#e1e3e4",
+                "secondary-fixed-dim": "#adc6ff",
+                "surface-container-high": "#e7e8e9",
+                "surface-bright": "#f8f9fa",
+                "on-primary-fixed-variant": "#404758",
+                "background": "#f8f9fa"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "container_padding": "24px",
+                "sidebar_width": "216px",
+                "gutter": "16px",
+                "right_panel_width": "280px",
+                "navbar_height": "56px"
+        },
+        "fontFamily": {
+                "h1": [
+                        "Inter"
+                ],
+                "card-title": [
+                        "Inter"
+                ],
+                "table-header": [
+                        "Inter"
+                ],
+                "ui-medium": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "subheading": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "h1": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "card-title": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "table-header": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "ui-medium": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "subheading": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+  }
+</style>
+</head>
+<body class="flex min-h-screen antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-screen flex-col p-4 z-40 bg-surface-container-lowest border-r border-outline-variant w-[216px]">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-bold">P</div>
+<div>
+<h1 class="font-h1 text-h1 text-primary">PlacePrep</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Interview Intelligence</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all font-ui-medium text-ui-medium rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">home</span>
+        Home
+      </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all font-ui-medium text-ui-medium rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">map</span>
+        Roadmap
+      </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all font-ui-medium text-ui-medium rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">business</span>
+        Companies
+      </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all font-ui-medium text-ui-medium rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">exercise</span>
+        Practice
+      </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all font-ui-medium text-ui-medium rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">trending_up</span>
+        Progress
+      </a>
+<a class="bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg flex items-center h-10 px-3 scale-95 duration-150 font-ui-medium text-ui-medium" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+        Leaderboard
+      </a>
+<a class="text-on-surface-variant flex items-center h-10 px-3 hover:bg-surface-container-low transition-all font-ui-medium text-ui-medium rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">rate_review</span>
+        Submit Experience
+      </a>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<button class="w-full h-10 rounded-lg bg-surface-container-high text-on-surface font-ui-medium text-ui-medium hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+        Share a Concern
+      </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-[216px] p-container_padding flex justify-center pb-20">
+<div class="w-full max-w-5xl space-y-8">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary to-secondary p-8 text-on-primary shadow-sm border border-outline-variant/20 flex flex-col items-center text-center">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+<div class="relative z-10 flex flex-col items-center gap-4">
+<span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full font-body-sm text-body-sm text-white border border-white/30 uppercase tracking-wider font-semibold">June 2026 Contest</span>
+<h2 class="text-[32px] leading-[40px] font-bold font-h1 tracking-tight text-white">PlacePrep Leaderboard</h2>
+<p class="font-subheading text-subheading text-primary-fixed max-w-xl">Compete with your peers, climb the ranks, and secure your position at the top. Consistent practice yields the highest rewards.</p>
+</div>
+</section>
+<!-- Filters & Actions -->
+<div class="flex items-center justify-between">
+<div class="inline-flex bg-surface-container-low p-1 rounded-lg border border-outline-variant shadow-sm">
+<button class="px-4 py-1.5 rounded-md bg-surface-container-lowest text-on-surface font-ui-medium text-ui-medium shadow-sm ring-1 ring-outline-variant/50">All Time</button>
+<button class="px-4 py-1.5 rounded-md text-on-surface-variant font-ui-medium text-ui-medium hover:text-on-surface transition-colors">Monthly</button>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-64 h-9 pl-9 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest font-body-sm text-body-sm focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all placeholder:text-outline" placeholder="Search a student..." type="text"/>
+</div>
+</div>
+<!-- Podium Section -->
+<section class="flex items-end justify-center gap-4 sm:gap-8 pt-8 pb-4">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center w-32 pb-4">
+<div class="relative mb-3 flex flex-col items-center group">
+<span class="material-symbols-outlined text-outline-variant text-[24px] mb-1 drop-shadow-sm group-hover:scale-110 transition-transform">social_leaderboard</span>
+<div class="w-20 h-20 rounded-full border-4 border-surface-container-lowest shadow-md overflow-hidden bg-surface-container-high ring-2 ring-outline-variant">
+<img alt="Rank 2" class="w-full h-full object-cover" data-alt="A close-up studio portrait of a young adult with a subtle, confident smile. The lighting is crisp and modern, featuring bright white studio lights that highlight the subject's features against a clean, neutral background. The aesthetic is highly professional, clean, and polished, suitable for an elite academic or corporate profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgky8tpbsELLtThP8YwDtHiJvI98DFTUa2zg2JNVCm3bFrnvwSD4pAJOu5li4KA-5_R05xBl2y9XrLvcgy7zLIgOdxyE72L7QmPchx9WAapW_M8nYCAtbPf4keClY0Vz4FlU4Hr-TWYhJoJ5FT9RoJ75VJW9jdd12zImk2QHe7pF4JYICULeYqwRwWfl-wBd3PGXbaklIg22DJntzTSKeoYILbNOIW1jQu4RmoCduMF-joLrn1uOMzBHaRFL88WuRMeFSK1hZXzEbH"/>
+</div>
+<div class="absolute -bottom-3 bg-surface-container-lowest border border-outline-variant text-on-surface font-bold text-sm w-8 h-8 rounded-full flex items-center justify-center shadow-sm">2</div>
+</div>
+<div class="font-ui-medium text-ui-medium text-on-surface text-center truncate w-full">Sarah Jenkins</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim font-bold flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> 14,250 XP
+          </div>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center w-40 z-10">
+<div class="relative mb-3 flex flex-col items-center group">
+<span class="material-symbols-outlined text-[#F59E0B] text-[32px] mb-1 drop-shadow-md group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<div class="w-28 h-28 rounded-full border-4 border-surface-container-lowest shadow-lg overflow-hidden bg-surface-container-high ring-4 ring-[#F59E0B]/50">
+<img alt="Rank 1" class="w-full h-full object-cover" data-alt="A modern, high-quality portrait of a focused individual looking directly at the camera. The setting is a minimalist office space with soft, diffused daylight creating a calm, productive atmosphere. The individual is dressed in smart-casual corporate attire. The overall visual style is sleek, contemporary, and conveys a sense of leadership and academic excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzDnXBL77IgBe62jkpUyxbOrc40-IrsCTkjt_v1LjFrhVJs7JgNJGftp8bYTzjWOqofdMCb-76QnODLCRktD1kqWkXET7qgY2dohP70by95rzzGUVtWhuAQBBWrHI4GjxLL9ZzgCzsZuOSxYi_k-o47gzXYS60NUaGIUfnO0VT_PuTze6L5mWpqQfEor5yj8YxIROSGU7_7TNyAo3YKt7nzSpfv-MeQJX6we2aClV-sWzbyb9vSr0ktoTJ5Dlbsb1YQ-YQ-eSa3mdP"/>
+</div>
+<div class="absolute -bottom-4 bg-[#F59E0B] text-white font-bold text-lg w-10 h-10 rounded-full flex items-center justify-center shadow-md border-2 border-surface-container-lowest">1</div>
+</div>
+<div class="font-card-title text-card-title text-on-surface text-center truncate w-full mt-2">Michael Chen</div>
+<div class="font-ui-medium text-ui-medium text-[#F59E0B] font-bold flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">bolt</span> 18,900 XP
+          </div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center w-32 pb-4">
+<div class="relative mb-3 flex flex-col items-center group">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[24px] mb-1 drop-shadow-sm group-hover:scale-110 transition-transform">social_leaderboard</span>
+<div class="w-20 h-20 rounded-full border-4 border-surface-container-lowest shadow-md overflow-hidden bg-surface-container-high ring-2 ring-tertiary-fixed-dim/50">
+<img alt="Rank 3" class="w-full h-full object-cover" data-alt="A professional headshot of an individual with a bright, welcoming expression. The photo is taken in a well-lit, contemporary environment with subtle, out-of-focus structural elements in the background. The aesthetic emphasizes clarity, modern utility, and approachability, aligning with a premium educational platform's identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr-l9cvEm-nVV2PEDofz2-KW8N8VJrge3Y_ZZ1-QjYFhoMWEEC5USNgXPimIGEknaBF8iiMAQGYDW3_lT8jibJWZdh3LUt2jBU8EI5pVcOXwfgPYwUxrxuZBCsMrVVSweVbhYySBt6JyS7JSEUhO213aOlu-_WA_XM8iNIeH4oIbyEoAOiqrwNWRYc9r3MTpTFZdMMVM9_chx8NHxkCEXOnmDei3_zb9DtWL6Fp1V-xlwSxXzYJXBMZBnE28oLPfy4Y_dRysqPCZj6"/>
+</div>
+<div class="absolute -bottom-3 bg-surface-container-lowest border border-outline-variant text-on-surface font-bold text-sm w-8 h-8 rounded-full flex items-center justify-center shadow-sm">3</div>
+</div>
+<div class="font-ui-medium text-ui-medium text-on-surface text-center truncate w-full">Emily Davis</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim font-bold flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> 13,800 XP
+          </div>
+</div>
+</section>
+<!-- CTA Banner -->
+<div class="bg-secondary-container rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm border border-secondary-container/20 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=')]"></div>
+<div class="relative z-10 flex items-center gap-4 text-on-secondary-container">
+<div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-[24px]">trending_up</span>
+</div>
+<div>
+<h3 class="font-card-title text-card-title font-bold">Ready to climb the ranks?</h3>
+<p class="font-body-sm text-body-sm opacity-90">Increase your XP by completing practice modules and daily challenges.</p>
+</div>
+</div>
+<button class="relative z-10 shrink-0 px-6 py-2.5 rounded-lg bg-surface-container-lowest text-secondary font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors shadow-sm font-semibold">
+          Go to Practice
+        </button>
+</div>
+<!-- Leaderboard Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant w-20 text-center">RANK</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant w-24 text-center">CHANGE</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant">NAME</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant text-right">XP THIS MONTH</th>
+<th class="py-3 px-4 font-table-header text-table-header text-on-surface-variant text-right">LATEST SUBMISSION</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/50 font-body-sm text-body-sm text-on-surface">
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-4 text-center font-bold text-on-surface-variant">4</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center gap-1 text-[#059669]">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> 2
+                </div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A clear, professional avatar image of a young man with a neutral, focused expression. The background is a simple, blurred office setting. The lighting is balanced and natural, fitting a modern SaaS platform user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbxkcwHT2Py5s5u0We0Rqj9LDEk894HJhkiCpwAveIh9Hvgn5f3vORNFJF1SZ8lT3bzrylKQUBjqUG0JAuN5o4MKPD0fKGCeoyYpYT7JcWasIV0g8hsL_s2e1Obe_EPoGzMwiXsdKMWHAtHYotBihF4yj6UbSi3FJRFi3zc67ELVPMxcHNwl1kMkPcbQXo2fwaPikzeZ5urncnXmzVGkFo7rA82fqaB0I18VFJg5w3rxuuyu4taaRsFzgWq-3R5qR7yuTN_rn21JmL"/>
+</div>
+<span class="font-ui-medium text-ui-medium">David Kim</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-ui-medium text-ui-medium">12,450</td>
+<td class="py-3 px-4 text-right text-on-surface-variant">2 hrs ago</td>
+</tr>
+<!-- Row 5 (Current User) -->
+<tr class="bg-tertiary-fixed/30 hover:bg-tertiary-fixed/40 transition-colors border-l-4 border-l-tertiary-fixed-dim">
+<td class="py-3 px-4 text-center font-bold text-on-surface">5</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">horizontal_rule</span> 0
+                </div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary overflow-hidden border-2 border-tertiary-fixed-dim flex items-center justify-center text-on-primary font-bold text-xs">
+                    YOU
+                  </div>
+<span class="font-ui-medium text-ui-medium font-bold">Alex Johnson (You)</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-ui-medium text-ui-medium font-bold">11,920</td>
+<td class="py-3 px-4 text-right text-on-surface-variant">5 mins ago</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-4 text-center font-bold text-on-surface-variant">6</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center gap-1 text-error">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span> 1
+                </div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant flex items-center justify-center text-on-surface-variant font-bold text-xs">
+                    RJ
+                  </div>
+<span class="font-ui-medium text-ui-medium">Rachel Jones</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-ui-medium text-ui-medium">11,100</td>
+<td class="py-3 px-4 text-right text-on-surface-variant">1 day ago</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-4 text-center font-bold text-on-surface-variant">7</td>
+<td class="py-3 px-4 text-center">
+<div class="flex items-center justify-center gap-1 text-[#059669]">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> 5
+                </div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A profile picture of a confident young woman in a brightly lit indoor environment. The aesthetic is clean, professional, and optimistic. The image utilizes high-key lighting to emphasize clarity and approachability, aligning with an educational utility application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCigArDnoGhIIQSokW8bODmhg8tKyAWV9egHtoYTsQg7h2Qqgz0Zv397Skx8xos-mOKiwxnHbY5eZ4jlsUgO7mI_HSh1cMLjDzY97ZHzJ9EfCQoiK6FmebHjW6sSrTLuG5COFmv01E_oziX-9ne4WFmw660owygk5Dp4UvByULbgX8ij2J3cqKj4SGRKwtMRRxEymE_4QfIc-IvoWADJweylIXQkZ7F0TgfdzZsJRQ9Mkqp6sLF_AdGVd7ovIS54-eDTBOyQeZF-0Wc"/>
+</div>
+<span class="font-ui-medium text-ui-medium">Maria Garcia</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-ui-medium text-ui-medium">10,850</td>
+<td class="py-3 px-4 text-right text-on-surface-variant">3 hrs ago</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination / Load More -->
+<div class="p-4 border-t border-outline-variant flex justify-center bg-surface-container-lowest">
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-ui-medium text-ui-medium hover:bg-surface-container-low transition-colors flex items-center gap-2">
+            View Top 100
+            <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

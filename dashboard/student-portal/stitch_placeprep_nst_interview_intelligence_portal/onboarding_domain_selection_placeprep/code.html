@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Step 1: Domain Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e1e3e4",
+                      "on-secondary-container": "#fefcff",
+                      "tertiary-fixed": "#ffddb8",
+                      "tertiary": "#000000",
+                      "on-primary-fixed": "#141b2b",
+                      "on-primary-container": "#7d8497",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#2a1700",
+                      "secondary": "#0058be",
+                      "surface-container-low": "#f3f4f5",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#004395",
+                      "primary-fixed": "#dce2f7",
+                      "surface": "#f8f9fa",
+                      "on-tertiary-container": "#b87500",
+                      "outline-variant": "#c6c6cd",
+                      "primary-container": "#141b2b",
+                      "inverse-on-surface": "#f0f1f2",
+                      "primary": "#000000",
+                      "secondary-container": "#2170e4",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#c0c6db",
+                      "on-surface-variant": "#45464c",
+                      "inverse-surface": "#2e3132",
+                      "on-error-container": "#93000a",
+                      "outline": "#76777d",
+                      "on-surface": "#191c1d",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "surface-container": "#edeeef",
+                      "on-tertiary-fixed": "#2a1700",
+                      "secondary-fixed": "#d8e2ff",
+                      "surface-tint": "#575e70",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d9dadb",
+                      "inverse-primary": "#c0c6db",
+                      "on-secondary-fixed": "#001a42",
+                      "on-background": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#e1e3e4",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-bright": "#f8f9fa",
+                      "on-primary-fixed-variant": "#404758",
+                      "background": "#f8f9fa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container_padding": "24px",
+                      "sidebar_width": "216px",
+                      "gutter": "16px",
+                      "right_panel_width": "280px",
+                      "navbar_height": "56px"
+              },
+              "fontFamily": {
+                      "h1": [
+                              "Inter"
+                      ],
+                      "card-title": [
+                              "Inter"
+                      ],
+                      "table-header": [
+                              "Inter"
+                      ],
+                      "ui-medium": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "subheading": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h1": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "card-title": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "table-header": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "ui-medium": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "subheading": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center font-ui-medium text-on-background antialiased selection:bg-secondary selection:text-on-secondary">
+<div class="w-full max-w-2xl px-6 py-12 flex flex-col items-center">
+<!-- Progress Stepper -->
+<div class="flex items-center w-64 mb-12 relative">
+<!-- Line -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant -translate-y-1/2 z-0"></div>
+<!-- Progress Line (Filled) -->
+<div class="absolute top-1/2 left-0 w-[0%] h-[2px] bg-[#2563EB] -translate-y-1/2 z-0 transition-all duration-300"></div>
+<!-- Dots -->
+<div class="flex justify-between w-full z-10">
+<div class="w-3 h-3 rounded-full bg-[#2563EB] ring-4 ring-background"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant ring-4 ring-background"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant ring-4 ring-background"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant ring-4 ring-background"></div>
+</div>
+</div>
+<!-- Header -->
+<div class="text-center mb-10">
+<h1 class="font-h1 text-h1 text-primary mb-2">What are you preparing for?</h1>
+<p class="font-subheading text-subheading text-on-surface-variant">Select all domains you want to cover</p>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 w-full max-w-[540px]">
+<!-- Card 1: Selected -->
+<div class="domain-card relative group cursor-pointer rounded-lg p-5 flex flex-col items-center justify-center text-center bg-[#EFF6FF] border border-[#2563EB] h-[140px] transition-all hover:shadow-[0_1px_3px_rgba(0,0,0,0.1)]" onclick="toggleDomain(this)">
+<span class="material-symbols-outlined absolute top-3 right-3 text-[#2563EB] text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[32px] text-[#2563EB] mb-3">code</span>
+<span class="font-card-title text-card-title text-primary">SDE</span>
+</div>
+<!-- Card 2 -->
+<div class="domain-card relative group cursor-pointer rounded-lg p-5 flex flex-col items-center justify-center text-center bg-surface-container-lowest border border-outline-variant h-[140px] transition-all hover:bg-surface-container-low hover:border-outline" onclick="toggleDomain(this)">
+<span class="check-icon material-symbols-outlined absolute top-3 right-3 text-transparent text-[20px] transition-colors" data-weight="fill">check_circle</span>
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-3 group-hover:text-primary transition-colors">web</span>
+<span class="font-card-title text-card-title text-primary">Frontend</span>
+</div>
+<!-- Card 3 -->
+<div class="domain-card relative group cursor-pointer rounded-lg p-5 flex flex-col items-center justify-center text-center bg-surface-container-lowest border border-outline-variant h-[140px] transition-all hover:bg-surface-container-low hover:border-outline" onclick="toggleDomain(this)">
+<span class="check-icon material-symbols-outlined absolute top-3 right-3 text-transparent text-[20px] transition-colors" data-weight="fill">check_circle</span>
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-3 group-hover:text-primary transition-colors">analytics</span>
+<span class="font-card-title text-card-title text-primary">Data Science</span>
+</div>
+<!-- Card 4 -->
+<div class="domain-card relative group cursor-pointer rounded-lg p-5 flex flex-col items-center justify-center text-center bg-surface-container-lowest border border-outline-variant h-[140px] transition-all hover:bg-surface-container-low hover:border-outline" onclick="toggleDomain(this)">
+<span class="check-icon material-symbols-outlined absolute top-3 right-3 text-transparent text-[20px] transition-colors" data-weight="fill">check_circle</span>
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-3 group-hover:text-primary transition-colors">query_stats</span>
+<span class="font-card-title text-card-title text-primary">Data Analyst</span>
+</div>
+<!-- Card 5 -->
+<div class="domain-card relative group cursor-pointer rounded-lg p-5 flex flex-col items-center justify-center text-center bg-surface-container-lowest border border-outline-variant h-[140px] transition-all hover:bg-surface-container-low hover:border-outline" onclick="toggleDomain(this)">
+<span class="check-icon material-symbols-outlined absolute top-3 right-3 text-transparent text-[20px] transition-colors" data-weight="fill">check_circle</span>
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-3 group-hover:text-primary transition-colors">cloud</span>
+<span class="font-card-title text-card-title text-primary">DevOps</span>
+</div>
+<!-- Card 6 -->
+<div class="domain-card relative group cursor-pointer rounded-lg p-5 flex flex-col items-center justify-center text-center bg-surface-container-lowest border border-outline-variant h-[140px] transition-all hover:bg-surface-container-low hover:border-outline" onclick="toggleDomain(this)">
+<span class="check-icon material-symbols-outlined absolute top-3 right-3 text-transparent text-[20px] transition-colors" data-weight="fill">check_circle</span>
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant mb-3 group-hover:text-primary transition-colors">more_horiz</span>
+<span class="font-card-title text-card-title text-primary">Other</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between w-full max-w-[540px] mt-auto">
+<button class="text-on-surface-variant hover:text-primary transition-colors font-ui-medium text-ui-medium">Skip for now</button>
+<button class="bg-[#111827] text-white px-6 py-2.5 rounded-[6px] font-ui-medium text-ui-medium hover:bg-black transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#111827] focus:outline-none">Continue</button>
+</div>
+</div>
+<script>
+        function toggleDomain(element) {
+            const isSelected = element.classList.contains('bg-[#EFF6FF]');
+            
+            if (isSelected) {
+                // Deselect
+                element.classList.remove('bg-[#EFF6FF]', 'border-[#2563EB]');
+                element.classList.add('bg-surface-container-lowest', 'border-outline-variant');
+                
+                const icon = element.querySelector('.material-symbols-outlined');
+                icon.classList.remove('text-[#2563EB]');
+                icon.classList.add('text-transparent');
+                
+                const mainIcon = element.querySelectorAll('.material-symbols-outlined')[1];
+                mainIcon.classList.remove('text-[#2563EB]');
+                mainIcon.classList.add('text-on-surface-variant');
+                
+            } else {
+                // Select
+                element.classList.remove('bg-surface-container-lowest', 'border-outline-variant', 'hover:bg-surface-container-low', 'hover:border-outline');
+                element.classList.add('bg-[#EFF6FF]', 'border-[#2563EB]');
+                
+                const icon = element.querySelector('.material-symbols-outlined');
+                icon.classList.remove('text-transparent');
+                icon.classList.add('text-[#2563EB]');
+                icon.style.fontVariationSettings = "'FILL' 1";
+                
+                const mainIcon = element.querySelectorAll('.material-symbols-outlined')[1];
+                mainIcon.classList.remove('text-on-surface-variant');
+                mainIcon.classList.add('text-[#2563EB]');
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roadmap Ready - PlacePrep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-highest": "#e1e3e4",
+                            "on-secondary-container": "#fefcff",
+                            "tertiary-fixed": "#ffddb8",
+                            "tertiary": "#000000",
+                            "on-primary-fixed": "#141b2b",
+                            "on-primary-container": "#7d8497",
+                            "on-secondary": "#ffffff",
+                            "tertiary-container": "#2a1700",
+                            "secondary": "#0058be",
+                            "surface-container-low": "#f3f4f5",
+                            "tertiary-fixed-dim": "#ffb95f",
+                            "surface-container-lowest": "#ffffff",
+                            "on-secondary-fixed-variant": "#004395",
+                            "primary-fixed": "#dce2f7",
+                            "surface": "#f8f9fa",
+                            "on-tertiary-container": "#b87500",
+                            "outline-variant": "#c6c6cd",
+                            "primary-container": "#141b2b",
+                            "inverse-on-surface": "#f0f1f2",
+                            "primary": "#000000",
+                            "secondary-container": "#2170e4",
+                            "on-error": "#ffffff",
+                            "primary-fixed-dim": "#c0c6db",
+                            "on-surface-variant": "#45464c",
+                            "inverse-surface": "#2e3132",
+                            "on-error-container": "#93000a",
+                            "outline": "#76777d",
+                            "on-surface": "#191c1d",
+                            "on-tertiary": "#ffffff",
+                            "on-tertiary-fixed-variant": "#653e00",
+                            "surface-container": "#edeeef",
+                            "on-tertiary-fixed": "#2a1700",
+                            "secondary-fixed": "#d8e2ff",
+                            "surface-tint": "#575e70",
+                            "on-primary": "#ffffff",
+                            "surface-dim": "#d9dadb",
+                            "inverse-primary": "#c0c6db",
+                            "on-secondary-fixed": "#001a42",
+                            "on-background": "#191c1d",
+                            "error-container": "#ffdad6",
+                            "error": "#ba1a1a",
+                            "surface-variant": "#e1e3e4",
+                            "secondary-fixed-dim": "#adc6ff",
+                            "surface-container-high": "#e7e8e9",
+                            "surface-bright": "#f8f9fa",
+                            "on-primary-fixed-variant": "#404758",
+                            "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "container_padding": "24px",
+                            "sidebar_width": "216px",
+                            "gutter": "16px",
+                            "right_panel_width": "280px",
+                            "navbar_height": "56px"
+                    },
+                    "fontFamily": {
+                            "h1": ["Inter"],
+                            "card-title": ["Inter"],
+                            "table-header": ["Inter"],
+                            "ui-medium": ["Inter"],
+                            "body-sm": ["Inter"],
+                            "subheading": ["Inter"]
+                    },
+                    "fontSize": {
+                            "h1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "card-title": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                            "table-header": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "ui-medium": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                            "subheading": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-ui-medium antialiased min-h-screen flex items-center justify-center p-4">
+<!-- Main Container -->
+<main class="w-full max-w-2xl bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col items-center py-12 px-6 sm:px-10 relative">
+<!-- Animated Background Elements (Subtle) -->
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-secondary/5 to-transparent pointer-events-none"></div>
+<!-- Success Visual -->
+<div class="mb-8 relative">
+<div class="absolute inset-0 bg-[#ECFDF5] rounded-full animate-pulse-soft blur-md opacity-50"></div>
+<div class="w-20 h-20 bg-[#ECFDF5] text-[#059669] rounded-full flex items-center justify-center relative z-10 shadow-sm border border-[#059669]/20">
+<span class="material-symbols-outlined text-4xl" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Header Text -->
+<h1 class="font-h1 text-h1 text-primary text-center mb-3">Your personalized roadmap is ready!</h1>
+<!-- Subtext Details -->
+<div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-on-surface-variant font-subheading text-subheading">
+<span class="px-3 py-1 bg-surface-container rounded-full border border-outline-variant">Target: <strong>Google</strong></span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="px-3 py-1 bg-surface-container rounded-full border border-outline-variant">Duration: <strong>12 Weeks</strong></span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="px-3 py-1 bg-surface-container rounded-full border border-outline-variant">Goal: <strong>SDE-1 Readiness</strong></span>
+</div>
+<!-- Preview Card: Bento Style -->
+<div class="w-full bg-surface border border-outline-variant rounded-xl p-6 mb-10 shadow-[0_1px_3px_rgba(0,0,0,0.05)] relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-4 mb-4 relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary text-on-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<h2 class="font-card-title text-card-title text-primary">Week 1: Foundations</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Data Structures &amp; Core Algorithms</p>
+</div>
+</div>
+<span class="text-xs font-semibold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">5 Problems</span>
+</div>
+<div class="space-y-3 relative z-10">
+<!-- Problem Item 1 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-sm" data-icon="data_object">data_object</span>
+<span class="font-ui-medium text-ui-medium text-on-surface">Two Sum</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-[#ECFDF5] text-[#059669]">Easy</span>
+</div>
+<!-- Problem Item 2 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-sm" data-icon="account_tree">account_tree</span>
+<span class="font-ui-medium text-ui-medium text-on-surface">Valid Parentheses</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-[#ECFDF5] text-[#059669]">Easy</span>
+</div>
+<!-- Problem Item 3 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-sm" data-icon="list_alt">list_alt</span>
+<span class="font-ui-medium text-ui-medium text-on-surface">Merge Two Sorted Lists</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-[#ECFDF5] text-[#059669]">Easy</span>
+</div>
+<!-- Problem Item 4 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-sm" data-icon="trending_up">trending_up</span>
+<span class="font-ui-medium text-ui-medium text-on-surface">Best Time to Buy and Sell Stock</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-[#ECFDF5] text-[#059669]">Easy</span>
+</div>
+<!-- Problem Item 5 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50 hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-sm" data-icon="search">search</span>
+<span class="font-ui-medium text-ui-medium text-on-surface">Binary Search</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-[#FEF3C7] text-[#D97706]">Medium</span>
+</div>
+</div>
+<div class="mt-4 text-center">
+<span class="text-xs text-on-surface-variant font-medium">...and 11 more weeks planned</span>
+</div>
+</div>
+<!-- Action Area -->
+<button class="w-full sm:w-auto bg-primary text-on-primary font-ui-medium text-ui-medium py-3 px-8 rounded-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-sm mb-6 active:scale-95 duration-150">
+            Go to Dashboard
+            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Footer XP Note -->
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container px-4 py-2 rounded-full border border-outline-variant/50">
+<span class="material-symbols-outlined text-[#F59E0B]" data-icon="toll" data-weight="fill" style="font-variation-settings: 'FILL' 1;">toll</span>
+            Start earning XP from Day 1
+        </div>
+</main>
+</body></html>

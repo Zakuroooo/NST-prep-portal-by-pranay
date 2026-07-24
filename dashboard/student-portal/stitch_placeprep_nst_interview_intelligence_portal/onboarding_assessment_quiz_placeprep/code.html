@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PlacePrep - Assessment Quiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Progress Bar Animation */
+        @keyframes fillProgress {
+            from { width: 20%; }
+            to { width: 40%; }
+        }
+        .animate-progress {
+            animation: fillProgress 0.8s ease-out forwards;
+        }
+
+        /* Circular Timer */
+        .circular-chart {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            max-height: 250px;
+        }
+        .circle-bg {
+            fill: none;
+            stroke: #eee;
+            stroke-width: 3.8;
+        }
+        .circle {
+            fill: none;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            animation: progress 45s linear forwards;
+        }
+        @keyframes progress {
+            0% {
+                stroke-dasharray: 0 100;
+            }
+            100% {
+                stroke-dasharray: 100 100;
+            }
+        }
+        .percentage {
+            fill: #666;
+            font-family: sans-serif;
+            font-size: 0.5em;
+            text-anchor: middle;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-highest": "#e1e3e4",
+                            "on-secondary-container": "#fefcff",
+                            "tertiary-fixed": "#ffddb8",
+                            "tertiary": "#000000",
+                            "on-primary-fixed": "#141b2b",
+                            "on-primary-container": "#7d8497",
+                            "on-secondary": "#ffffff",
+                            "tertiary-container": "#2a1700",
+                            "secondary": "#0058be",
+                            "surface-container-low": "#f3f4f5",
+                            "tertiary-fixed-dim": "#ffb95f",
+                            "surface-container-lowest": "#ffffff",
+                            "on-secondary-fixed-variant": "#004395",
+                            "primary-fixed": "#dce2f7",
+                            "surface": "#f8f9fa",
+                            "on-tertiary-container": "#b87500",
+                            "outline-variant": "#c6c6cd",
+                            "primary-container": "#141b2b",
+                            "inverse-on-surface": "#f0f1f2",
+                            "primary": "#000000",
+                            "secondary-container": "#2170e4",
+                            "on-error": "#ffffff",
+                            "primary-fixed-dim": "#c0c6db",
+                            "on-surface-variant": "#45464c",
+                            "inverse-surface": "#2e3132",
+                            "on-error-container": "#93000a",
+                            "outline": "#76777d",
+                            "on-surface": "#191c1d",
+                            "on-tertiary": "#ffffff",
+                            "on-tertiary-fixed-variant": "#653e00",
+                            "surface-container": "#edeeef",
+                            "on-tertiary-fixed": "#2a1700",
+                            "secondary-fixed": "#d8e2ff",
+                            "surface-tint": "#575e70",
+                            "on-primary": "#ffffff",
+                            "surface-dim": "#d9dadb",
+                            "inverse-primary": "#c0c6db",
+                            "on-secondary-fixed": "#001a42",
+                            "on-background": "#191c1d",
+                            "error-container": "#ffdad6",
+                            "error": "#ba1a1a",
+                            "surface-variant": "#e1e3e4",
+                            "secondary-fixed-dim": "#adc6ff",
+                            "surface-container-high": "#e7e8e9",
+                            "surface-bright": "#f8f9fa",
+                            "on-primary-fixed-variant": "#404758",
+                            "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "container_padding": "24px",
+                            "sidebar_width": "216px",
+                            "gutter": "16px",
+                            "right_panel_width": "280px",
+                            "navbar_height": "56px"
+                    },
+                    "fontFamily": {
+                            "h1": [
+                                    "Inter"
+                            ],
+                            "card-title": [
+                                    "Inter"
+                            ],
+                            "table-header": [
+                                    "Inter"
+                            ],
+                            "ui-medium": [
+                                    "Inter"
+                            ],
+                            "body-sm": [
+                                    "Inter"
+                            ],
+                            "subheading": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "h1": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "card-title": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "table-header": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "ui-medium": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "body-sm": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "18px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "subheading": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-ui-medium font-inter">
+<!-- Main Container -->
+<main class="flex-grow flex flex-col items-center justify-center p-container_padding sm:p-8">
+<!-- Onboarding Progress Dots -->
+<div aria-label="Progress" class="flex items-center space-x-2 mb-12">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Header Content -->
+<div class="text-center max-w-2xl w-full mb-8">
+<h1 class="font-h1 text-h1 text-primary mb-2">Let's assess your current level</h1>
+<p class="font-subheading text-subheading text-on-surface-variant">5 quick questions from your selected domain</p>
+</div>
+<!-- Progress Tracking -->
+<div class="w-full max-w-3xl mb-6">
+<div class="flex justify-between items-end mb-2">
+<span class="font-ui-medium text-ui-medium text-on-surface-variant">Question 2 of 5</span>
+<span class="font-body-sm text-body-sm text-outline">40% completed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full animate-progress" style="width: 40%"></div>
+</div>
+</div>
+<!-- Main Question Card -->
+<div class="w-full max-w-3xl bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.1)] p-6 sm:p-8 relative">
+<!-- Timer & Badge Row -->
+<div class="flex justify-between items-start mb-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-ui-medium text-ui-medium">
+<span class="material-symbols-outlined mr-1.5" style="font-size: 16px;">code</span>
+                    Arrays
+                </span>
+<!-- Timer -->
+<div class="flex items-center space-x-2 text-on-surface-variant bg-surface px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">timer</span>
+<span class="font-ui-medium text-ui-medium font-bold tabular-nums" id="timerDisplay">45s</span>
+</div>
+</div>
+<!-- Question Text -->
+<h2 class="font-card-title text-card-title text-on-surface mb-8" style="font-size: 18px; line-height: 28px;">
+                What is the time complexity of searching for an element in a balanced Binary Search Tree (BST)?
+            </h2>
+<!-- Options Form -->
+<form class="space-y-4 mb-8" id="quizForm">
+<!-- Option A -->
+<label class="group relative flex items-center p-4 cursor-pointer border rounded-lg transition-all duration-200 border-outline-variant hover:bg-surface-container-low hover:border-outline bg-surface-container-lowest">
+<input class="peer sr-only" name="answer" type="radio" value="A"/>
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center border border-outline rounded text-xs font-bold text-on-surface-variant group-hover:text-primary transition-colors peer-checked:bg-secondary peer-checked:border-secondary peer-checked:text-on-primary">
+                        A
+                    </div>
+<span class="ml-4 font-ui-medium text-ui-medium text-on-surface group-hover:text-primary transition-colors">O(1)</span>
+<div class="absolute inset-0 border-2 border-transparent rounded-lg pointer-events-none peer-checked:border-secondary peer-checked:bg-secondary-fixed/10 transition-all"></div>
+</label>
+<!-- Option B (Selected State Example via JS simulation below, but standard HTML structure here) -->
+<label class="group relative flex items-center p-4 cursor-pointer border rounded-lg transition-all duration-200 border-outline-variant hover:bg-surface-container-low hover:border-outline bg-surface-container-lowest">
+<input class="peer sr-only" name="answer" type="radio" value="B"/>
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center border border-outline rounded text-xs font-bold text-on-surface-variant group-hover:text-primary transition-colors peer-checked:bg-secondary peer-checked:border-secondary peer-checked:text-on-primary">
+                        B
+                    </div>
+<span class="ml-4 font-ui-medium text-ui-medium text-on-surface group-hover:text-primary transition-colors">O(log n)</span>
+<div class="absolute inset-0 border-2 border-transparent rounded-lg pointer-events-none peer-checked:border-secondary peer-checked:bg-secondary-fixed/30 transition-all"></div>
+</label>
+<!-- Option C -->
+<label class="group relative flex items-center p-4 cursor-pointer border rounded-lg transition-all duration-200 border-outline-variant hover:bg-surface-container-low hover:border-outline bg-surface-container-lowest">
+<input class="peer sr-only" name="answer" type="radio" value="C"/>
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center border border-outline rounded text-xs font-bold text-on-surface-variant group-hover:text-primary transition-colors peer-checked:bg-secondary peer-checked:border-secondary peer-checked:text-on-primary">
+                        C
+                    </div>
+<span class="ml-4 font-ui-medium text-ui-medium text-on-surface group-hover:text-primary transition-colors">O(n)</span>
+<div class="absolute inset-0 border-2 border-transparent rounded-lg pointer-events-none peer-checked:border-secondary peer-checked:bg-secondary-fixed/10 transition-all"></div>
+</label>
+<!-- Option D -->
+<label class="group relative flex items-center p-4 cursor-pointer border rounded-lg transition-all duration-200 border-outline-variant hover:bg-surface-container-low hover:border-outline bg-surface-container-lowest">
+<input class="peer sr-only" name="answer" type="radio" value="D"/>
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center border border-outline rounded text-xs font-bold text-on-surface-variant group-hover:text-primary transition-colors peer-checked:bg-secondary peer-checked:border-secondary peer-checked:text-on-primary">
+                        D
+                    </div>
+<span class="ml-4 font-ui-medium text-ui-medium text-on-surface group-hover:text-primary transition-colors">O(n log n)</span>
+<div class="absolute inset-0 border-2 border-transparent rounded-lg pointer-events-none peer-checked:border-secondary peer-checked:bg-secondary-fixed/10 transition-all"></div>
+</label>
+</form>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-between mt-8 pt-6 border-t border-outline-variant">
+<button class="text-on-surface-variant hover:text-primary font-ui-medium text-ui-medium transition-colors mb-4 sm:mb-0 w-full sm:w-auto text-center" type="button">
+                    Skip this question
+                </button>
+<button class="bg-primary text-on-primary font-ui-medium text-ui-medium px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity w-full sm:w-auto shadow-sm disabled:opacity-50 disabled:cursor-not-allowed" id="nextBtn" type="button">
+                    Next Question
+                    <span class="material-symbols-outlined align-middle ml-1" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<script>
+        // Simple timer logic
+        let timeLeft = 45;
+        const timerDisplay = document.getElementById('timerDisplay');
+        const timerInterval = setInterval(() => {
+            timeLeft--;
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+                timerDisplay.textContent = "0s";
+                timerDisplay.classList.add('text-error');
+                // Auto skip or disable logic could go here
+            } else {
+                timerDisplay.textContent = timeLeft + "s";
+                if(timeLeft <= 10) {
+                    timerDisplay.classList.add('text-error');
+                }
+            }
+        }, 1000);
+
+        // Optional logic to ensure an option is selected before proceeding
+        const nextBtn = document.getElementById('nextBtn');
+        const form = document.getElementById('quizForm');
+        
+        // Disable next initially if desired, or let them skip by clicking next without selection.
+        // Assuming we want them to select something if clicking 'Next' instead of 'Skip'
+        nextBtn.disabled = true;
+        
+        form.addEventListener('change', () => {
+            nextBtn.disabled = false;
+        });
+
+    </script>
+</body></html>
