@@ -26,6 +26,70 @@ logging.basicConfig(
 )
 logger = logging.getLogger("classify_kaggle")
 
+# Canonical topic mapping: Kaggle raw tags → our 18 standard categories
+# This ensures consistent topic names across all classification methods
+TOPIC_MAP = {
+    # Arrays
+    "Array": "Arrays", "Matrix": "Arrays", "Prefix Sum": "Arrays",
+    # Strings
+    "String": "Strings", "String Matching": "Strings",
+    "Rolling Hash": "Strings", "Suffix Array": "Strings",
+    # Linked Lists
+    "Linked List": "Linked Lists", "Doubly-Linked List": "Linked Lists",
+    # Trees
+    "Tree": "Trees", "Binary Tree": "Trees", "Binary Search Tree": "Trees",
+    "Trie": "Trees", "Segment Tree": "Trees", "Binary Indexed Tree": "Trees",
+    # Graphs
+    "Graph": "Graphs", "Breadth-First Search": "Graphs",
+    "Depth-First Search": "Graphs", "Union Find": "Graphs",
+    "Shortest Path": "Graphs", "Topological Sort": "Graphs",
+    "Minimum Spanning Tree": "Graphs", "Strongly Connected Component": "Graphs",
+    "Biconnected Component": "Graphs", "Eulerian Circuit": "Graphs",
+    # Dynamic Programming
+    "Dynamic Programming": "Dynamic Programming", "Memoization": "Dynamic Programming",
+    # Greedy
+    "Greedy": "Greedy",
+    # Binary Search
+    "Binary Search": "Binary Search", "Divide and Conquer": "Binary Search",
+    # Hash Tables
+    "Hash Table": "Hash Tables", "Hash Function": "Hash Tables", "Counting": "Hash Tables",
+    # Sorting
+    "Sorting": "Sorting", "Merge Sort": "Sorting", "Bucket Sort": "Sorting",
+    "Counting Sort": "Sorting", "Radix Sort": "Sorting", "Quickselect": "Sorting",
+    # Stacks & Queues
+    "Stack": "Stacks & Queues", "Queue": "Stacks & Queues",
+    "Monotonic Stack": "Stacks & Queues", "Monotonic Queue": "Stacks & Queues",
+    "Heap (Priority Queue)": "Stacks & Queues",
+    # Two Pointers
+    "Two Pointers": "Two Pointers", "Sliding Window": "Two Pointers",
+    # Backtracking
+    "Backtracking": "Backtracking", "Recursion": "Backtracking",
+    # Bit Manipulation
+    "Bit Manipulation": "Bit Manipulation", "Bitmask": "Bit Manipulation",
+    # Math
+    "Math": "Math", "Number Theory": "Math", "Geometry": "Math",
+    "Combinatorics": "Math", "Probability and Statistics": "Math", "Game Theory": "Math",
+    # System Design
+    "Design": "System Design", "Data Stream": "System Design",
+    "Concurrency": "System Design", "Iterator": "System Design", "Interactive": "System Design",
+    # Databases
+    "Database": "Databases", "Shell": "Databases",
+}
+
+def map_topics(raw_topics: list) -> list:
+    """Convert Kaggle raw tags to canonical names, deduplicate, skip unmapped as 'Other'."""
+    canonical = set()
+    has_unmapped = False
+    for t in raw_topics:
+        mapped = TOPIC_MAP.get(t)
+        if mapped:
+            canonical.add(mapped)
+        else:
+            has_unmapped = True
+    if has_unmapped and not canonical:
+        canonical.add("Other")
+    return sorted(list(canonical))
+
 def normalize_url(url: str) -> str:
     if not url or pd.isna(url):
         return ""
@@ -102,12 +166,14 @@ def run(dry_run: bool = False):
         assigned_topics = None
         
         if db_url and db_url in url_to_topics:
-            assigned_topics = url_to_topics[db_url]
+            raw = url_to_topics[db_url]
+            assigned_topics = map_topics(raw)
             matched_by_url += 1
             if len(sample_matches) < 10 and assigned_topics:
                 sample_matches.append(f"[{record.get('companySlug')}] {db_title} => {assigned_topics}")
         elif db_title and db_title in title_to_topics:
-            assigned_topics = title_to_topics[db_title]
+            raw = title_to_topics[db_title]
+            assigned_topics = map_topics(raw)
             matched_by_title += 1
             if len(sample_matches) < 10 and assigned_topics:
                 sample_matches.append(f"[{record.get('companySlug')}] {db_title} => {assigned_topics}")
