@@ -1,0 +1,5426 @@
+[
+    {
+        "slug": "1kosmos",
+        "name": "1Kosmos",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016317",
+        "updatedAt": "2026-07-27 12:15:15.016340"
+    },
+    {
+        "slug": "6sense",
+        "name": "6Sense",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016350",
+        "updatedAt": "2026-07-27 12:15:15.016353"
+    },
+    {
+        "slug": "accelya",
+        "name": "Accelya",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016357",
+        "updatedAt": "2026-07-27 12:15:15.016359"
+    },
+    {
+        "slug": "accenture",
+        "name": "Accenture",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016363",
+        "updatedAt": "2026-07-27 12:15:15.016365"
+    },
+    {
+        "slug": "accolite",
+        "name": "Accolite",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016368",
+        "updatedAt": "2026-07-27 12:15:15.016371"
+    },
+    {
+        "slug": "acko",
+        "name": "Acko",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016374",
+        "updatedAt": "2026-07-27 12:15:15.016376"
+    },
+    {
+        "slug": "acorns",
+        "name": "Acorns",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016379",
+        "updatedAt": "2026-07-27 12:15:15.016381"
+    },
+    {
+        "slug": "activision",
+        "name": "Activision",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016384",
+        "updatedAt": "2026-07-27 12:15:15.016387"
+    },
+    {
+        "slug": "adobe",
+        "name": "Adobe",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016390",
+        "updatedAt": "2026-07-27 12:15:15.016392"
+    },
+    {
+        "slug": "adp",
+        "name": "Adp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016395",
+        "updatedAt": "2026-07-27 12:15:15.016397"
+    },
+    {
+        "slug": "aetion",
+        "name": "Aetion",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016400",
+        "updatedAt": "2026-07-27 12:15:15.016402"
+    },
+    {
+        "slug": "affinity",
+        "name": "Affinity",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016405",
+        "updatedAt": "2026-07-27 12:15:15.016408"
+    },
+    {
+        "slug": "affirm",
+        "name": "Affirm",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016410",
+        "updatedAt": "2026-07-27 12:15:15.016413"
+    },
+    {
+        "slug": "agoda",
+        "name": "Agoda",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016415",
+        "updatedAt": "2026-07-27 12:15:15.016418"
+    },
+    {
+        "slug": "airbnb",
+        "name": "Airbnb",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016420",
+        "updatedAt": "2026-07-27 12:15:15.016423"
+    },
+    {
+        "slug": "airbus",
+        "name": "Airbus",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016425",
+        "updatedAt": "2026-07-27 12:15:15.016428"
+    },
+    {
+        "slug": "airtel",
+        "name": "Airtel",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016430",
+        "updatedAt": "2026-07-27 12:15:15.016432"
+    },
+    {
+        "slug": "airwallex",
+        "name": "Airwallex",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016435",
+        "updatedAt": "2026-07-27 12:15:15.016438"
+    },
+    {
+        "slug": "akamai",
+        "name": "Akamai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016440",
+        "updatedAt": "2026-07-27 12:15:15.016442"
+    },
+    {
+        "slug": "akuna",
+        "name": "Akuna",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016445",
+        "updatedAt": "2026-07-27 12:15:15.016447"
+    },
+    {
+        "slug": "akuna-capital",
+        "name": "Akuna Capital",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016451",
+        "updatedAt": "2026-07-27 12:15:15.016453"
+    },
+    {
+        "slug": "alation",
+        "name": "Alation",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016456",
+        "updatedAt": "2026-07-27 12:15:15.016458"
+    },
+    {
+        "slug": "alibaba",
+        "name": "Alibaba",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016461",
+        "updatedAt": "2026-07-27 12:15:15.016463"
+    },
+    {
+        "slug": "allincall",
+        "name": "Allincall",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016466",
+        "updatedAt": "2026-07-27 12:15:15.016468"
+    },
+    {
+        "slug": "alphonso",
+        "name": "Alphonso",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016471",
+        "updatedAt": "2026-07-27 12:15:15.016473"
+    },
+    {
+        "slug": "alten",
+        "name": "Alten",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016476",
+        "updatedAt": "2026-07-27 12:15:15.016478"
+    },
+    {
+        "slug": "altimetrik",
+        "name": "Altimetrik",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016481",
+        "updatedAt": "2026-07-27 12:15:15.016483"
+    },
+    {
+        "slug": "amadeus",
+        "name": "Amadeus",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016486",
+        "updatedAt": "2026-07-27 12:15:15.016488"
+    },
+    {
+        "slug": "amazon",
+        "name": "Amazon",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016491",
+        "updatedAt": "2026-07-27 12:15:15.016493"
+    },
+    {
+        "slug": "amd",
+        "name": "Amd",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016496",
+        "updatedAt": "2026-07-27 12:15:15.016498"
+    },
+    {
+        "slug": "amdocs",
+        "name": "Amdocs",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016501",
+        "updatedAt": "2026-07-27 12:15:15.016503"
+    },
+    {
+        "slug": "american-airlines",
+        "name": "American Airlines",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016507",
+        "updatedAt": "2026-07-27 12:15:15.016509"
+    },
+    {
+        "slug": "american-express",
+        "name": "American Express",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016512",
+        "updatedAt": "2026-07-27 12:15:15.016514"
+    },
+    {
+        "slug": "amplitude",
+        "name": "Amplitude",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016517",
+        "updatedAt": "2026-07-27 12:15:15.016519"
+    },
+    {
+        "slug": "analytics-quotient",
+        "name": "Analytics Quotient",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016522",
+        "updatedAt": "2026-07-27 12:15:15.016525"
+    },
+    {
+        "slug": "andela",
+        "name": "Andela",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016527",
+        "updatedAt": "2026-07-27 12:15:15.016538"
+    },
+    {
+        "slug": "anduril",
+        "name": "Anduril",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016542",
+        "updatedAt": "2026-07-27 12:15:15.016544"
+    },
+    {
+        "slug": "anthropic",
+        "name": "Anthropic",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016547",
+        "updatedAt": "2026-07-27 12:15:15.016549"
+    },
+    {
+        "slug": "anyscale",
+        "name": "Anyscale",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016552",
+        "updatedAt": "2026-07-27 12:15:15.016554"
+    },
+    {
+        "slug": "aon",
+        "name": "Aon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016557",
+        "updatedAt": "2026-07-27 12:15:15.016559"
+    },
+    {
+        "slug": "apolloio",
+        "name": "Apolloio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016562",
+        "updatedAt": "2026-07-27 12:15:15.016564"
+    },
+    {
+        "slug": "appdynamics",
+        "name": "Appdynamics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016567",
+        "updatedAt": "2026-07-27 12:15:15.016570"
+    },
+    {
+        "slug": "appfolio",
+        "name": "Appfolio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016572",
+        "updatedAt": "2026-07-27 12:15:15.016575"
+    },
+    {
+        "slug": "apple",
+        "name": "Apple",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016577",
+        "updatedAt": "2026-07-27 12:15:15.016580"
+    },
+    {
+        "slug": "applied-intuition",
+        "name": "Applied Intuition",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016583",
+        "updatedAt": "2026-07-27 12:15:15.016585"
+    },
+    {
+        "slug": "aqr-capital-management",
+        "name": "Aqr Capital Management",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016588",
+        "updatedAt": "2026-07-27 12:15:15.016590"
+    },
+    {
+        "slug": "arcesium",
+        "name": "Arcesium",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016593",
+        "updatedAt": "2026-07-27 12:15:15.016595"
+    },
+    {
+        "slug": "argo-ai",
+        "name": "Argo Ai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016598",
+        "updatedAt": "2026-07-27 12:15:15.016601"
+    },
+    {
+        "slug": "arista",
+        "name": "Arista",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016603",
+        "updatedAt": "2026-07-27 12:15:15.016606"
+    },
+    {
+        "slug": "arista-networks",
+        "name": "Arista Networks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016608",
+        "updatedAt": "2026-07-27 12:15:15.016611"
+    },
+    {
+        "slug": "asana",
+        "name": "Asana",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016613",
+        "updatedAt": "2026-07-27 12:15:15.016616"
+    },
+    {
+        "slug": "ascend",
+        "name": "Ascend",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016621",
+        "updatedAt": "2026-07-27 12:15:15.016623"
+    },
+    {
+        "slug": "athenahealth",
+        "name": "Athenahealth",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016626",
+        "updatedAt": "2026-07-27 12:15:15.016628"
+    },
+    {
+        "slug": "atlassian",
+        "name": "Atlassian",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016631",
+        "updatedAt": "2026-07-27 12:15:15.016634"
+    },
+    {
+        "slug": "att",
+        "name": "Att",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016636",
+        "updatedAt": "2026-07-27 12:15:15.016638"
+    },
+    {
+        "slug": "attentive",
+        "name": "Attentive",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016641",
+        "updatedAt": "2026-07-27 12:15:15.016643"
+    },
+    {
+        "slug": "audible",
+        "name": "Audible",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016646",
+        "updatedAt": "2026-07-27 12:15:15.016648"
+    },
+    {
+        "slug": "auriga",
+        "name": "Auriga",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016651",
+        "updatedAt": "2026-07-27 12:15:15.016654"
+    },
+    {
+        "slug": "aurora",
+        "name": "Aurora",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016656",
+        "updatedAt": "2026-07-27 12:15:15.016658"
+    },
+    {
+        "slug": "autodesk",
+        "name": "Autodesk",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016661",
+        "updatedAt": "2026-07-27 12:15:15.016663"
+    },
+    {
+        "slug": "avalara",
+        "name": "Avalara",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016666",
+        "updatedAt": "2026-07-27 12:15:15.016668"
+    },
+    {
+        "slug": "avito",
+        "name": "Avito",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016671",
+        "updatedAt": "2026-07-27 12:15:15.016673"
+    },
+    {
+        "slug": "axis-bank",
+        "name": "Axis Bank",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016676",
+        "updatedAt": "2026-07-27 12:15:15.016679"
+    },
+    {
+        "slug": "axon",
+        "name": "Axon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016681",
+        "updatedAt": "2026-07-27 12:15:15.016684"
+    },
+    {
+        "slug": "baidu",
+        "name": "Baidu",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016686",
+        "updatedAt": "2026-07-27 12:15:15.016689"
+    },
+    {
+        "slug": "bank-of-america",
+        "name": "Bank Of America",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016692",
+        "updatedAt": "2026-07-27 12:15:15.016695"
+    },
+    {
+        "slug": "barclays",
+        "name": "Barclays",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016698",
+        "updatedAt": "2026-07-27 12:15:15.016700"
+    },
+    {
+        "slug": "bcg",
+        "name": "Bcg",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016703",
+        "updatedAt": "2026-07-27 12:15:15.016705"
+    },
+    {
+        "slug": "bending-spoons",
+        "name": "Bending Spoons",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016708",
+        "updatedAt": "2026-07-27 12:15:15.016710"
+    },
+    {
+        "slug": "bill-com",
+        "name": "Bill Com",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016713",
+        "updatedAt": "2026-07-27 12:15:15.016715"
+    },
+    {
+        "slug": "bitgo",
+        "name": "Bitgo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016718",
+        "updatedAt": "2026-07-27 12:15:15.016720"
+    },
+    {
+        "slug": "blackbuck",
+        "name": "Blackbuck",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016723",
+        "updatedAt": "2026-07-27 12:15:15.016725"
+    },
+    {
+        "slug": "blackrock",
+        "name": "Blackrock",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016728",
+        "updatedAt": "2026-07-27 12:15:15.016730"
+    },
+    {
+        "slug": "blackstone",
+        "name": "Blackstone",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016733",
+        "updatedAt": "2026-07-27 12:15:15.016735"
+    },
+    {
+        "slug": "blend",
+        "name": "Blend",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016738",
+        "updatedAt": "2026-07-27 12:15:15.016740"
+    },
+    {
+        "slug": "blinkit",
+        "name": "Blinkit",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016742",
+        "updatedAt": "2026-07-27 12:15:15.016745"
+    },
+    {
+        "slug": "blizzard",
+        "name": "Blizzard",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016761",
+        "updatedAt": "2026-07-27 12:15:15.016763"
+    },
+    {
+        "slug": "bloomberg",
+        "name": "Bloomberg",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016767",
+        "updatedAt": "2026-07-27 12:15:15.016769"
+    },
+    {
+        "slug": "bloomreach",
+        "name": "Bloomreach",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016772",
+        "updatedAt": "2026-07-27 12:15:15.016774"
+    },
+    {
+        "slug": "blue-origin",
+        "name": "Blue Origin",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016777",
+        "updatedAt": "2026-07-27 12:15:15.016779"
+    },
+    {
+        "slug": "bnp-paribas",
+        "name": "Bnp Paribas",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016782",
+        "updatedAt": "2026-07-27 12:15:15.016784"
+    },
+    {
+        "slug": "bny-mellon",
+        "name": "BNY Mellon",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016787",
+        "updatedAt": "2026-07-27 12:15:15.016790"
+    },
+    {
+        "slug": "boeing",
+        "name": "Boeing",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016792",
+        "updatedAt": "2026-07-27 12:15:15.016795"
+    },
+    {
+        "slug": "bolt",
+        "name": "Bolt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016797",
+        "updatedAt": "2026-07-27 12:15:15.016800"
+    },
+    {
+        "slug": "booking",
+        "name": "Booking.com",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016803",
+        "updatedAt": "2026-07-27 12:15:15.016805"
+    },
+    {
+        "slug": "bookingcom",
+        "name": "Booking.com",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016808",
+        "updatedAt": "2026-07-27 12:15:15.016810"
+    },
+    {
+        "slug": "box",
+        "name": "Box",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016813",
+        "updatedAt": "2026-07-27 12:15:15.016815"
+    },
+    {
+        "slug": "bp",
+        "name": "Bp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016818",
+        "updatedAt": "2026-07-27 12:15:15.016820"
+    },
+    {
+        "slug": "braze",
+        "name": "Braze",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016823",
+        "updatedAt": "2026-07-27 12:15:15.016825"
+    },
+    {
+        "slug": "bridgewater-associates",
+        "name": "Bridgewater Associates",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016828",
+        "updatedAt": "2026-07-27 12:15:15.016830"
+    },
+    {
+        "slug": "brillio",
+        "name": "Brillio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016833",
+        "updatedAt": "2026-07-27 12:15:15.016835"
+    },
+    {
+        "slug": "broadcom",
+        "name": "Broadcom",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016838",
+        "updatedAt": "2026-07-27 12:15:15.016840"
+    },
+    {
+        "slug": "browserstack",
+        "name": "Browserstack",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016843",
+        "updatedAt": "2026-07-27 12:15:15.016845"
+    },
+    {
+        "slug": "bt-group",
+        "name": "Bt Group",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016848",
+        "updatedAt": "2026-07-27 12:15:15.016851"
+    },
+    {
+        "slug": "buyhatke",
+        "name": "Buyhatke",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016853",
+        "updatedAt": "2026-07-27 12:15:15.016856"
+    },
+    {
+        "slug": "bytedance",
+        "name": "Bytedance",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016858",
+        "updatedAt": "2026-07-27 12:15:15.016861"
+    },
+    {
+        "slug": "bytedancetoutiao",
+        "name": "Bytedancetoutiao",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016863",
+        "updatedAt": "2026-07-27 12:15:15.016866"
+    },
+    {
+        "slug": "c3-ai",
+        "name": "C3 Ai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016869",
+        "updatedAt": "2026-07-27 12:15:15.016871"
+    },
+    {
+        "slug": "c3-iot",
+        "name": "C3 Iot",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016874",
+        "updatedAt": "2026-07-27 12:15:15.016876"
+    },
+    {
+        "slug": "c3ai",
+        "name": "C3Ai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016879",
+        "updatedAt": "2026-07-27 12:15:15.016881"
+    },
+    {
+        "slug": "cadence",
+        "name": "Cadence",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016883",
+        "updatedAt": "2026-07-27 12:15:15.016886"
+    },
+    {
+        "slug": "canonical",
+        "name": "Canonical",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016888",
+        "updatedAt": "2026-07-27 12:15:15.016891"
+    },
+    {
+        "slug": "canva",
+        "name": "Canva",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016893",
+        "updatedAt": "2026-07-27 12:15:15.016896"
+    },
+    {
+        "slug": "capgemini",
+        "name": "Capgemini",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016898",
+        "updatedAt": "2026-07-27 12:15:15.016900"
+    },
+    {
+        "slug": "capital-one",
+        "name": "Capital One",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016903",
+        "updatedAt": "2026-07-27 12:15:15.016906"
+    },
+    {
+        "slug": "careem",
+        "name": "Careem",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016908",
+        "updatedAt": "2026-07-27 12:15:15.016911"
+    },
+    {
+        "slug": "cars24",
+        "name": "Cars24",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016914",
+        "updatedAt": "2026-07-27 12:15:15.016916"
+    },
+    {
+        "slug": "carwale",
+        "name": "Carwale",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016919",
+        "updatedAt": "2026-07-27 12:15:15.016921"
+    },
+    {
+        "slug": "cashfree",
+        "name": "Cashfree",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016924",
+        "updatedAt": "2026-07-27 12:15:15.016926"
+    },
+    {
+        "slug": "caterpillar",
+        "name": "Caterpillar",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016929",
+        "updatedAt": "2026-07-27 12:15:15.016931"
+    },
+    {
+        "slug": "cerner",
+        "name": "Cerner",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016934",
+        "updatedAt": "2026-07-27 12:15:15.016936"
+    },
+    {
+        "slug": "chalo",
+        "name": "Chalo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016939",
+        "updatedAt": "2026-07-27 12:15:15.016941"
+    },
+    {
+        "slug": "chargebee",
+        "name": "Chargebee",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016944",
+        "updatedAt": "2026-07-27 12:15:15.016946"
+    },
+    {
+        "slug": "checkpoint",
+        "name": "Checkpoint",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016949",
+        "updatedAt": "2026-07-27 12:15:15.016951"
+    },
+    {
+        "slug": "chewy",
+        "name": "Chewy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016954",
+        "updatedAt": "2026-07-27 12:15:15.016956"
+    },
+    {
+        "slug": "chime",
+        "name": "Chime",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016959",
+        "updatedAt": "2026-07-27 12:15:15.016961"
+    },
+    {
+        "slug": "chubb",
+        "name": "Chubb",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016964",
+        "updatedAt": "2026-07-27 12:15:15.016966"
+    },
+    {
+        "slug": "ciena",
+        "name": "Ciena",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016969",
+        "updatedAt": "2026-07-27 12:15:15.016971"
+    },
+    {
+        "slug": "circle",
+        "name": "Circle",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016974",
+        "updatedAt": "2026-07-27 12:15:15.016976"
+    },
+    {
+        "slug": "cisco",
+        "name": "Cisco",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016979",
+        "updatedAt": "2026-07-27 12:15:15.016981"
+    },
+    {
+        "slug": "citadel",
+        "name": "Citadel",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016984",
+        "updatedAt": "2026-07-27 12:15:15.016986"
+    },
+    {
+        "slug": "citi",
+        "name": "Citi",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016989",
+        "updatedAt": "2026-07-27 12:15:15.016991"
+    },
+    {
+        "slug": "citrix",
+        "name": "Citrix",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016994",
+        "updatedAt": "2026-07-27 12:15:15.016996"
+    },
+    {
+        "slug": "clari",
+        "name": "Clari",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.016999",
+        "updatedAt": "2026-07-27 12:15:15.017001"
+    },
+    {
+        "slug": "cleartrip",
+        "name": "Cleartrip",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017004",
+        "updatedAt": "2026-07-27 12:15:15.017007"
+    },
+    {
+        "slug": "clevertap",
+        "name": "Clevertap",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017016",
+        "updatedAt": "2026-07-27 12:15:15.017018"
+    },
+    {
+        "slug": "cloudera",
+        "name": "Cloudera",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017021",
+        "updatedAt": "2026-07-27 12:15:15.017023"
+    },
+    {
+        "slug": "cloudflare",
+        "name": "Cloudflare",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017026",
+        "updatedAt": "2026-07-27 12:15:15.017028"
+    },
+    {
+        "slug": "clutter",
+        "name": "Clutter",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017031",
+        "updatedAt": "2026-07-27 12:15:15.017033"
+    },
+    {
+        "slug": "cme-group",
+        "name": "Cme Group",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017039",
+        "updatedAt": "2026-07-27 12:15:15.017042"
+    },
+    {
+        "slug": "cockroach-labs",
+        "name": "Cockroach Labs",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017045",
+        "updatedAt": "2026-07-27 12:15:15.017047"
+    },
+    {
+        "slug": "code-studio",
+        "name": "Code Studio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017050",
+        "updatedAt": "2026-07-27 12:15:15.017053"
+    },
+    {
+        "slug": "codenation",
+        "name": "Codenation",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017055",
+        "updatedAt": "2026-07-27 12:15:15.017058"
+    },
+    {
+        "slug": "coditas",
+        "name": "Coditas",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017060",
+        "updatedAt": "2026-07-27 12:15:15.017063"
+    },
+    {
+        "slug": "cognizant",
+        "name": "Cognizant",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017065",
+        "updatedAt": "2026-07-27 12:15:15.017068"
+    },
+    {
+        "slug": "cohesity",
+        "name": "Cohesity",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017070",
+        "updatedAt": "2026-07-27 12:15:15.017073"
+    },
+    {
+        "slug": "coinbase",
+        "name": "Coinbase",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017075",
+        "updatedAt": "2026-07-27 12:15:15.017077"
+    },
+    {
+        "slug": "coindcx",
+        "name": "Coindcx",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017080",
+        "updatedAt": "2026-07-27 12:15:15.017085"
+    },
+    {
+        "slug": "coinswitch-kuber",
+        "name": "Coinswitch Kuber",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017088",
+        "updatedAt": "2026-07-27 12:15:15.017090"
+    },
+    {
+        "slug": "comcast",
+        "name": "Comcast",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017093",
+        "updatedAt": "2026-07-27 12:15:15.017095"
+    },
+    {
+        "slug": "commvault",
+        "name": "Commvault",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017098",
+        "updatedAt": "2026-07-27 12:15:15.017100"
+    },
+    {
+        "slug": "compass",
+        "name": "Compass",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017103",
+        "updatedAt": "2026-07-27 12:15:15.017105"
+    },
+    {
+        "slug": "confluent",
+        "name": "Confluent",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017108",
+        "updatedAt": "2026-07-27 12:15:15.017110"
+    },
+    {
+        "slug": "couchbase",
+        "name": "Couchbase",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017113",
+        "updatedAt": "2026-07-27 12:15:15.017115"
+    },
+    {
+        "slug": "coupa",
+        "name": "Coupa",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017118",
+        "updatedAt": "2026-07-27 12:15:15.017120"
+    },
+    {
+        "slug": "coupang",
+        "name": "Coupang",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017122",
+        "updatedAt": "2026-07-27 12:15:15.017125"
+    },
+    {
+        "slug": "coursera",
+        "name": "Coursera",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017127",
+        "updatedAt": "2026-07-27 12:15:15.017130"
+    },
+    {
+        "slug": "coveo",
+        "name": "Coveo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017132",
+        "updatedAt": "2026-07-27 12:15:15.017135"
+    },
+    {
+        "slug": "cred",
+        "name": "Cred",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017137",
+        "updatedAt": "2026-07-27 12:15:15.017140"
+    },
+    {
+        "slug": "criteo",
+        "name": "Criteo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017142",
+        "updatedAt": "2026-07-27 12:15:15.017145"
+    },
+    {
+        "slug": "crowdstrike",
+        "name": "Crowdstrike",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017147",
+        "updatedAt": "2026-07-27 12:15:15.017150"
+    },
+    {
+        "slug": "cruise-automation",
+        "name": "Cruise Automation",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017153",
+        "updatedAt": "2026-07-27 12:15:15.017155"
+    },
+    {
+        "slug": "ctc",
+        "name": "Ctc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017158",
+        "updatedAt": "2026-07-27 12:15:15.017160"
+    },
+    {
+        "slug": "curefit",
+        "name": "Curefit",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017163",
+        "updatedAt": "2026-07-27 12:15:15.017165"
+    },
+    {
+        "slug": "cvent",
+        "name": "Cvent",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017168",
+        "updatedAt": "2026-07-27 12:15:15.017170"
+    },
+    {
+        "slug": "cyntexa",
+        "name": "Cyntexa",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017173",
+        "updatedAt": "2026-07-27 12:15:15.017175"
+    },
+    {
+        "slug": "cyware",
+        "name": "Cyware",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017178",
+        "updatedAt": "2026-07-27 12:15:15.017180"
+    },
+    {
+        "slug": "dailyhunt",
+        "name": "Dailyhunt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017183",
+        "updatedAt": "2026-07-27 12:15:15.017185"
+    },
+    {
+        "slug": "darwinbox",
+        "name": "Darwinbox",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017188",
+        "updatedAt": "2026-07-27 12:15:15.017190"
+    },
+    {
+        "slug": "dassault-sysetmes",
+        "name": "Dassault Sysetmes",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017193",
+        "updatedAt": "2026-07-27 12:15:15.017195"
+    },
+    {
+        "slug": "dataart",
+        "name": "Dataart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017198",
+        "updatedAt": "2026-07-27 12:15:15.017200"
+    },
+    {
+        "slug": "databricks",
+        "name": "Databricks",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017203",
+        "updatedAt": "2026-07-27 12:15:15.017205"
+    },
+    {
+        "slug": "datadog",
+        "name": "Datadog",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017208",
+        "updatedAt": "2026-07-27 12:15:15.017210"
+    },
+    {
+        "slug": "dataminr",
+        "name": "Dataminr",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017213",
+        "updatedAt": "2026-07-27 12:15:15.017215"
+    },
+    {
+        "slug": "de-shaw",
+        "name": "De Shaw",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017218",
+        "updatedAt": "2026-07-27 12:15:15.017220"
+    },
+    {
+        "slug": "deepmind",
+        "name": "Deepmind",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017223",
+        "updatedAt": "2026-07-27 12:15:15.017225"
+    },
+    {
+        "slug": "delhivery",
+        "name": "Delhivery",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017228",
+        "updatedAt": "2026-07-27 12:15:15.017230"
+    },
+    {
+        "slug": "deliveroo",
+        "name": "Deliveroo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017233",
+        "updatedAt": "2026-07-27 12:15:15.017235"
+    },
+    {
+        "slug": "deliveryhero",
+        "name": "Deliveryhero",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017238",
+        "updatedAt": "2026-07-27 12:15:15.017240"
+    },
+    {
+        "slug": "dell",
+        "name": "Dell",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017243",
+        "updatedAt": "2026-07-27 12:15:15.017245"
+    },
+    {
+        "slug": "deloitte",
+        "name": "Deloitte",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017248",
+        "updatedAt": "2026-07-27 12:15:15.017250"
+    },
+    {
+        "slug": "deltax",
+        "name": "Deltax",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017253",
+        "updatedAt": "2026-07-27 12:15:15.017255"
+    },
+    {
+        "slug": "deutsche-bank",
+        "name": "Deutsche Bank",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017258",
+        "updatedAt": "2026-07-27 12:15:15.017260"
+    },
+    {
+        "slug": "devrev",
+        "name": "Devrev",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017263",
+        "updatedAt": "2026-07-27 12:15:15.017266"
+    },
+    {
+        "slug": "dialpad",
+        "name": "Dialpad",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017268",
+        "updatedAt": "2026-07-27 12:15:15.017271"
+    },
+    {
+        "slug": "didi",
+        "name": "Didi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017273",
+        "updatedAt": "2026-07-27 12:15:15.017276"
+    },
+    {
+        "slug": "directi",
+        "name": "Directi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017279",
+        "updatedAt": "2026-07-27 12:15:15.017281"
+    },
+    {
+        "slug": "discord",
+        "name": "Discord",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017283",
+        "updatedAt": "2026-07-27 12:15:15.017286"
+    },
+    {
+        "slug": "discovery",
+        "name": "Discovery",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017288",
+        "updatedAt": "2026-07-27 12:15:15.017291"
+    },
+    {
+        "slug": "disney",
+        "name": "Disney",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017293",
+        "updatedAt": "2026-07-27 12:15:15.017295"
+    },
+    {
+        "slug": "dji",
+        "name": "Dji",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017298",
+        "updatedAt": "2026-07-27 12:15:15.017300"
+    },
+    {
+        "slug": "docusign",
+        "name": "Docusign",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017303",
+        "updatedAt": "2026-07-27 12:15:15.017305"
+    },
+    {
+        "slug": "doordash",
+        "name": "Doordash",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017308",
+        "updatedAt": "2026-07-27 12:15:15.017310"
+    },
+    {
+        "slug": "dp-world",
+        "name": "Dp World",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017313",
+        "updatedAt": "2026-07-27 12:15:15.017315"
+    },
+    {
+        "slug": "drawbridge",
+        "name": "Drawbridge",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017318",
+        "updatedAt": "2026-07-27 12:15:15.017320"
+    },
+    {
+        "slug": "dream11",
+        "name": "Dream11",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017323",
+        "updatedAt": "2026-07-27 12:15:15.017325"
+    },
+    {
+        "slug": "dropbox",
+        "name": "Dropbox",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017328",
+        "updatedAt": "2026-07-27 12:15:15.017330"
+    },
+    {
+        "slug": "druva",
+        "name": "Druva",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017333",
+        "updatedAt": "2026-07-27 12:15:15.017335"
+    },
+    {
+        "slug": "drw",
+        "name": "Drw",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017338",
+        "updatedAt": "2026-07-27 12:15:15.017340"
+    },
+    {
+        "slug": "dtcc",
+        "name": "Dtcc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017343",
+        "updatedAt": "2026-07-27 12:15:15.017345"
+    },
+    {
+        "slug": "dunzo",
+        "name": "Dunzo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017348",
+        "updatedAt": "2026-07-27 12:15:15.017350"
+    },
+    {
+        "slug": "duolingo",
+        "name": "Duolingo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017353",
+        "updatedAt": "2026-07-27 12:15:15.017355"
+    },
+    {
+        "slug": "earnin",
+        "name": "Earnin",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017357",
+        "updatedAt": "2026-07-27 12:15:15.017360"
+    },
+    {
+        "slug": "ebay",
+        "name": "Ebay",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017362",
+        "updatedAt": "2026-07-27 12:15:15.017365"
+    },
+    {
+        "slug": "edelweiss",
+        "name": "Edelweiss",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017367",
+        "updatedAt": "2026-07-27 12:15:15.017370"
+    },
+    {
+        "slug": "electronic-arts",
+        "name": "Electronic Arts",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017372",
+        "updatedAt": "2026-07-27 12:15:15.017375"
+    },
+    {
+        "slug": "elitmus",
+        "name": "Elitmus",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017377",
+        "updatedAt": "2026-07-27 12:15:15.017379"
+    },
+    {
+        "slug": "emc",
+        "name": "Emc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017382",
+        "updatedAt": "2026-07-27 12:15:15.017384"
+    },
+    {
+        "slug": "envoy",
+        "name": "Envoy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017387",
+        "updatedAt": "2026-07-27 12:15:15.017389"
+    },
+    {
+        "slug": "epam-systems",
+        "name": "Epam Systems",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017392",
+        "updatedAt": "2026-07-27 12:15:15.017395"
+    },
+    {
+        "slug": "epic-games",
+        "name": "Epic Games",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017398",
+        "updatedAt": "2026-07-27 12:15:15.017400"
+    },
+    {
+        "slug": "epic-systems",
+        "name": "Epic Systems",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017403",
+        "updatedAt": "2026-07-27 12:15:15.017405"
+    },
+    {
+        "slug": "epifi",
+        "name": "Epifi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017408",
+        "updatedAt": "2026-07-27 12:15:15.017410"
+    },
+    {
+        "slug": "equinix",
+        "name": "Equinix",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017413",
+        "updatedAt": "2026-07-27 12:15:15.017415"
+    },
+    {
+        "slug": "ericsson",
+        "name": "Ericsson",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017418",
+        "updatedAt": "2026-07-27 12:15:15.017420"
+    },
+    {
+        "slug": "etsy",
+        "name": "Etsy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017455",
+        "updatedAt": "2026-07-27 12:15:15.017458"
+    },
+    {
+        "slug": "evernote",
+        "name": "Evernote",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017461",
+        "updatedAt": "2026-07-27 12:15:15.017463"
+    },
+    {
+        "slug": "exl",
+        "name": "Exl",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017468",
+        "updatedAt": "2026-07-27 12:15:15.017471"
+    },
+    {
+        "slug": "expedia",
+        "name": "Expedia",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017473",
+        "updatedAt": "2026-07-27 12:15:15.017476"
+    },
+    {
+        "slug": "ey",
+        "name": "Ey",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017478",
+        "updatedAt": "2026-07-27 12:15:15.017481"
+    },
+    {
+        "slug": "f5-networks",
+        "name": "F5 Networks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017484",
+        "updatedAt": "2026-07-27 12:15:15.017486"
+    },
+    {
+        "slug": "facebook",
+        "name": "Facebook",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017489",
+        "updatedAt": "2026-07-27 12:15:15.017491"
+    },
+    {
+        "slug": "factset",
+        "name": "Factset",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017494",
+        "updatedAt": "2026-07-27 12:15:15.017496"
+    },
+    {
+        "slug": "faire",
+        "name": "Faire",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017499",
+        "updatedAt": "2026-07-27 12:15:15.017501"
+    },
+    {
+        "slug": "fallible",
+        "name": "Fallible",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017503",
+        "updatedAt": "2026-07-27 12:15:15.017506"
+    },
+    {
+        "slug": "fanatics",
+        "name": "Fanatics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017508",
+        "updatedAt": "2026-07-27 12:15:15.017511"
+    },
+    {
+        "slug": "fast",
+        "name": "Fast",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017513",
+        "updatedAt": "2026-07-27 12:15:15.017516"
+    },
+    {
+        "slug": "fastenal",
+        "name": "Fastenal",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017518",
+        "updatedAt": "2026-07-27 12:15:15.017520"
+    },
+    {
+        "slug": "fico",
+        "name": "Fico",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017523",
+        "updatedAt": "2026-07-27 12:15:15.017525"
+    },
+    {
+        "slug": "fidelity",
+        "name": "Fidelity",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017528",
+        "updatedAt": "2026-07-27 12:15:15.017530"
+    },
+    {
+        "slug": "fidessa",
+        "name": "Fidessa",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017533",
+        "updatedAt": "2026-07-27 12:15:15.017535"
+    },
+    {
+        "slug": "figma",
+        "name": "Figma",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017538",
+        "updatedAt": "2026-07-27 12:15:15.017540"
+    },
+    {
+        "slug": "fiverr",
+        "name": "Fiverr",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017543",
+        "updatedAt": "2026-07-27 12:15:15.017545"
+    },
+    {
+        "slug": "fivetran",
+        "name": "Fivetran",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017548",
+        "updatedAt": "2026-07-27 12:15:15.017550"
+    },
+    {
+        "slug": "flatiron-health",
+        "name": "Flatiron Health",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017553",
+        "updatedAt": "2026-07-27 12:15:15.017555"
+    },
+    {
+        "slug": "fleetx",
+        "name": "Fleetx",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017558",
+        "updatedAt": "2026-07-27 12:15:15.017560"
+    },
+    {
+        "slug": "flexera",
+        "name": "Flexera",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017563",
+        "updatedAt": "2026-07-27 12:15:15.017565"
+    },
+    {
+        "slug": "flexport",
+        "name": "Flexport",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017568",
+        "updatedAt": "2026-07-27 12:15:15.017570"
+    },
+    {
+        "slug": "flipkart",
+        "name": "Flipkart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017572",
+        "updatedAt": "2026-07-27 12:15:15.017575"
+    },
+    {
+        "slug": "fortinet",
+        "name": "Fortinet",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017577",
+        "updatedAt": "2026-07-27 12:15:15.017580"
+    },
+    {
+        "slug": "forusall",
+        "name": "Forusall",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017582",
+        "updatedAt": "2026-07-27 12:15:15.017584"
+    },
+    {
+        "slug": "fourkites",
+        "name": "Fourkites",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017587",
+        "updatedAt": "2026-07-27 12:15:15.017589"
+    },
+    {
+        "slug": "fpt",
+        "name": "Fpt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017592",
+        "updatedAt": "2026-07-27 12:15:15.017594"
+    },
+    {
+        "slug": "fractal-analytics",
+        "name": "Fractal Analytics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017598",
+        "updatedAt": "2026-07-27 12:15:15.017600"
+    },
+    {
+        "slug": "freecharge",
+        "name": "Freecharge",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017603",
+        "updatedAt": "2026-07-27 12:15:15.017605"
+    },
+    {
+        "slug": "freshworks",
+        "name": "Freshworks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017608",
+        "updatedAt": "2026-07-27 12:15:15.017610"
+    },
+    {
+        "slug": "fynd",
+        "name": "Fynd",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017613",
+        "updatedAt": "2026-07-27 12:15:15.017615"
+    },
+    {
+        "slug": "gainsight",
+        "name": "Gainsight",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017618",
+        "updatedAt": "2026-07-27 12:15:15.017620"
+    },
+    {
+        "slug": "gameskraft",
+        "name": "Gameskraft",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017623",
+        "updatedAt": "2026-07-27 12:15:15.017625"
+    },
+    {
+        "slug": "garena",
+        "name": "Garena",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017628",
+        "updatedAt": "2026-07-27 12:15:15.017632"
+    },
+    {
+        "slug": "garmin",
+        "name": "Garmin",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017635",
+        "updatedAt": "2026-07-27 12:15:15.017637"
+    },
+    {
+        "slug": "gartner",
+        "name": "Gartner",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017640",
+        "updatedAt": "2026-07-27 12:15:15.017642"
+    },
+    {
+        "slug": "ge-digital",
+        "name": "Ge Digital",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017645",
+        "updatedAt": "2026-07-27 12:15:15.017647"
+    },
+    {
+        "slug": "ge-healthcare",
+        "name": "Ge Healthcare",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017650",
+        "updatedAt": "2026-07-27 12:15:15.017653"
+    },
+    {
+        "slug": "geico",
+        "name": "Geico",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017655",
+        "updatedAt": "2026-07-27 12:15:15.017658"
+    },
+    {
+        "slug": "general-electric",
+        "name": "General Electric",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017660",
+        "updatedAt": "2026-07-27 12:15:15.017663"
+    },
+    {
+        "slug": "general-motors",
+        "name": "General Motors",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017666",
+        "updatedAt": "2026-07-27 12:15:15.017668"
+    },
+    {
+        "slug": "gilt-groupe",
+        "name": "Gilt Groupe",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017671",
+        "updatedAt": "2026-07-27 12:15:15.017673"
+    },
+    {
+        "slug": "github",
+        "name": "GitHub",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017676",
+        "updatedAt": "2026-07-27 12:15:15.017678"
+    },
+    {
+        "slug": "glassdoor",
+        "name": "Glassdoor",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017681",
+        "updatedAt": "2026-07-27 12:15:15.017683"
+    },
+    {
+        "slug": "globallogic",
+        "name": "Globallogic",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017686",
+        "updatedAt": "2026-07-27 12:15:15.017688"
+    },
+    {
+        "slug": "glovo",
+        "name": "Glovo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017691",
+        "updatedAt": "2026-07-27 12:15:15.017693"
+    },
+    {
+        "slug": "godaddy",
+        "name": "Godaddy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017696",
+        "updatedAt": "2026-07-27 12:15:15.017698"
+    },
+    {
+        "slug": "gojek",
+        "name": "Gojek",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017700",
+        "updatedAt": "2026-07-27 12:15:15.017703"
+    },
+    {
+        "slug": "goldman-sachs",
+        "name": "Goldman Sachs",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017705",
+        "updatedAt": "2026-07-27 12:15:15.017707"
+    },
+    {
+        "slug": "google",
+        "name": "Google",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017710",
+        "updatedAt": "2026-07-27 12:15:15.017713"
+    },
+    {
+        "slug": "gopuff",
+        "name": "Gopuff",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017715",
+        "updatedAt": "2026-07-27 12:15:15.017717"
+    },
+    {
+        "slug": "goto",
+        "name": "Goto",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017720",
+        "updatedAt": "2026-07-27 12:15:15.017722"
+    },
+    {
+        "slug": "grab",
+        "name": "Grab",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017725",
+        "updatedAt": "2026-07-27 12:15:15.017727"
+    },
+    {
+        "slug": "grammarly",
+        "name": "Grammarly",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017730",
+        "updatedAt": "2026-07-27 12:15:15.017732"
+    },
+    {
+        "slug": "graviton",
+        "name": "Graviton",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017735",
+        "updatedAt": "2026-07-27 12:15:15.017737"
+    },
+    {
+        "slug": "groupon",
+        "name": "Groupon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017739",
+        "updatedAt": "2026-07-27 12:15:15.017742"
+    },
+    {
+        "slug": "groww",
+        "name": "Groww",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017744",
+        "updatedAt": "2026-07-27 12:15:15.017746"
+    },
+    {
+        "slug": "grubhub",
+        "name": "Grubhub",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017749",
+        "updatedAt": "2026-07-27 12:15:15.017751"
+    },
+    {
+        "slug": "gsa-capital",
+        "name": "Gsa Capital",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017754",
+        "updatedAt": "2026-07-27 12:15:15.017756"
+    },
+    {
+        "slug": "gsn-games",
+        "name": "Gsn Games",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017759",
+        "updatedAt": "2026-07-27 12:15:15.017761"
+    },
+    {
+        "slug": "guidewire",
+        "name": "Guidewire",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017764",
+        "updatedAt": "2026-07-27 12:15:15.017766"
+    },
+    {
+        "slug": "gusto",
+        "name": "Gusto",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017769",
+        "updatedAt": "2026-07-27 12:15:15.017771"
+    },
+    {
+        "slug": "harness",
+        "name": "Harness",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017782",
+        "updatedAt": "2026-07-27 12:15:15.017784"
+    },
+    {
+        "slug": "hashedin",
+        "name": "Hashedin",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017787",
+        "updatedAt": "2026-07-27 12:15:15.017790"
+    },
+    {
+        "slug": "hbo",
+        "name": "Hbo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017792",
+        "updatedAt": "2026-07-27 12:15:15.017795"
+    },
+    {
+        "slug": "hcl",
+        "name": "HCL",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017797",
+        "updatedAt": "2026-07-27 12:15:15.017800"
+    },
+    {
+        "slug": "helix",
+        "name": "Helix",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017802",
+        "updatedAt": "2026-07-27 12:15:15.017804"
+    },
+    {
+        "slug": "highspot",
+        "name": "Highspot",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017807",
+        "updatedAt": "2026-07-27 12:15:15.017809"
+    },
+    {
+        "slug": "hilabs",
+        "name": "Hilabs",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017812",
+        "updatedAt": "2026-07-27 12:15:15.017814"
+    },
+    {
+        "slug": "hive",
+        "name": "Hive",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017817",
+        "updatedAt": "2026-07-27 12:15:15.017819"
+    },
+    {
+        "slug": "honey",
+        "name": "Honey",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017822",
+        "updatedAt": "2026-07-27 12:15:15.017824"
+    },
+    {
+        "slug": "honeywell",
+        "name": "Honeywell",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017827",
+        "updatedAt": "2026-07-27 12:15:15.017829"
+    },
+    {
+        "slug": "hopper",
+        "name": "Hopper",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017831",
+        "updatedAt": "2026-07-27 12:15:15.017834"
+    },
+    {
+        "slug": "hotstar",
+        "name": "Hotstar",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017836",
+        "updatedAt": "2026-07-27 12:15:15.017838"
+    },
+    {
+        "slug": "houzz",
+        "name": "Houzz",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017841",
+        "updatedAt": "2026-07-27 12:15:15.017844"
+    },
+    {
+        "slug": "hp",
+        "name": "Hp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017846",
+        "updatedAt": "2026-07-27 12:15:15.017849"
+    },
+    {
+        "slug": "hpe",
+        "name": "Hpe",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017851",
+        "updatedAt": "2026-07-27 12:15:15.017854"
+    },
+    {
+        "slug": "hrt",
+        "name": "Hrt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017856",
+        "updatedAt": "2026-07-27 12:15:15.017858"
+    },
+    {
+        "slug": "hsbc",
+        "name": "HSBC",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017861",
+        "updatedAt": "2026-07-27 12:15:15.017863"
+    },
+    {
+        "slug": "htc",
+        "name": "Htc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017868",
+        "updatedAt": "2026-07-27 12:15:15.017871"
+    },
+    {
+        "slug": "huawei",
+        "name": "Huawei",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017873",
+        "updatedAt": "2026-07-27 12:15:15.017876"
+    },
+    {
+        "slug": "hubspot",
+        "name": "Hubspot",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017878",
+        "updatedAt": "2026-07-27 12:15:15.017880"
+    },
+    {
+        "slug": "hulu",
+        "name": "Hulu",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017883",
+        "updatedAt": "2026-07-27 12:15:15.017885"
+    },
+    {
+        "slug": "ibm",
+        "name": "IBM",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017888",
+        "updatedAt": "2026-07-27 12:15:15.017890"
+    },
+    {
+        "slug": "iit-bombay",
+        "name": "Iit Bombay",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017893",
+        "updatedAt": "2026-07-27 12:15:15.017895"
+    },
+    {
+        "slug": "imc",
+        "name": "Imc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017898",
+        "updatedAt": "2026-07-27 12:15:15.017900"
+    },
+    {
+        "slug": "impact-analytics",
+        "name": "Impact Analytics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017903",
+        "updatedAt": "2026-07-27 12:15:15.017905"
+    },
+    {
+        "slug": "impetus",
+        "name": "Impetus",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017908",
+        "updatedAt": "2026-07-27 12:15:15.017910"
+    },
+    {
+        "slug": "increff",
+        "name": "Increff",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017913",
+        "updatedAt": "2026-07-27 12:15:15.017915"
+    },
+    {
+        "slug": "indeed",
+        "name": "Indeed",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017918",
+        "updatedAt": "2026-07-27 12:15:15.017920"
+    },
+    {
+        "slug": "info-edge",
+        "name": "Info Edge",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017923",
+        "updatedAt": "2026-07-27 12:15:15.017925"
+    },
+    {
+        "slug": "informatica",
+        "name": "Informatica",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017928",
+        "updatedAt": "2026-07-27 12:15:15.017930"
+    },
+    {
+        "slug": "infosys",
+        "name": "Infosys",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017933",
+        "updatedAt": "2026-07-27 12:15:15.017935"
+    },
+    {
+        "slug": "inmobi",
+        "name": "Inmobi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017937",
+        "updatedAt": "2026-07-27 12:15:15.017940"
+    },
+    {
+        "slug": "innovaccer",
+        "name": "Innovaccer",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017942",
+        "updatedAt": "2026-07-27 12:15:15.017945"
+    },
+    {
+        "slug": "instabase",
+        "name": "Instabase",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017947",
+        "updatedAt": "2026-07-27 12:15:15.017949"
+    },
+    {
+        "slug": "instacart",
+        "name": "Instacart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017958",
+        "updatedAt": "2026-07-27 12:15:15.017960"
+    },
+    {
+        "slug": "intel",
+        "name": "Intel",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017963",
+        "updatedAt": "2026-07-27 12:15:15.017965"
+    },
+    {
+        "slug": "interactive-brokers",
+        "name": "Interactive Brokers",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017968",
+        "updatedAt": "2026-07-27 12:15:15.017971"
+    },
+    {
+        "slug": "intercom",
+        "name": "Intercom",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017973",
+        "updatedAt": "2026-07-27 12:15:15.017976"
+    },
+    {
+        "slug": "intuit",
+        "name": "Intuit",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017978",
+        "updatedAt": "2026-07-27 12:15:15.017981"
+    },
+    {
+        "slug": "ivp",
+        "name": "Ivp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017983",
+        "updatedAt": "2026-07-27 12:15:15.017985"
+    },
+    {
+        "slug": "ixigo",
+        "name": "Ixigo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017988",
+        "updatedAt": "2026-07-27 12:15:15.017990"
+    },
+    {
+        "slug": "ixl",
+        "name": "Ixl",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017994",
+        "updatedAt": "2026-07-27 12:15:15.017996"
+    },
+    {
+        "slug": "jane-street",
+        "name": "Jane Street",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.017999",
+        "updatedAt": "2026-07-27 12:15:15.018001"
+    },
+    {
+        "slug": "jd",
+        "name": "Jd",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018004",
+        "updatedAt": "2026-07-27 12:15:15.018006"
+    },
+    {
+        "slug": "jeavio",
+        "name": "Jeavio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018009",
+        "updatedAt": "2026-07-27 12:15:15.018011"
+    },
+    {
+        "slug": "jingchi",
+        "name": "Jingchi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018013",
+        "updatedAt": "2026-07-27 12:15:15.018016"
+    },
+    {
+        "slug": "jio",
+        "name": "Jio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018018",
+        "updatedAt": "2026-07-27 12:15:15.018020"
+    },
+    {
+        "slug": "josh-technology",
+        "name": "Josh Technology",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018023",
+        "updatedAt": "2026-07-27 12:15:15.018026"
+    },
+    {
+        "slug": "jp-morgan-chase",
+        "name": "JPMorgan Chase",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018028",
+        "updatedAt": "2026-07-27 12:15:15.018031"
+    },
+    {
+        "slug": "jpmorgan",
+        "name": "JPMorgan Chase",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018033",
+        "updatedAt": "2026-07-27 12:15:15.018036"
+    },
+    {
+        "slug": "jtg",
+        "name": "Jtg",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018038",
+        "updatedAt": "2026-07-27 12:15:15.018040"
+    },
+    {
+        "slug": "jump-trading",
+        "name": "Jump Trading",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018043",
+        "updatedAt": "2026-07-27 12:15:15.018045"
+    },
+    {
+        "slug": "juspay",
+        "name": "Juspay",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018048",
+        "updatedAt": "2026-07-27 12:15:15.018050"
+    },
+    {
+        "slug": "kakao",
+        "name": "Kakao",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018053",
+        "updatedAt": "2026-07-27 12:15:15.018055"
+    },
+    {
+        "slug": "karat",
+        "name": "Karat",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018058",
+        "updatedAt": "2026-07-27 12:15:15.018060"
+    },
+    {
+        "slug": "kickdrum",
+        "name": "Kickdrum",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018063",
+        "updatedAt": "2026-07-27 12:15:15.018065"
+    },
+    {
+        "slug": "kla",
+        "name": "Kla",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018068",
+        "updatedAt": "2026-07-27 12:15:15.018070"
+    },
+    {
+        "slug": "kla-tencor",
+        "name": "Kla Tencor",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018073",
+        "updatedAt": "2026-07-27 12:15:15.018075"
+    },
+    {
+        "slug": "kotak-mahindra-bank",
+        "name": "Kotak Mahindra Bank",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018078",
+        "updatedAt": "2026-07-27 12:15:15.018080"
+    },
+    {
+        "slug": "kpmg",
+        "name": "Kpmg",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018083",
+        "updatedAt": "2026-07-27 12:15:15.018085"
+    },
+    {
+        "slug": "larsen-toubro",
+        "name": "Larsen Toubro",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018088",
+        "updatedAt": "2026-07-27 12:15:15.018090"
+    },
+    {
+        "slug": "leap-motion",
+        "name": "Leap Motion",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018093",
+        "updatedAt": "2026-07-27 12:15:15.018095"
+    },
+    {
+        "slug": "lendingkart",
+        "name": "Lendingkart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018098",
+        "updatedAt": "2026-07-27 12:15:15.018100"
+    },
+    {
+        "slug": "lenskart",
+        "name": "Lenskart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018103",
+        "updatedAt": "2026-07-27 12:15:15.018105"
+    },
+    {
+        "slug": "lg-electronics",
+        "name": "Lg Electronics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018108",
+        "updatedAt": "2026-07-27 12:15:15.018110"
+    },
+    {
+        "slug": "liberty-mutual",
+        "name": "Liberty Mutual",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018113",
+        "updatedAt": "2026-07-27 12:15:15.018115"
+    },
+    {
+        "slug": "liftoff",
+        "name": "Liftoff",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018118",
+        "updatedAt": "2026-07-27 12:15:15.018120"
+    },
+    {
+        "slug": "lime",
+        "name": "Lime",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018123",
+        "updatedAt": "2026-07-27 12:15:15.018125"
+    },
+    {
+        "slug": "limebike",
+        "name": "Limebike",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018128",
+        "updatedAt": "2026-07-27 12:15:15.018130"
+    },
+    {
+        "slug": "line",
+        "name": "Line",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018133",
+        "updatedAt": "2026-07-27 12:15:15.018135"
+    },
+    {
+        "slug": "linkedin",
+        "name": "LinkedIn",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018138",
+        "updatedAt": "2026-07-27 12:15:15.018140"
+    },
+    {
+        "slug": "liveramp",
+        "name": "Liveramp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018143",
+        "updatedAt": "2026-07-27 12:15:15.018145"
+    },
+    {
+        "slug": "livspace",
+        "name": "Livspace",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018147",
+        "updatedAt": "2026-07-27 12:15:15.018150"
+    },
+    {
+        "slug": "lowe",
+        "name": "Lowe",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018152",
+        "updatedAt": "2026-07-27 12:15:15.018160"
+    },
+    {
+        "slug": "lti",
+        "name": "Lti",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018163",
+        "updatedAt": "2026-07-27 12:15:15.018165"
+    },
+    {
+        "slug": "lucid",
+        "name": "Lucid",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018168",
+        "updatedAt": "2026-07-27 12:15:15.018170"
+    },
+    {
+        "slug": "luxoft",
+        "name": "Luxoft",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018173",
+        "updatedAt": "2026-07-27 12:15:15.018175"
+    },
+    {
+        "slug": "lyft",
+        "name": "Lyft",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018177",
+        "updatedAt": "2026-07-27 12:15:15.018180"
+    },
+    {
+        "slug": "machine-zone",
+        "name": "Machine Zone",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018182",
+        "updatedAt": "2026-07-27 12:15:15.018185"
+    },
+    {
+        "slug": "machinezone",
+        "name": "Machinezone",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018187",
+        "updatedAt": "2026-07-27 12:15:15.018190"
+    },
+    {
+        "slug": "maersk",
+        "name": "Maersk",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018192",
+        "updatedAt": "2026-07-27 12:15:15.018194"
+    },
+    {
+        "slug": "makemytrip",
+        "name": "Makemytrip",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018197",
+        "updatedAt": "2026-07-27 12:15:15.018199"
+    },
+    {
+        "slug": "mapbox",
+        "name": "Mapbox",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018202",
+        "updatedAt": "2026-07-27 12:15:15.018204"
+    },
+    {
+        "slug": "maq-software",
+        "name": "Maq Software",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018207",
+        "updatedAt": "2026-07-27 12:15:15.018209"
+    },
+    {
+        "slug": "marqeta",
+        "name": "Marqeta",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018212",
+        "updatedAt": "2026-07-27 12:15:15.018214"
+    },
+    {
+        "slug": "mastercard",
+        "name": "Mastercard",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018217",
+        "updatedAt": "2026-07-27 12:15:15.018219"
+    },
+    {
+        "slug": "mathworks",
+        "name": "Mathworks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018222",
+        "updatedAt": "2026-07-27 12:15:15.018224"
+    },
+    {
+        "slug": "mcafee",
+        "name": "Mcafee",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018227",
+        "updatedAt": "2026-07-27 12:15:15.018229"
+    },
+    {
+        "slug": "mcdonalds",
+        "name": "Mcdonalds",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018232",
+        "updatedAt": "2026-07-27 12:15:15.018234"
+    },
+    {
+        "slug": "mckinsey",
+        "name": "Mckinsey",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018237",
+        "updatedAt": "2026-07-27 12:15:15.018239"
+    },
+    {
+        "slug": "medianet",
+        "name": "Medianet",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018241",
+        "updatedAt": "2026-07-27 12:15:15.018244"
+    },
+    {
+        "slug": "meesho",
+        "name": "Meesho",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018246",
+        "updatedAt": "2026-07-27 12:15:15.018248"
+    },
+    {
+        "slug": "meituan",
+        "name": "Meituan",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018251",
+        "updatedAt": "2026-07-27 12:15:15.018253"
+    },
+    {
+        "slug": "mercari",
+        "name": "Mercari",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018256",
+        "updatedAt": "2026-07-27 12:15:15.018258"
+    },
+    {
+        "slug": "meta",
+        "name": "Meta",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018261",
+        "updatedAt": "2026-07-27 12:15:15.018263"
+    },
+    {
+        "slug": "micro1",
+        "name": "Micro1",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018269",
+        "updatedAt": "2026-07-27 12:15:15.018272"
+    },
+    {
+        "slug": "microsoft",
+        "name": "Microsoft",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018274",
+        "updatedAt": "2026-07-27 12:15:15.018277"
+    },
+    {
+        "slug": "microstrategy",
+        "name": "Microstrategy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018280",
+        "updatedAt": "2026-07-27 12:15:15.018282"
+    },
+    {
+        "slug": "millennium",
+        "name": "Millennium",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018285",
+        "updatedAt": "2026-07-27 12:15:15.018287"
+    },
+    {
+        "slug": "mindtickle",
+        "name": "Mindtickle",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018289",
+        "updatedAt": "2026-07-27 12:15:15.018292"
+    },
+    {
+        "slug": "mindtree",
+        "name": "Mindtree",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018294",
+        "updatedAt": "2026-07-27 12:15:15.018296"
+    },
+    {
+        "slug": "mishipay",
+        "name": "Mishipay",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018299",
+        "updatedAt": "2026-07-27 12:15:15.018301"
+    },
+    {
+        "slug": "mitsogo",
+        "name": "Mitsogo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018304",
+        "updatedAt": "2026-07-27 12:15:15.018306"
+    },
+    {
+        "slug": "mixpanel",
+        "name": "Mixpanel",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018309",
+        "updatedAt": "2026-07-27 12:15:15.018311"
+    },
+    {
+        "slug": "mobileye",
+        "name": "Mobileye",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018313",
+        "updatedAt": "2026-07-27 12:15:15.018316"
+    },
+    {
+        "slug": "mobisy",
+        "name": "Mobisy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018318",
+        "updatedAt": "2026-07-27 12:15:15.018320"
+    },
+    {
+        "slug": "moengage",
+        "name": "Moengage",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018323",
+        "updatedAt": "2026-07-27 12:15:15.018325"
+    },
+    {
+        "slug": "moloco",
+        "name": "Moloco",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018328",
+        "updatedAt": "2026-07-27 12:15:15.018330"
+    },
+    {
+        "slug": "moneylion",
+        "name": "Moneylion",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018333",
+        "updatedAt": "2026-07-27 12:15:15.018335"
+    },
+    {
+        "slug": "mongodb",
+        "name": "Mongodb",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018338",
+        "updatedAt": "2026-07-27 12:15:15.018340"
+    },
+    {
+        "slug": "morgan-stanley",
+        "name": "Morgan Stanley",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018343",
+        "updatedAt": "2026-07-27 12:15:15.018345"
+    },
+    {
+        "slug": "motive",
+        "name": "Motive",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018347",
+        "updatedAt": "2026-07-27 12:15:15.018350"
+    },
+    {
+        "slug": "moveworks",
+        "name": "Moveworks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018352",
+        "updatedAt": "2026-07-27 12:15:15.018355"
+    },
+    {
+        "slug": "mphasis",
+        "name": "Mphasis",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018357",
+        "updatedAt": "2026-07-27 12:15:15.018360"
+    },
+    {
+        "slug": "msci",
+        "name": "Msci",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018362",
+        "updatedAt": "2026-07-27 12:15:15.018364"
+    },
+    {
+        "slug": "murex",
+        "name": "Murex",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018367",
+        "updatedAt": "2026-07-27 12:15:15.018369"
+    },
+    {
+        "slug": "mykaarma",
+        "name": "Mykaarma",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018372",
+        "updatedAt": "2026-07-27 12:15:15.018374"
+    },
+    {
+        "slug": "myntra",
+        "name": "Myntra",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018377",
+        "updatedAt": "2026-07-27 12:15:15.018379"
+    },
+    {
+        "slug": "nagarro",
+        "name": "Nagarro",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018382",
+        "updatedAt": "2026-07-27 12:15:15.018384"
+    },
+    {
+        "slug": "nasdaq",
+        "name": "Nasdaq",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018387",
+        "updatedAt": "2026-07-27 12:15:15.018389"
+    },
+    {
+        "slug": "national-instruments",
+        "name": "National Instruments",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018392",
+        "updatedAt": "2026-07-27 12:15:15.018395"
+    },
+    {
+        "slug": "national-payments-coorperation-india",
+        "name": "National Payments Coorperation India",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018416",
+        "updatedAt": "2026-07-27 12:15:15.018418"
+    },
+    {
+        "slug": "natwest",
+        "name": "Natwest",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018421",
+        "updatedAt": "2026-07-27 12:15:15.018423"
+    },
+    {
+        "slug": "navan",
+        "name": "Navan",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018425",
+        "updatedAt": "2026-07-27 12:15:15.018428"
+    },
+    {
+        "slug": "naver",
+        "name": "Naver",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018430",
+        "updatedAt": "2026-07-27 12:15:15.018432"
+    },
+    {
+        "slug": "navi",
+        "name": "Navi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018435",
+        "updatedAt": "2026-07-27 12:15:15.018437"
+    },
+    {
+        "slug": "ncr",
+        "name": "Ncr",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018440",
+        "updatedAt": "2026-07-27 12:15:15.018442"
+    },
+    {
+        "slug": "nerdwallet",
+        "name": "Nerdwallet",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018445",
+        "updatedAt": "2026-07-27 12:15:15.018447"
+    },
+    {
+        "slug": "netapp",
+        "name": "Netapp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018450",
+        "updatedAt": "2026-07-27 12:15:15.018452"
+    },
+    {
+        "slug": "netcracker-technology",
+        "name": "Netcracker Technology",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018455",
+        "updatedAt": "2026-07-27 12:15:15.018457"
+    },
+    {
+        "slug": "netease",
+        "name": "Netease",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018460",
+        "updatedAt": "2026-07-27 12:15:15.018462"
+    },
+    {
+        "slug": "netflix",
+        "name": "Netflix",
+        "category": "maang",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018465",
+        "updatedAt": "2026-07-27 12:15:15.018467"
+    },
+    {
+        "slug": "netskope",
+        "name": "Netskope",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018470",
+        "updatedAt": "2026-07-27 12:15:15.018472"
+    },
+    {
+        "slug": "netsuite",
+        "name": "Netsuite",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018476",
+        "updatedAt": "2026-07-27 12:15:15.018478"
+    },
+    {
+        "slug": "newsbreak",
+        "name": "Newsbreak",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018481",
+        "updatedAt": "2026-07-27 12:15:15.018483"
+    },
+    {
+        "slug": "nextdoor",
+        "name": "Nextdoor",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018486",
+        "updatedAt": "2026-07-27 12:15:15.018488"
+    },
+    {
+        "slug": "nextjump",
+        "name": "Nextjump",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018491",
+        "updatedAt": "2026-07-27 12:15:15.018493"
+    },
+    {
+        "slug": "niantic",
+        "name": "Niantic",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018496",
+        "updatedAt": "2026-07-27 12:15:15.018498"
+    },
+    {
+        "slug": "nielsen",
+        "name": "Nielsen",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018501",
+        "updatedAt": "2026-07-27 12:15:15.018503"
+    },
+    {
+        "slug": "nike",
+        "name": "Nike",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018505",
+        "updatedAt": "2026-07-27 12:15:15.018508"
+    },
+    {
+        "slug": "nokia",
+        "name": "Nokia",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018510",
+        "updatedAt": "2026-07-27 12:15:15.018513"
+    },
+    {
+        "slug": "noon",
+        "name": "Noon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018515",
+        "updatedAt": "2026-07-27 12:15:15.018517"
+    },
+    {
+        "slug": "nordstrom",
+        "name": "Nordstrom",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018520",
+        "updatedAt": "2026-07-27 12:15:15.018522"
+    },
+    {
+        "slug": "notion",
+        "name": "Notion",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018525",
+        "updatedAt": "2026-07-27 12:15:15.018527"
+    },
+    {
+        "slug": "npci",
+        "name": "Npci",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018530",
+        "updatedAt": "2026-07-27 12:15:15.018532"
+    },
+    {
+        "slug": "nuro",
+        "name": "Nuro",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018535",
+        "updatedAt": "2026-07-27 12:15:15.018537"
+    },
+    {
+        "slug": "nutanix",
+        "name": "Nutanix",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018540",
+        "updatedAt": "2026-07-27 12:15:15.018542"
+    },
+    {
+        "slug": "nvidia",
+        "name": "Nvidia",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018545",
+        "updatedAt": "2026-07-27 12:15:15.018547"
+    },
+    {
+        "slug": "nykaa",
+        "name": "Nykaa",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018549",
+        "updatedAt": "2026-07-27 12:15:15.018552"
+    },
+    {
+        "slug": "observeai",
+        "name": "Observeai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018554",
+        "updatedAt": "2026-07-27 12:15:15.018556"
+    },
+    {
+        "slug": "odoo",
+        "name": "Odoo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018559",
+        "updatedAt": "2026-07-27 12:15:15.018561"
+    },
+    {
+        "slug": "okta",
+        "name": "Okta",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018564",
+        "updatedAt": "2026-07-27 12:15:15.018566"
+    },
+    {
+        "slug": "okx",
+        "name": "Okx",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018569",
+        "updatedAt": "2026-07-27 12:15:15.018571"
+    },
+    {
+        "slug": "olx",
+        "name": "Olx",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018573",
+        "updatedAt": "2026-07-27 12:15:15.018576"
+    },
+    {
+        "slug": "openai",
+        "name": "Openai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018578",
+        "updatedAt": "2026-07-27 12:15:15.018580"
+    },
+    {
+        "slug": "opendoor",
+        "name": "Opendoor",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018583",
+        "updatedAt": "2026-07-27 12:15:15.018585"
+    },
+    {
+        "slug": "opentext",
+        "name": "Opentext",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018588",
+        "updatedAt": "2026-07-27 12:15:15.018590"
+    },
+    {
+        "slug": "oppo",
+        "name": "Oppo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018593",
+        "updatedAt": "2026-07-27 12:15:15.018595"
+    },
+    {
+        "slug": "optiver",
+        "name": "Optiver",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018598",
+        "updatedAt": "2026-07-27 12:15:15.018600"
+    },
+    {
+        "slug": "optum",
+        "name": "Optum",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018603",
+        "updatedAt": "2026-07-27 12:15:15.018605"
+    },
+    {
+        "slug": "oracle",
+        "name": "Oracle",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018608",
+        "updatedAt": "2026-07-27 12:15:15.018610"
+    },
+    {
+        "slug": "oscar-health",
+        "name": "Oscar Health",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018613",
+        "updatedAt": "2026-07-27 12:15:15.018615"
+    },
+    {
+        "slug": "otterai",
+        "name": "Otterai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018617",
+        "updatedAt": "2026-07-27 12:15:15.018620"
+    },
+    {
+        "slug": "oyo",
+        "name": "Oyo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018622",
+        "updatedAt": "2026-07-27 12:15:15.018624"
+    },
+    {
+        "slug": "ozon",
+        "name": "Ozon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018627",
+        "updatedAt": "2026-07-27 12:15:15.018629"
+    },
+    {
+        "slug": "palantir",
+        "name": "Palantir",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018632",
+        "updatedAt": "2026-07-27 12:15:15.018634"
+    },
+    {
+        "slug": "palantir-technologies",
+        "name": "Palantir Technologies",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018637",
+        "updatedAt": "2026-07-27 12:15:15.018640"
+    },
+    {
+        "slug": "palo-alto-networks",
+        "name": "Palo Alto Networks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018643",
+        "updatedAt": "2026-07-27 12:15:15.018645"
+    },
+    {
+        "slug": "park",
+        "name": "Park",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018648",
+        "updatedAt": "2026-07-27 12:15:15.018650"
+    },
+    {
+        "slug": "patreon",
+        "name": "Patreon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018653",
+        "updatedAt": "2026-07-27 12:15:15.018655"
+    },
+    {
+        "slug": "paycom",
+        "name": "Paycom",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018658",
+        "updatedAt": "2026-07-27 12:15:15.018660"
+    },
+    {
+        "slug": "paypal",
+        "name": "PayPal",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018663",
+        "updatedAt": "2026-07-27 12:15:15.018665"
+    },
+    {
+        "slug": "paypay",
+        "name": "Paypay",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018667",
+        "updatedAt": "2026-07-27 12:15:15.018670"
+    },
+    {
+        "slug": "paytm",
+        "name": "Paytm",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018676",
+        "updatedAt": "2026-07-27 12:15:15.018678"
+    },
+    {
+        "slug": "payu",
+        "name": "Payu",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018681",
+        "updatedAt": "2026-07-27 12:15:15.018683"
+    },
+    {
+        "slug": "peak6",
+        "name": "Peak6",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018689",
+        "updatedAt": "2026-07-27 12:15:15.018691"
+    },
+    {
+        "slug": "pega",
+        "name": "Pega",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018694",
+        "updatedAt": "2026-07-27 12:15:15.018696"
+    },
+    {
+        "slug": "peloton",
+        "name": "Peloton",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018699",
+        "updatedAt": "2026-07-27 12:15:15.018701"
+    },
+    {
+        "slug": "persistent-systems",
+        "name": "Persistent Systems",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018704",
+        "updatedAt": "2026-07-27 12:15:15.018706"
+    },
+    {
+        "slug": "philips",
+        "name": "Philips",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018709",
+        "updatedAt": "2026-07-27 12:15:15.018711"
+    },
+    {
+        "slug": "phonepe",
+        "name": "Phonepe",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018714",
+        "updatedAt": "2026-07-27 12:15:15.018716"
+    },
+    {
+        "slug": "pickrr",
+        "name": "Pickrr",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018719",
+        "updatedAt": "2026-07-27 12:15:15.018721"
+    },
+    {
+        "slug": "pinterest",
+        "name": "Pinterest",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018724",
+        "updatedAt": "2026-07-27 12:15:15.018726"
+    },
+    {
+        "slug": "plaid",
+        "name": "Plaid",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018728",
+        "updatedAt": "2026-07-27 12:15:15.018731"
+    },
+    {
+        "slug": "playsimple",
+        "name": "Playsimple",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018733",
+        "updatedAt": "2026-07-27 12:15:15.018735"
+    },
+    {
+        "slug": "pocket-gems",
+        "name": "Pocket Gems",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018738",
+        "updatedAt": "2026-07-27 12:15:15.018741"
+    },
+    {
+        "slug": "point72",
+        "name": "Point72",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018743",
+        "updatedAt": "2026-07-27 12:15:15.018746"
+    },
+    {
+        "slug": "polar",
+        "name": "Polar",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018748",
+        "updatedAt": "2026-07-27 12:15:15.018750"
+    },
+    {
+        "slug": "ponyai",
+        "name": "Ponyai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018753",
+        "updatedAt": "2026-07-27 12:15:15.018755"
+    },
+    {
+        "slug": "pornhub",
+        "name": "Pornhub",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018759",
+        "updatedAt": "2026-07-27 12:15:15.018761"
+    },
+    {
+        "slug": "porter",
+        "name": "Porter",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018764",
+        "updatedAt": "2026-07-27 12:15:15.018766"
+    },
+    {
+        "slug": "poshmark",
+        "name": "Poshmark",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018768",
+        "updatedAt": "2026-07-27 12:15:15.018771"
+    },
+    {
+        "slug": "postman",
+        "name": "Postman",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018773",
+        "updatedAt": "2026-07-27 12:15:15.018775"
+    },
+    {
+        "slug": "postmates",
+        "name": "Postmates",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018778",
+        "updatedAt": "2026-07-27 12:15:15.018780"
+    },
+    {
+        "slug": "poynt",
+        "name": "Poynt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018783",
+        "updatedAt": "2026-07-27 12:15:15.018785"
+    },
+    {
+        "slug": "practo",
+        "name": "Practo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018788",
+        "updatedAt": "2026-07-27 12:15:15.018790"
+    },
+    {
+        "slug": "pramp",
+        "name": "Pramp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018793",
+        "updatedAt": "2026-07-27 12:15:15.018795"
+    },
+    {
+        "slug": "publicis-sapient",
+        "name": "Publicis Sapient",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018798",
+        "updatedAt": "2026-07-27 12:15:15.018800"
+    },
+    {
+        "slug": "pubmatic",
+        "name": "Pubmatic",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018803",
+        "updatedAt": "2026-07-27 12:15:15.018805"
+    },
+    {
+        "slug": "pure",
+        "name": "Pure",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018807",
+        "updatedAt": "2026-07-27 12:15:15.018809"
+    },
+    {
+        "slug": "pure-storage",
+        "name": "Pure Storage",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018812",
+        "updatedAt": "2026-07-27 12:15:15.018814"
+    },
+    {
+        "slug": "purplle",
+        "name": "Purplle",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018817",
+        "updatedAt": "2026-07-27 12:15:15.018819"
+    },
+    {
+        "slug": "pwc",
+        "name": "Pwc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018822",
+        "updatedAt": "2026-07-27 12:15:15.018824"
+    },
+    {
+        "slug": "qualcomm",
+        "name": "Qualcomm",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018827",
+        "updatedAt": "2026-07-27 12:15:15.018829"
+    },
+    {
+        "slug": "qualtrics",
+        "name": "Qualtrics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018832",
+        "updatedAt": "2026-07-27 12:15:15.018834"
+    },
+    {
+        "slug": "qualys",
+        "name": "Qualys",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018836",
+        "updatedAt": "2026-07-27 12:15:15.018839"
+    },
+    {
+        "slug": "quantcast",
+        "name": "Quantcast",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018841",
+        "updatedAt": "2026-07-27 12:15:15.018844"
+    },
+    {
+        "slug": "quantiphi",
+        "name": "Quantiphi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018846",
+        "updatedAt": "2026-07-27 12:15:15.018848"
+    },
+    {
+        "slug": "quince",
+        "name": "Quince",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018851",
+        "updatedAt": "2026-07-27 12:15:15.018853"
+    },
+    {
+        "slug": "quip",
+        "name": "Quip",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018856",
+        "updatedAt": "2026-07-27 12:15:15.018858"
+    },
+    {
+        "slug": "quora",
+        "name": "Quora",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018861",
+        "updatedAt": "2026-07-27 12:15:15.018863"
+    },
+    {
+        "slug": "rackspace",
+        "name": "Rackspace",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018866",
+        "updatedAt": "2026-07-27 12:15:15.018868"
+    },
+    {
+        "slug": "radius",
+        "name": "Radius",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018871",
+        "updatedAt": "2026-07-27 12:15:15.018873"
+    },
+    {
+        "slug": "rakuten",
+        "name": "Rakuten",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018876",
+        "updatedAt": "2026-07-27 12:15:15.018878"
+    },
+    {
+        "slug": "rally-health",
+        "name": "Rally Health",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018881",
+        "updatedAt": "2026-07-27 12:15:15.018883"
+    },
+    {
+        "slug": "ramp-2",
+        "name": "Ramp 2",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018886",
+        "updatedAt": "2026-07-27 12:15:15.018888"
+    },
+    {
+        "slug": "razorpay",
+        "name": "Razorpay",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018891",
+        "updatedAt": "2026-07-27 12:15:15.018893"
+    },
+    {
+        "slug": "rbc",
+        "name": "Rbc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018896",
+        "updatedAt": "2026-07-27 12:15:15.018898"
+    },
+    {
+        "slug": "redbus",
+        "name": "Redbus",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018907",
+        "updatedAt": "2026-07-27 12:15:15.018909"
+    },
+    {
+        "slug": "reddit",
+        "name": "Reddit",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018912",
+        "updatedAt": "2026-07-27 12:15:15.018914"
+    },
+    {
+        "slug": "redfin",
+        "name": "Redfin",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018916",
+        "updatedAt": "2026-07-27 12:15:15.018919"
+    },
+    {
+        "slug": "reliance-retails",
+        "name": "Reliance Retails",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018922",
+        "updatedAt": "2026-07-27 12:15:15.018924"
+    },
+    {
+        "slug": "remitly",
+        "name": "Remitly",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018927",
+        "updatedAt": "2026-07-27 12:15:15.018929"
+    },
+    {
+        "slug": "retailmenot",
+        "name": "Retailmenot",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018932",
+        "updatedAt": "2026-07-27 12:15:15.018934"
+    },
+    {
+        "slug": "revolut",
+        "name": "Revolut",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018936",
+        "updatedAt": "2026-07-27 12:15:15.018939"
+    },
+    {
+        "slug": "riot-games",
+        "name": "Riot Games",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018942",
+        "updatedAt": "2026-07-27 12:15:15.018944"
+    },
+    {
+        "slug": "ripple",
+        "name": "Ripple",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018946",
+        "updatedAt": "2026-07-27 12:15:15.018949"
+    },
+    {
+        "slug": "rippling",
+        "name": "Rippling",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018951",
+        "updatedAt": "2026-07-27 12:15:15.018954"
+    },
+    {
+        "slug": "rivian",
+        "name": "Rivian",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018956",
+        "updatedAt": "2026-07-27 12:15:15.018958"
+    },
+    {
+        "slug": "robinhood",
+        "name": "Robinhood",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018961",
+        "updatedAt": "2026-07-27 12:15:15.018963"
+    },
+    {
+        "slug": "roblox",
+        "name": "Roblox",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018966",
+        "updatedAt": "2026-07-27 12:15:15.018969"
+    },
+    {
+        "slug": "rokt",
+        "name": "Rokt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018971",
+        "updatedAt": "2026-07-27 12:15:15.018974"
+    },
+    {
+        "slug": "roku",
+        "name": "Roku",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018976",
+        "updatedAt": "2026-07-27 12:15:15.018978"
+    },
+    {
+        "slug": "rubrik",
+        "name": "Rubrik",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018981",
+        "updatedAt": "2026-07-27 12:15:15.018983"
+    },
+    {
+        "slug": "salesforce",
+        "name": "Salesforce",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018986",
+        "updatedAt": "2026-07-27 12:15:15.018988"
+    },
+    {
+        "slug": "sambanova",
+        "name": "Sambanova",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018991",
+        "updatedAt": "2026-07-27 12:15:15.018993"
+    },
+    {
+        "slug": "samsara",
+        "name": "Samsara",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.018996",
+        "updatedAt": "2026-07-27 12:15:15.018998"
+    },
+    {
+        "slug": "samsung",
+        "name": "Samsung",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019001",
+        "updatedAt": "2026-07-27 12:15:15.019003"
+    },
+    {
+        "slug": "sap",
+        "name": "SAP",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019006",
+        "updatedAt": "2026-07-27 12:15:15.019008"
+    },
+    {
+        "slug": "sapient",
+        "name": "Sapient",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019011",
+        "updatedAt": "2026-07-27 12:15:15.019013"
+    },
+    {
+        "slug": "scale-ai",
+        "name": "Scale Ai",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019016",
+        "updatedAt": "2026-07-27 12:15:15.019018"
+    },
+    {
+        "slug": "scaler",
+        "name": "Scaler",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019021",
+        "updatedAt": "2026-07-27 12:15:15.019023"
+    },
+    {
+        "slug": "schlumberger",
+        "name": "Schlumberger",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019026",
+        "updatedAt": "2026-07-27 12:15:15.019028"
+    },
+    {
+        "slug": "schneider-electric",
+        "name": "Schneider Electric",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019031",
+        "updatedAt": "2026-07-27 12:15:15.019033"
+    },
+    {
+        "slug": "schrodinger",
+        "name": "Schrodinger",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019036",
+        "updatedAt": "2026-07-27 12:15:15.019038"
+    },
+    {
+        "slug": "sentry",
+        "name": "Sentry",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019041",
+        "updatedAt": "2026-07-27 12:15:15.019043"
+    },
+    {
+        "slug": "servicenow",
+        "name": "Servicenow",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019046",
+        "updatedAt": "2026-07-27 12:15:15.019048"
+    },
+    {
+        "slug": "sharechat",
+        "name": "Sharechat",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019051",
+        "updatedAt": "2026-07-27 12:15:15.019053"
+    },
+    {
+        "slug": "shift-technology",
+        "name": "Shift Technology",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019056",
+        "updatedAt": "2026-07-27 12:15:15.019058"
+    },
+    {
+        "slug": "shipsy",
+        "name": "Shipsy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019061",
+        "updatedAt": "2026-07-27 12:15:15.019063"
+    },
+    {
+        "slug": "shopback",
+        "name": "Shopback",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019066",
+        "updatedAt": "2026-07-27 12:15:15.019068"
+    },
+    {
+        "slug": "shopee",
+        "name": "Shopee",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019074",
+        "updatedAt": "2026-07-27 12:15:15.019076"
+    },
+    {
+        "slug": "shopify",
+        "name": "Shopify",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019079",
+        "updatedAt": "2026-07-27 12:15:15.019081"
+    },
+    {
+        "slug": "shopup",
+        "name": "Shopup",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019084",
+        "updatedAt": "2026-07-27 12:15:15.019086"
+    },
+    {
+        "slug": "siemens",
+        "name": "Siemens",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019089",
+        "updatedAt": "2026-07-27 12:15:15.019091"
+    },
+    {
+        "slug": "sig",
+        "name": "Sig",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019094",
+        "updatedAt": "2026-07-27 12:15:15.019096"
+    },
+    {
+        "slug": "sigmoid",
+        "name": "Sigmoid",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019098",
+        "updatedAt": "2026-07-27 12:15:15.019101"
+    },
+    {
+        "slug": "singlestore",
+        "name": "Singlestore",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019103",
+        "updatedAt": "2026-07-27 12:15:15.019106"
+    },
+    {
+        "slug": "sixt",
+        "name": "Sixt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019108",
+        "updatedAt": "2026-07-27 12:15:15.019110"
+    },
+    {
+        "slug": "slice",
+        "name": "Slice",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019113",
+        "updatedAt": "2026-07-27 12:15:15.019115"
+    },
+    {
+        "slug": "smartnews",
+        "name": "Smartnews",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019118",
+        "updatedAt": "2026-07-27 12:15:15.019120"
+    },
+    {
+        "slug": "smartsheet",
+        "name": "Smartsheet",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019123",
+        "updatedAt": "2026-07-27 12:15:15.019125"
+    },
+    {
+        "slug": "snapchat",
+        "name": "Snapchat",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019128",
+        "updatedAt": "2026-07-27 12:15:15.019130"
+    },
+    {
+        "slug": "snapdeal",
+        "name": "Snapdeal",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019133",
+        "updatedAt": "2026-07-27 12:15:15.019135"
+    },
+    {
+        "slug": "snowflake",
+        "name": "Snowflake",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019138",
+        "updatedAt": "2026-07-27 12:15:15.019140"
+    },
+    {
+        "slug": "societe-generale",
+        "name": "Societe Generale",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019143",
+        "updatedAt": "2026-07-27 12:15:15.019145"
+    },
+    {
+        "slug": "sofi",
+        "name": "Sofi",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019148",
+        "updatedAt": "2026-07-27 12:15:15.019150"
+    },
+    {
+        "slug": "softwire",
+        "name": "Softwire",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019153",
+        "updatedAt": "2026-07-27 12:15:15.019155"
+    },
+    {
+        "slug": "sonatus",
+        "name": "Sonatus",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019158",
+        "updatedAt": "2026-07-27 12:15:15.019160"
+    },
+    {
+        "slug": "sony",
+        "name": "Sony",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019163",
+        "updatedAt": "2026-07-27 12:15:15.019165"
+    },
+    {
+        "slug": "soti",
+        "name": "Soti",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019168",
+        "updatedAt": "2026-07-27 12:15:15.019170"
+    },
+    {
+        "slug": "soundhound",
+        "name": "Soundhound",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019173",
+        "updatedAt": "2026-07-27 12:15:15.019175"
+    },
+    {
+        "slug": "spacex",
+        "name": "Spacex",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019177",
+        "updatedAt": "2026-07-27 12:15:15.019180"
+    },
+    {
+        "slug": "spinny",
+        "name": "Spinny",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019182",
+        "updatedAt": "2026-07-27 12:15:15.019188"
+    },
+    {
+        "slug": "splunk",
+        "name": "Splunk",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019191",
+        "updatedAt": "2026-07-27 12:15:15.019193"
+    },
+    {
+        "slug": "spotify",
+        "name": "Spotify",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019196",
+        "updatedAt": "2026-07-27 12:15:15.019198"
+    },
+    {
+        "slug": "sprinklr",
+        "name": "Sprinklr",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019201",
+        "updatedAt": "2026-07-27 12:15:15.019203"
+    },
+    {
+        "slug": "square",
+        "name": "Square",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019208",
+        "updatedAt": "2026-07-27 12:15:15.019210"
+    },
+    {
+        "slug": "squarepoint-capital",
+        "name": "Squarepoint Capital",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019213",
+        "updatedAt": "2026-07-27 12:15:15.019216"
+    },
+    {
+        "slug": "squarespace",
+        "name": "Squarespace",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019218",
+        "updatedAt": "2026-07-27 12:15:15.019221"
+    },
+    {
+        "slug": "stackadapt",
+        "name": "Stackadapt",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019223",
+        "updatedAt": "2026-07-27 12:15:15.019226"
+    },
+    {
+        "slug": "stackline",
+        "name": "Stackline",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019228",
+        "updatedAt": "2026-07-27 12:15:15.019231"
+    },
+    {
+        "slug": "starbucks",
+        "name": "Starbucks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019233",
+        "updatedAt": "2026-07-27 12:15:15.019235"
+    },
+    {
+        "slug": "state-farm",
+        "name": "State Farm",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019238",
+        "updatedAt": "2026-07-27 12:15:15.019241"
+    },
+    {
+        "slug": "strava",
+        "name": "Strava",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019243",
+        "updatedAt": "2026-07-27 12:15:15.019245"
+    },
+    {
+        "slug": "stripe",
+        "name": "Stripe",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019248",
+        "updatedAt": "2026-07-27 12:15:15.019250"
+    },
+    {
+        "slug": "sumologic",
+        "name": "Sumologic",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019253",
+        "updatedAt": "2026-07-27 12:15:15.019255"
+    },
+    {
+        "slug": "swiggy",
+        "name": "Swiggy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019258",
+        "updatedAt": "2026-07-27 12:15:15.019260"
+    },
+    {
+        "slug": "syfe",
+        "name": "Syfe",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019263",
+        "updatedAt": "2026-07-27 12:15:15.019265"
+    },
+    {
+        "slug": "symantec",
+        "name": "Symantec",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019268",
+        "updatedAt": "2026-07-27 12:15:15.019270"
+    },
+    {
+        "slug": "synopsys",
+        "name": "Synopsys",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019272",
+        "updatedAt": "2026-07-27 12:15:15.019275"
+    },
+    {
+        "slug": "ta-digital",
+        "name": "Ta Digital",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019278",
+        "updatedAt": "2026-07-27 12:15:15.019280"
+    },
+    {
+        "slug": "tableau",
+        "name": "Tableau",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019283",
+        "updatedAt": "2026-07-27 12:15:15.019285"
+    },
+    {
+        "slug": "tandemg",
+        "name": "Tandemg",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019287",
+        "updatedAt": "2026-07-27 12:15:15.019290"
+    },
+    {
+        "slug": "tanium",
+        "name": "Tanium",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019292",
+        "updatedAt": "2026-07-27 12:15:15.019294"
+    },
+    {
+        "slug": "target",
+        "name": "Target",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019297",
+        "updatedAt": "2026-07-27 12:15:15.019299"
+    },
+    {
+        "slug": "tcs",
+        "name": "TCS",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019302",
+        "updatedAt": "2026-07-27 12:15:15.019304"
+    },
+    {
+        "slug": "tech-mahindra",
+        "name": "Tech Mahindra",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019307",
+        "updatedAt": "2026-07-27 12:15:15.019309"
+    },
+    {
+        "slug": "tekion",
+        "name": "Tekion",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019312",
+        "updatedAt": "2026-07-27 12:15:15.019315"
+    },
+    {
+        "slug": "tencent",
+        "name": "Tencent",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019317",
+        "updatedAt": "2026-07-27 12:15:15.019319"
+    },
+    {
+        "slug": "teradata",
+        "name": "Teradata",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019322",
+        "updatedAt": "2026-07-27 12:15:15.019324"
+    },
+    {
+        "slug": "tesco",
+        "name": "Tesco",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019327",
+        "updatedAt": "2026-07-27 12:15:15.019329"
+    },
+    {
+        "slug": "tesla",
+        "name": "Tesla",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019332",
+        "updatedAt": "2026-07-27 12:15:15.019334"
+    },
+    {
+        "slug": "texas-instruments",
+        "name": "Texas Instruments",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019337",
+        "updatedAt": "2026-07-27 12:15:15.019339"
+    },
+    {
+        "slug": "the-trade-desk",
+        "name": "The Trade Desk",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019342",
+        "updatedAt": "2026-07-27 12:15:15.019344"
+    },
+    {
+        "slug": "thomson-reuters",
+        "name": "Thomson Reuters",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019347",
+        "updatedAt": "2026-07-27 12:15:15.019349"
+    },
+    {
+        "slug": "thoughtspot",
+        "name": "Thoughtspot",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019352",
+        "updatedAt": "2026-07-27 12:15:15.019354"
+    },
+    {
+        "slug": "thoughtworks",
+        "name": "Thoughtworks",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019357",
+        "updatedAt": "2026-07-27 12:15:15.019359"
+    },
+    {
+        "slug": "thousandeyes",
+        "name": "Thousandeyes",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019362",
+        "updatedAt": "2026-07-27 12:15:15.019364"
+    },
+    {
+        "slug": "thumbtack",
+        "name": "Thumbtack",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019367",
+        "updatedAt": "2026-07-27 12:15:15.019369"
+    },
+    {
+        "slug": "tiaa",
+        "name": "Tiaa",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019372",
+        "updatedAt": "2026-07-27 12:15:15.019374"
+    },
+    {
+        "slug": "tiger-analytics",
+        "name": "Tiger Analytics",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019377",
+        "updatedAt": "2026-07-27 12:15:15.019379"
+    },
+    {
+        "slug": "tiktok",
+        "name": "Tiktok",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019382",
+        "updatedAt": "2026-07-27 12:15:15.019385"
+    },
+    {
+        "slug": "tinder",
+        "name": "Tinder",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019388",
+        "updatedAt": "2026-07-27 12:15:15.019390"
+    },
+    {
+        "slug": "tinkoff",
+        "name": "Tinkoff",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019392",
+        "updatedAt": "2026-07-27 12:15:15.019395"
+    },
+    {
+        "slug": "toast",
+        "name": "Toast",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019397",
+        "updatedAt": "2026-07-27 12:15:15.019399"
+    },
+    {
+        "slug": "tokopedia",
+        "name": "Tokopedia",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019402",
+        "updatedAt": "2026-07-27 12:15:15.019404"
+    },
+    {
+        "slug": "tomtom",
+        "name": "Tomtom",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019407",
+        "updatedAt": "2026-07-27 12:15:15.019409"
+    },
+    {
+        "slug": "toptal",
+        "name": "Toptal",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019412",
+        "updatedAt": "2026-07-27 12:15:15.019414"
+    },
+    {
+        "slug": "tower-research",
+        "name": "Tower Research",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019417",
+        "updatedAt": "2026-07-27 12:15:15.019419"
+    },
+    {
+        "slug": "tracxn",
+        "name": "Tracxn",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019422",
+        "updatedAt": "2026-07-27 12:15:15.019424"
+    },
+    {
+        "slug": "traveloka",
+        "name": "Traveloka",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019427",
+        "updatedAt": "2026-07-27 12:15:15.019429"
+    },
+    {
+        "slug": "trend-micro",
+        "name": "Trend Micro",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019432",
+        "updatedAt": "2026-07-27 12:15:15.019434"
+    },
+    {
+        "slug": "trexquant",
+        "name": "Trexquant",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019437",
+        "updatedAt": "2026-07-27 12:15:15.019439"
+    },
+    {
+        "slug": "trilogy",
+        "name": "Trilogy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019442",
+        "updatedAt": "2026-07-27 12:15:15.019444"
+    },
+    {
+        "slug": "tripactions",
+        "name": "Tripactions",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019447",
+        "updatedAt": "2026-07-27 12:15:15.019450"
+    },
+    {
+        "slug": "tripadvisor",
+        "name": "Tripadvisor",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019452",
+        "updatedAt": "2026-07-27 12:15:15.019455"
+    },
+    {
+        "slug": "triplebyte",
+        "name": "Triplebyte",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019457",
+        "updatedAt": "2026-07-27 12:15:15.019459"
+    },
+    {
+        "slug": "turing",
+        "name": "Turing",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019462",
+        "updatedAt": "2026-07-27 12:15:15.019464"
+    },
+    {
+        "slug": "turvo",
+        "name": "Turvo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019472",
+        "updatedAt": "2026-07-27 12:15:15.019475"
+    },
+    {
+        "slug": "tusimple",
+        "name": "Tusimple",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019478",
+        "updatedAt": "2026-07-27 12:15:15.019480"
+    },
+    {
+        "slug": "twilio",
+        "name": "Twilio",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019482",
+        "updatedAt": "2026-07-27 12:15:15.019484"
+    },
+    {
+        "slug": "twitch",
+        "name": "Twitch",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019487",
+        "updatedAt": "2026-07-27 12:15:15.019489"
+    },
+    {
+        "slug": "twitter",
+        "name": "Twitter",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019492",
+        "updatedAt": "2026-07-27 12:15:15.019494"
+    },
+    {
+        "slug": "two-sigma",
+        "name": "Two Sigma",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019497",
+        "updatedAt": "2026-07-27 12:15:15.019500"
+    },
+    {
+        "slug": "uber",
+        "name": "Uber",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019502",
+        "updatedAt": "2026-07-27 12:15:15.019505"
+    },
+    {
+        "slug": "ubisoft",
+        "name": "Ubisoft",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019507",
+        "updatedAt": "2026-07-27 12:15:15.019509"
+    },
+    {
+        "slug": "ubs",
+        "name": "Ubs",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019512",
+        "updatedAt": "2026-07-27 12:15:15.019514"
+    },
+    {
+        "slug": "udemy",
+        "name": "Udemy",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019517",
+        "updatedAt": "2026-07-27 12:15:15.019519"
+    },
+    {
+        "slug": "uipath",
+        "name": "Uipath",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019522",
+        "updatedAt": "2026-07-27 12:15:15.019524"
+    },
+    {
+        "slug": "ukg",
+        "name": "Ukg",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019527",
+        "updatedAt": "2026-07-27 12:15:15.019529"
+    },
+    {
+        "slug": "unbxd",
+        "name": "Unbxd",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019532",
+        "updatedAt": "2026-07-27 12:15:15.019534"
+    },
+    {
+        "slug": "united-health-group",
+        "name": "United Health Group",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019537",
+        "updatedAt": "2026-07-27 12:15:15.019539"
+    },
+    {
+        "slug": "unity",
+        "name": "Unity",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019542",
+        "updatedAt": "2026-07-27 12:15:15.019544"
+    },
+    {
+        "slug": "unstop",
+        "name": "Unstop",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019547",
+        "updatedAt": "2026-07-27 12:15:15.019549"
+    },
+    {
+        "slug": "upstart",
+        "name": "Upstart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019552",
+        "updatedAt": "2026-07-27 12:15:15.019554"
+    },
+    {
+        "slug": "urban-company",
+        "name": "Urban Company",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019557",
+        "updatedAt": "2026-07-27 12:15:15.019559"
+    },
+    {
+        "slug": "valve",
+        "name": "Valve",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019562",
+        "updatedAt": "2026-07-27 12:15:15.019564"
+    },
+    {
+        "slug": "veeva",
+        "name": "Veeva",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019567",
+        "updatedAt": "2026-07-27 12:15:15.019569"
+    },
+    {
+        "slug": "verily",
+        "name": "Verily",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019571",
+        "updatedAt": "2026-07-27 12:15:15.019574"
+    },
+    {
+        "slug": "veritas",
+        "name": "Veritas",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019576",
+        "updatedAt": "2026-07-27 12:15:15.019579"
+    },
+    {
+        "slug": "verizon",
+        "name": "Verizon",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019581",
+        "updatedAt": "2026-07-27 12:15:15.019583"
+    },
+    {
+        "slug": "verkada",
+        "name": "Verkada",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019586",
+        "updatedAt": "2026-07-27 12:15:15.019588"
+    },
+    {
+        "slug": "viasat",
+        "name": "Viasat",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019591",
+        "updatedAt": "2026-07-27 12:15:15.019593"
+    },
+    {
+        "slug": "vimeo",
+        "name": "Vimeo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019596",
+        "updatedAt": "2026-07-27 12:15:15.019598"
+    },
+    {
+        "slug": "virtu",
+        "name": "Virtu",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019601",
+        "updatedAt": "2026-07-27 12:15:15.019603"
+    },
+    {
+        "slug": "virtusa",
+        "name": "Virtusa",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019606",
+        "updatedAt": "2026-07-27 12:15:15.019608"
+    },
+    {
+        "slug": "visa",
+        "name": "Visa",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019611",
+        "updatedAt": "2026-07-27 12:15:15.019613"
+    },
+    {
+        "slug": "vk",
+        "name": "Vk",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019615",
+        "updatedAt": "2026-07-27 12:15:15.019618"
+    },
+    {
+        "slug": "vmware",
+        "name": "VMware",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019620",
+        "updatedAt": "2026-07-27 12:15:15.019622"
+    },
+    {
+        "slug": "walmart",
+        "name": "Walmart",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019625",
+        "updatedAt": "2026-07-27 12:15:15.019627"
+    },
+    {
+        "slug": "walmart-labs",
+        "name": "Walmart Labs",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019630",
+        "updatedAt": "2026-07-27 12:15:15.019632"
+    },
+    {
+        "slug": "warnermedia",
+        "name": "Warnermedia",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019635",
+        "updatedAt": "2026-07-27 12:15:15.019638"
+    },
+    {
+        "slug": "wayfair",
+        "name": "Wayfair",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019640",
+        "updatedAt": "2026-07-27 12:15:15.019642"
+    },
+    {
+        "slug": "waymo",
+        "name": "Waymo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019645",
+        "updatedAt": "2026-07-27 12:15:15.019647"
+    },
+    {
+        "slug": "wayve",
+        "name": "Wayve",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019650",
+        "updatedAt": "2026-07-27 12:15:15.019652"
+    },
+    {
+        "slug": "wealthfront",
+        "name": "Wealthfront",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019655",
+        "updatedAt": "2026-07-27 12:15:15.019657"
+    },
+    {
+        "slug": "wells-fargo",
+        "name": "Wells Fargo",
+        "category": "bfsi",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019660",
+        "updatedAt": "2026-07-27 12:15:15.019662"
+    },
+    {
+        "slug": "weride",
+        "name": "Weride",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019665",
+        "updatedAt": "2026-07-27 12:15:15.019667"
+    },
+    {
+        "slug": "western-digital",
+        "name": "Western Digital",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019670",
+        "updatedAt": "2026-07-27 12:15:15.019672"
+    },
+    {
+        "slug": "whatfix",
+        "name": "Whatfix",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019675",
+        "updatedAt": "2026-07-27 12:15:15.019677"
+    },
+    {
+        "slug": "whatnot",
+        "name": "Whatnot",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019680",
+        "updatedAt": "2026-07-27 12:15:15.019682"
+    },
+    {
+        "slug": "winzo",
+        "name": "Winzo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019684",
+        "updatedAt": "2026-07-27 12:15:15.019687"
+    },
+    {
+        "slug": "wipro",
+        "name": "Wipro",
+        "category": "service",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019689",
+        "updatedAt": "2026-07-27 12:15:15.019692"
+    },
+    {
+        "slug": "wise",
+        "name": "Wise",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019694",
+        "updatedAt": "2026-07-27 12:15:15.019696"
+    },
+    {
+        "slug": "wish",
+        "name": "Wish",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019699",
+        "updatedAt": "2026-07-27 12:15:15.019701"
+    },
+    {
+        "slug": "wissen",
+        "name": "Wissen",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019704",
+        "updatedAt": "2026-07-27 12:15:15.019706"
+    },
+    {
+        "slug": "wix",
+        "name": "Wix",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019709",
+        "updatedAt": "2026-07-27 12:15:15.019711"
+    },
+    {
+        "slug": "workday",
+        "name": "Workday",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019714",
+        "updatedAt": "2026-07-27 12:15:15.019716"
+    },
+    {
+        "slug": "works-applications",
+        "name": "Works Applications",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019721",
+        "updatedAt": "2026-07-27 12:15:15.019723"
+    },
+    {
+        "slug": "worldquant",
+        "name": "Worldquant",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019726",
+        "updatedAt": "2026-07-27 12:15:15.019728"
+    },
+    {
+        "slug": "woven-by-toyota",
+        "name": "Woven By Toyota",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019731",
+        "updatedAt": "2026-07-27 12:15:15.019733"
+    },
+    {
+        "slug": "xing",
+        "name": "Xing",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019736",
+        "updatedAt": "2026-07-27 12:15:15.019738"
+    },
+    {
+        "slug": "yahoo",
+        "name": "Yahoo",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019741",
+        "updatedAt": "2026-07-27 12:15:15.019743"
+    },
+    {
+        "slug": "yandex",
+        "name": "Yandex",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019746",
+        "updatedAt": "2026-07-27 12:15:15.019748"
+    },
+    {
+        "slug": "yatra",
+        "name": "Yatra",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019751",
+        "updatedAt": "2026-07-27 12:15:15.019753"
+    },
+    {
+        "slug": "yelp",
+        "name": "Yelp",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019755",
+        "updatedAt": "2026-07-27 12:15:15.019758"
+    },
+    {
+        "slug": "yugabyte",
+        "name": "Yugabyte",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019760",
+        "updatedAt": "2026-07-27 12:15:15.019762"
+    },
+    {
+        "slug": "zalando",
+        "name": "Zalando",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019765",
+        "updatedAt": "2026-07-27 12:15:15.019767"
+    },
+    {
+        "slug": "zappos",
+        "name": "Zappos",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019770",
+        "updatedAt": "2026-07-27 12:15:15.019772"
+    },
+    {
+        "slug": "zemoso",
+        "name": "Zemoso",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019775",
+        "updatedAt": "2026-07-27 12:15:15.019777"
+    },
+    {
+        "slug": "zendesk",
+        "name": "Zendesk",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019779",
+        "updatedAt": "2026-07-27 12:15:15.019782"
+    },
+    {
+        "slug": "zenefits",
+        "name": "Zenefits",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019784",
+        "updatedAt": "2026-07-27 12:15:15.019787"
+    },
+    {
+        "slug": "zepto",
+        "name": "Zepto",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019789",
+        "updatedAt": "2026-07-27 12:15:15.019792"
+    },
+    {
+        "slug": "zeta",
+        "name": "Zeta",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019794",
+        "updatedAt": "2026-07-27 12:15:15.019796"
+    },
+    {
+        "slug": "zeta-suite",
+        "name": "Zeta Suite",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019799",
+        "updatedAt": "2026-07-27 12:15:15.019802"
+    },
+    {
+        "slug": "zillow",
+        "name": "Zillow",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019804",
+        "updatedAt": "2026-07-27 12:15:15.019806"
+    },
+    {
+        "slug": "zip",
+        "name": "Zip",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019809",
+        "updatedAt": "2026-07-27 12:15:15.019811"
+    },
+    {
+        "slug": "ziprecruiter",
+        "name": "Ziprecruiter",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019814",
+        "updatedAt": "2026-07-27 12:15:15.019816"
+    },
+    {
+        "slug": "zluri",
+        "name": "Zluri",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019819",
+        "updatedAt": "2026-07-27 12:15:15.019821"
+    },
+    {
+        "slug": "zocdoc",
+        "name": "Zocdoc",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019824",
+        "updatedAt": "2026-07-27 12:15:15.019826"
+    },
+    {
+        "slug": "zoho",
+        "name": "Zoho",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019829",
+        "updatedAt": "2026-07-27 12:15:15.019831"
+    },
+    {
+        "slug": "zomato",
+        "name": "Zomato",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019834",
+        "updatedAt": "2026-07-27 12:15:15.019836"
+    },
+    {
+        "slug": "zoom",
+        "name": "Zoom",
+        "category": "product",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019839",
+        "updatedAt": "2026-07-27 12:15:15.019841"
+    },
+    {
+        "slug": "zoox",
+        "name": "Zoox",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019843",
+        "updatedAt": "2026-07-27 12:15:15.019846"
+    },
+    {
+        "slug": "zopsmart",
+        "name": "Zopsmart",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019855",
+        "updatedAt": "2026-07-27 12:15:15.019857"
+    },
+    {
+        "slug": "zs-associates",
+        "name": "Zs Associates",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019860",
+        "updatedAt": "2026-07-27 12:15:15.019862"
+    },
+    {
+        "slug": "zscaler",
+        "name": "Zscaler",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019867",
+        "updatedAt": "2026-07-27 12:15:15.019870"
+    },
+    {
+        "slug": "zulily",
+        "name": "Zulily",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019872",
+        "updatedAt": "2026-07-27 12:15:15.019874"
+    },
+    {
+        "slug": "zynga",
+        "name": "Zynga",
+        "category": "other",
+        "isSeeded": true,
+        "createdAt": "2026-07-27 12:15:15.019877",
+        "updatedAt": "2026-07-27 12:15:15.019879"
+    }
+]
