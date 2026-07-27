@@ -13,6 +13,7 @@ export interface IUser extends Document {
   role: UserRole;
   isActive: boolean;
   lastLoginAt?: Date;
+  lastSeenAt?: Date; // For DAU/MAU and online tracking
   isSeeded?: boolean; // flag for seed data cleanup
   createdAt: Date;
   updatedAt: Date;
@@ -46,6 +47,9 @@ const UserSchema = new Schema<IUser>(
       index: true,
     },
     lastLoginAt: {
+      type: Date,
+    },
+    lastSeenAt: {
       type: Date,
     },
     isSeeded: {

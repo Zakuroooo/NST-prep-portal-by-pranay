@@ -21,16 +21,16 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       role: user.role,
       email: user.email,
       fullName: profile?.fullName,
-      studentId: profile?.studentId,
+      studentId: profile?._id?.toString(),   // IStudentProfile uses _id, not studentId
       branch: profile?.branch,
       batch: profile?.batch,
-      bio: profile?.bio,
+      phone: profile?.phone,
       linkedinUrl: profile?.linkedinUrl,
       githubUrl: profile?.githubUrl,
       xpTotal: profile?.xpTotal,
-      rank: profile?.rank,
+      rank: null,                             // rank is leaderboard-derived, not stored on profile
       currentStreakDays: profile?.currentStreakDays,
-      solved: profile?.solved,
+      solved: null,                           // solved count is in progress, not profile
       targetCategories: profile?.targetCategories,
       onboardingComplete: profile?.onboardingComplete ?? false,
       placementStatus: profile?.placementStatus,

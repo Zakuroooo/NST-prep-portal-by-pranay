@@ -69,6 +69,22 @@ export const notificationRepository = {
     });
   },
 
+  /**
+   * Check if a doubt-type notification was sent to a user in the last N minutes.
+   * Used for deduplication / spam prevention.
+   */
+  async findRecentDoubtNotif(
+    userId: string,
+    withinMinutes: number
+  ): Promise<INotification | null> {
+    const cutoff = new Date(Date.now() - withinMinutes * 60 * 1000);
+    return Notification.findOne({
+      userId: new mongoose.Types.ObjectId(userId),
+      type: 'doubt',
+      createdAt: { $gte: cutoff },
+    }).lean<INotification>();
+  },
+
   async deleteAllSeeded(): Promise<void> {
     await Notification.deleteMany({ isSeeded: true });
   },

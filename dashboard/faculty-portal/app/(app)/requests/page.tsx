@@ -18,6 +18,7 @@ import {
 
 import { FacultySessionRequest, SessionStatus } from "@/lib/types";
 import { getSessions, confirmSession, declineSession, proposeAlternative } from "@/lib/api";
+import { toast } from "sonner";
 import { 
   format, 
   addMonths, 
@@ -96,7 +97,10 @@ export default function RequestsPage() {
     getSessions()
       .then(({ sessions }) => {
         const mapped: FacultySessionRequest[] = sessions.map((s: any) => {
-          const studentName = typeof s.studentId === "object" ? s.studentId?.fullName ?? "Student" : "Student";
+          // BUG 2 FIX: SessionBooking model stores requestedDate (YYYY-MM-DD string)
+          // and requestedTime (HH:mm string) — NOT scheduledAt or durationMins.
+          // studentName is denormalized on the document — no need to populate.
+          const studentName = s.studentName ?? (typeof s.studentId === "object" ? s.studentId?.fullName ?? "Student" : "Student");
           return {
             id: s._id,
             studentName,
@@ -106,15 +110,13 @@ export default function RequestsPage() {
             branch: typeof s.studentId === "object" ? s.studentId?.branch ?? "CS" : "CS",
             topic: s.topic,
             notes: s.notes ?? "",
-            date: s.scheduledAt?.split("T")[0] ?? "",
-            time: new Date(s.scheduledAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" }),
-            duration: s.durationMins ?? 30,
+            date: s.requestedDate ?? "",         // YYYY-MM-DD ✓
+            time: s.requestedTime ?? "",          // HH:mm ✓
+            duration: s.durationMin ?? 30,        // 30 | 60 ✓
             status: (s.status === "declined" ? "cancelled" : s.status) as SessionStatus,
             meetLink: s.meetLink,
-            proposedDate: s.proposedAlternativeAt?.split("T")[0],
-            proposedTime: s.proposedAlternativeAt
-              ? new Date(s.proposedAlternativeAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })
-              : undefined,
+            proposedDate: s.proposedDate,         // stored as plain string in model
+            proposedTime: s.proposedTime,         // stored as plain string in model
           };
         });
         if (mapped.length > 0) setRequests(mapped);
@@ -124,40 +126,42 @@ export default function RequestsPage() {
   }, []);
 
   const handleConfirm = (id: string) => {
-    confirmSession(id).catch((err) => {
-      console.error(err);
-      alert("Failed to confirm session: " + err.message);
-    });
     setRequests((prev) =>
-      prev.map((r) =>
-        r.id === id
-          ? { ...r, status: "confirmed", meetLink: `https://meet.jit.si/NST-PlacePrep-${id}-${Math.random().toString(36).slice(2, 7)}` }
-          : r
-      )
+      prev.map((r) => r.id === id ? { ...r, status: "confirmed" } : r)
     );
+    confirmSession(id)
+      .then(() => toast.success("Session confirmed! Jitsi link generated."))
+      .catch((err) => {
+        setRequests((prev) => prev.map((r) => r.id === id ? { ...r, status: "pending" } : r));
+        toast.error("Failed to confirm session: " + (err?.message ?? "Unknown error"));
+      });
   };
 
   const handleDecline = (id: string) => {
-    declineSession(id).catch((err) => {
-      console.error(err);
-      alert("Failed to decline session: " + err.message);
-    });
     setRequests((prev) =>
       prev.map((r) => (r.id === id ? { ...r, status: "cancelled" } : r))
     );
+    declineSession(id)
+      .then(() => toast.success("Session declined."))
+      .catch((err) => {
+        setRequests((prev) => prev.map((r) => r.id === id ? { ...r, status: "pending" } : r));
+        toast.error("Failed to decline session: " + (err?.message ?? "Unknown error"));
+      });
   };
 
   const handleProposeSubmit = (id: string) => {
     if (!proposedDate || !proposedTime) return;
-    proposeAlternative(id, proposedDate, proposedTime).catch((err) => {
-      console.error(err);
-      alert("Failed to propose alternative: " + err.message);
-    });
     setRequests((prev) =>
       prev.map((r) =>
         r.id === id ? { ...r, status: "proposed", proposedDate, proposedTime } : r
       )
     );
+    proposeAlternative(id, proposedDate, proposedTime)
+      .then(() => toast.success("Alternative time proposed to student."))
+      .catch((err) => {
+        setRequests((prev) => prev.map((r) => r.id === id ? { ...r, status: "pending" } : r));
+        toast.error("Failed to propose alternative: " + (err?.message ?? "Unknown error"));
+      });
     setProposingFor(null);
     setProposedDate("");
     setProposedTime(TIME_SLOTS[0]);

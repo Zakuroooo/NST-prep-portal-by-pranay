@@ -33,8 +33,9 @@ export function useOverviewData() {
 }
 
 // ─── Students ────────────────────────────────────────────────────
-export function useStudents(page = 1, limit = 10, search = "") {
-  const key = `/api/admin/students?page=${page}&limit=${limit}&search=${encodeURIComponent(search)}`;
+export function useStudents(page = 1, limit = 10, search = "", batch = "") {
+  const batchParam = batch && batch !== "All" ? `&batch=${encodeURIComponent(batch)}` : "";
+  const key = `/api/admin/students?page=${page}&limit=${limit}&search=${encodeURIComponent(search)}${batchParam}`;
   const { data, error, isLoading, mutate } = useSWR(key, fetcher);
 
   let students: Student[] = [];

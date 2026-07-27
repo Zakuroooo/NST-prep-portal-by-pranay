@@ -4,6 +4,9 @@
  *
  * Uses aggregation pipelines — kept in this route since these are read-only analytical
  * queries with no business logic. For V2, move to an analytics.service.ts.
+ *
+ * PERFORMANCE: Results are cached for 5 minutes server-side to prevent hammering
+ * MongoDB with 5 heavy aggregations on every 30-second SWR refresh.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -11,15 +14,43 @@ import connectDB from 'placeprep-backend/src/config/db';
 import { requireAdmin } from 'placeprep-backend/src/utils/authMiddleware';
 import { successResponse } from 'placeprep-backend/src/utils/apiResponse';
 import { handleApiError } from 'placeprep-backend/src/utils/apiError';
+import { checkRateLimit, getClientIp, RATE_LIMITS } from 'placeprep-backend/src/utils/rateLimiter';
 import StudentProfile from 'placeprep-backend/src/models/StudentProfile';
 import QuestionCompletion from 'placeprep-backend/src/models/QuestionCompletion';
 import InterviewExperience from 'placeprep-backend/src/models/InterviewExperience';
 import DoubtThread from 'placeprep-backend/src/models/DoubtThread';
 
+// Server-side cache: reuse expensive aggregation results for 5 minutes
+const CACHE_TTL_MS = 5 * 60 * 1000;
+let analyticsCache: { data: unknown; expiresAt: number } | null = null;
+
 export async function GET(request: NextRequest): Promise<NextResponse> {
+  // Rate limit: prevent analytics route from being hammered
+  const ip = getClientIp(request);
+  const rl = checkRateLimit(`analytics:${ip}`, RATE_LIMITS.API);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { success: false, error: { code: 'RATE_LIMITED', message: 'Too many requests.' } },
+      { status: 429 }
+    );
+  }
+
   try {
     await connectDB();
     await requireAdmin(request);
+
+    // Serve from cache if still fresh
+    if (analyticsCache && Date.now() < analyticsCache.expiresAt) {
+      return NextResponse.json(
+        { success: true, data: analyticsCache.data },
+        {
+          headers: {
+            'Cache-Control': 'private, max-age=300',
+            'X-Cache': 'HIT',
+          },
+        }
+      );
+    }
 
     const [
       placementFunnel,
@@ -76,7 +107,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       ]),
     ]);
 
-    return successResponse({
+    const responseData = {
       placementFunnel: placementFunnel.map((p: { _id: string; count: number }) => ({
         status: p._id,
         count: p.count,
@@ -100,7 +131,20 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
         tag: d._id,
         count: d.count,
       })),
-    });
+    };
+
+    // Store in cache
+    analyticsCache = { data: responseData, expiresAt: Date.now() + CACHE_TTL_MS };
+
+    return NextResponse.json(
+      { success: true, data: responseData },
+      {
+        headers: {
+          'Cache-Control': 'private, max-age=300',
+          'X-Cache': 'MISS',
+        },
+      }
+    );
   } catch (error) {
     return handleApiError(error);
   }

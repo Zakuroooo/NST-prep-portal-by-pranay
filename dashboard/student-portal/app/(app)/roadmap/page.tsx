@@ -7,6 +7,7 @@ import {
   ExternalLink, Zap, Play, ChevronRight, BarChart2, ClipboardList,
   Trash2, Timer, Trophy, XCircle, Info
 } from "lucide-react";
+import { toast } from "sonner";
 import { Suspense } from "react";
 import { useRoadmap, usePractice, useProgress, useCompanies } from "@/lib/hooks";
 import { type UserRoadmapCompany } from "@/lib/constants";
@@ -218,9 +219,13 @@ function RoadmapContent() {
 
   const handleRemove = async (slug: string) => {
     try {
-      await fetch(`/api/roadmap/${slug}`, { method: 'DELETE' });
+      const res = await fetch(`/api/user/me/roadmap/${slug}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error('Failed to delete roadmap');
       mutate();
-    } catch {}
+      toast.success("Roadmap removed successfully");
+    } catch {
+      toast.error("Failed to remove roadmap");
+    }
     if (activeSlug === slug) {
       const remaining = companies.filter(c => c.slug !== slug);
       setActiveSlug(remaining[0]?.slug ?? "");

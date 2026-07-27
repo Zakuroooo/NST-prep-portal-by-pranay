@@ -15,6 +15,11 @@ import type { AuthUser, UserRole } from '../types/shared.types';
 
 export const TOKEN_COOKIE_NAME = 'placeprep_token';
 
+// Module-level debounce store: only write lastSeenAt once per 2 minutes per userId
+// This persists across requests in the same Node.js process instance
+const SEEN_DEBOUNCE_MS = 2 * 60 * 1000;
+const lastSeenWrittenAt = new Map<string, number>();
+
 /**
  * Validate the JWT cookie and return the authenticated user.
  * Throws ApiError.unauthorized if no token, ApiError.forbidden if wrong role.
@@ -52,6 +57,15 @@ export async function requireAuth(
     throw ApiError.forbidden(
       `This resource requires ${requiredRole} access. You are logged in as ${payload.role}.`
     );
+  }
+
+  // Fire-and-forget lastSeenAt with per-userId debounce (2-min window)
+  const lastWrittenAt = lastSeenWrittenAt.get(payload.userId) ?? 0;
+  if (Date.now() - lastWrittenAt > SEEN_DEBOUNCE_MS) {
+    lastSeenWrittenAt.set(payload.userId, Date.now());
+    import('../models/User').then(({ default: User }) => {
+      User.updateOne({ _id: payload.userId }, { $set: { lastSeenAt: new Date() } }).catch(() => {});
+    }).catch(() => {});
   }
 
   return {

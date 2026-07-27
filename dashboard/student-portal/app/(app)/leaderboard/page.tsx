@@ -32,8 +32,8 @@ export default function LeaderboardPage() {
         const mapped: LeaderEntry[] = Array.isArray(raw)
           ? raw.map((u: any, i: number) => ({
               rank:     u.rank    ?? u.leaderboardRank ?? i + 1,
-              name:     u.name    ?? u.fullName        ?? "Student",
-              initials: u.initials ?? getInitials(u.name ?? u.fullName ?? "ST"),
+              name:     u.studentName ?? u.name    ?? u.fullName        ?? "Student",
+              initials: u.initials ?? getInitials(u.studentName ?? u.name ?? u.fullName ?? "ST"),
               xp:       u.xp     ?? u.xpTotal         ?? 0,
               change:   u.change  ?? "—",
               time:     u.lastActivity

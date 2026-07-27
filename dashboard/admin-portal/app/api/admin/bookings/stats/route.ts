@@ -100,7 +100,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     // byBatch — join student bookings with batch info
     const studentBatchMap = new Map<string, string>(
-      (studentBatchRaw as { userId: string; batch: string }[]).map(s => [s.userId.toString(), s.batch])
+      (studentBatchRaw as unknown as { userId: string; batch: string }[]).map(s => [s.userId.toString(), s.batch])
     );
 
     type BatchRow = { batch: string; upcoming: number; completed: number; cancelled: number };

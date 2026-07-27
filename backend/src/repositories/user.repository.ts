@@ -21,6 +21,16 @@ export const userRepository = {
     return User.findById(id).lean<IUser>();
   },
 
+  /** Batch-fetch multiple users by IDs in a SINGLE query — avoids N+1 */
+  async findManyByIds(ids: string[]): Promise<IUser[]> {
+    if (ids.length === 0) return [];
+    const validIds = ids.filter((id) => mongoose.isValidObjectId(id));
+    if (validIds.length === 0) return [];
+    return User.find({ _id: { $in: validIds } })
+      .select('-passwordHash')
+      .lean<IUser[]>();
+  },
+
   /** Find user by email — no password */
   async findByEmail(email: string): Promise<IUser | null> {
     return User.findOne({ email: email.toLowerCase().trim() }).lean<IUser>();
@@ -66,6 +76,12 @@ export const userRepository = {
   /** Count users by role */
   async countByRole(role: 'student' | 'faculty' | 'admin'): Promise<number> {
     return User.countDocuments({ role, isActive: true });
+  },
+
+  /** Count active users by role within a given timeframe */
+  async getActiveCountByRole(role: 'student' | 'faculty' | 'admin', minutes: number): Promise<number> {
+    const threshold = new Date(Date.now() - minutes * 60 * 1000);
+    return User.countDocuments({ role, isActive: true, lastSeenAt: { $gte: threshold } });
   },
 
   /** Find all active users, optionally filtered by role */

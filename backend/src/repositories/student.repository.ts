@@ -48,7 +48,10 @@ export const studentRepository = {
     if (options.batch) filter.batch = options.batch;
     if (options.placementStatus) filter.placementStatus = options.placementStatus;
     if (options.search) {
-      filter.$text = { $search: options.search };
+      // Use regex for partial matching (e.g. "Rah" finds "Rahul")
+      // $text requires a text index and only matches full words — regex is more reliable
+      const searchRegex = { $regex: options.search.trim(), $options: 'i' };
+      filter.$or = [{ fullName: searchRegex }, { batch: searchRegex }];
     }
 
     const skip = (options.page - 1) * options.limit;
@@ -57,6 +60,12 @@ export const studentRepository = {
       StudentProfile.countDocuments(filter),
     ]);
     return { profiles, total };
+  },
+
+  /** Projection-only: get just userIds (for broadcast notifications) — avoids loading full documents */
+  async findUserIds(filter: Record<string, unknown> = {}): Promise<string[]> {
+    const docs = await StudentProfile.find(filter).select('userId').lean<{ userId: mongoose.Types.ObjectId }[]>();
+    return docs.map((d) => d.userId.toString());
   },
 
   /** Get all student profiles without pagination (for faculty matrix, leaderboard) */

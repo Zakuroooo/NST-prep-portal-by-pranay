@@ -167,7 +167,24 @@ export default function ManageFacultyPage() {
 
         {/* Faculty Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {paginated.map((f) => (
+          {isLoading ? (
+            // Skeleton cards — matches faculty card layout
+            Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse">
+                <div className="flex items-center gap-2.5 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-gray-200 shrink-0" />
+                  <div className="flex-1 space-y-1.5">
+                    <div className="h-3.5 w-32 bg-gray-200 rounded" />
+                    <div className="h-3 w-40 bg-gray-100 rounded" />
+                  </div>
+                </div>
+                <div className="space-y-2 mt-2">
+                  <div className="flex justify-between"><div className="h-3 w-12 bg-gray-100 rounded" /><div className="h-3 w-20 bg-gray-100 rounded" /></div>
+                  <div className="flex justify-between"><div className="h-3 w-12 bg-gray-100 rounded" /><div className="h-5 w-16 bg-gray-200 rounded-full" /></div>
+                </div>
+              </div>
+            ))
+          ) : paginated.map((f) => (
             <div
               key={f._id ?? String(f.id)}
               className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow relative"
@@ -189,7 +206,7 @@ export default function ManageFacultyPage() {
                       <Pencil className="w-3.5 h-3.5" /> Edit
                     </button>
                     <button
-                      onClick={() => { setRemovingFacultyId(f._id ?? f.id); setActiveMenuId(null); }}
+                      onClick={() => { setRemovingFacultyId(f._id ?? f.id ?? null); setActiveMenuId(null); }}
                       className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
                     >
                       <Trash2 className="w-3.5 h-3.5" /> Remove
@@ -216,7 +233,7 @@ export default function ManageFacultyPage() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-gray-400 font-medium">Status</span>
-                  {statusBadge(f.status)}
+                  {statusBadge(f.status ?? '')}
                 </div>
               </div>
             </div>
@@ -233,7 +250,7 @@ export default function ManageFacultyPage() {
         {totalPages > 1 && (
           <div className="flex justify-between items-center">
             <span className="text-xs text-gray-500">
-              Showing {(currentPage - 1) * itemsPerPage + 1}–{Math.min(currentPage * itemsPerPage, filtered.length)} of {filtered.length}
+            Showing {(currentPage - 1) * itemsPerPage + 1}–{Math.min(currentPage * itemsPerPage, total)} of {total}
             </span>
             <div className="flex items-center gap-1">
               <button

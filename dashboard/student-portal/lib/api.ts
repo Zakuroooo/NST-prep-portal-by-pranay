@@ -243,6 +243,10 @@ export async function submitDoubt(body: { subject: string; body: string; tag: st
   return apiFetch<DoubtData>("/api/doubts", { method: "POST", body: JSON.stringify(body) });
 }
 
+export async function resolveDoubt(id: string) {
+  return apiFetch<{ thread: DoubtData }>(`/api/doubts/${id}/resolve`, { method: "PATCH" });
+}
+
 // ─── Sessions ────────────────────────────────────────────────────
 export async function getSessions(): Promise<SessionData[]> {
   return apiFetch<SessionData[]>("/api/sessions");
@@ -255,6 +259,13 @@ export async function bookSession(body: {
   notes?: string;
 }) {
   return apiFetch<SessionData>("/api/sessions", { method: "POST", body: JSON.stringify(body) });
+}
+
+export async function updateSessionStatus(id: string, action: "accept_proposal" | "cancel") {
+  return apiFetch<SessionData>(`/api/sessions/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify({ action }),
+  });
 }
 
 // ─── Notifications ───────────────────────────────────────────────

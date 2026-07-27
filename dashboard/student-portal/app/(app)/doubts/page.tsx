@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import {
   MessageCircle, Plus, ChevronDown, ChevronUp,
-  Clock, CheckCircle2, AlertCircle, Send, Tag, X,
+  Clock, CheckCircle2, AlertCircle, Send, Tag, X, Loader2,
 } from "lucide-react";
+import { toast } from "sonner";
 
 type DoubtStatus = "pending" | "answered" | "resolved";
 type DoubtTag = "DSA" | "System Design" | "LLD" | "HR" | "General";
@@ -71,9 +72,29 @@ function TagPill({ tag }: { tag: DoubtTag }) {
   );
 }
 
-function DoubtCard({ doubt, onResolve }: { doubt: Doubt; onResolve: (id: string) => void }) {
+function DoubtCard({ doubt, onResolve, onReply }: { 
+  doubt: Doubt; 
+  onResolve: (id: string) => void;
+  onReply: (id: string, body: string) => Promise<void>;
+}) {
   const [open, setOpen] = useState(doubt.status === "answered");
   const [replyText, setReplyText] = useState("");
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSendReply = async () => {
+    const text = replyText.trim();
+    if (!text || isSending) return;
+    setIsSending(true);
+    try {
+      await onReply(doubt.id, text);
+      setReplyText("");
+      toast.success("Reply sent!");
+    } catch (err: any) {
+      toast.error(err?.message || "Failed to send reply.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   const leftAccent =
     doubt.status === "answered" ? "border-l-blue-600" :
@@ -152,11 +173,23 @@ function DoubtCard({ doubt, onResolve }: { doubt: Doubt; onResolve: (id: string)
                   type="text"
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey && replyText.trim().length > 0) {
+                      e.preventDefault();
+                      handleSendReply();
+                    }
+                  }}
                   placeholder="Write a follow-up..."
                   className="flex-1 text-sm border border-gray-200 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                  disabled={isSending}
                 />
-                <button className="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
-                  <Send className="w-3.5 h-3.5" />
+                <button
+                  onClick={handleSendReply}
+                  disabled={isSending || replyText.trim().length === 0}
+                  className="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  aria-label="Send reply"
+                >
+                  {isSending ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
                 </button>
               </div>
               <button
@@ -181,7 +214,7 @@ function NewDoubtDrawer({ onClose, onSubmit }: {
   const [body, setBody] = useState("");
   const [tag, setTag] = useState<DoubtTag>("DSA");
 
-  const canSubmit = subject.trim().length > 5 && body.trim().length > 10;
+  const canSubmit = subject.trim().length >= 5 && body.trim().length >= 20;
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -229,6 +262,9 @@ function NewDoubtDrawer({ onClose, onSubmit }: {
               className="w-full text-sm border border-gray-200 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <p className="text-[10px] text-gray-400 mt-1 text-right">{subject.length}/100</p>
+            {subject.trim().length > 0 && subject.trim().length < 5 && (
+              <p className="text-[11px] text-red-500 mt-1">Subject must be at least 5 characters</p>
+            )}
           </div>
 
           {/* Body */}
@@ -241,6 +277,12 @@ function NewDoubtDrawer({ onClose, onSubmit }: {
               placeholder="Explain your doubt in detail..."
               className="w-full text-sm border border-gray-200 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             />
+            <p className="text-[10px] mt-1 text-right">
+              {body.trim().length < 20
+                ? <span className="text-orange-500">{body.trim().length}/20 chars minimum</span>
+                : <span className="text-green-500">{body.trim().length} chars ✓</span>
+              }
+            </p>
           </div>
         </div>
 
@@ -263,10 +305,12 @@ function NewDoubtDrawer({ onClose, onSubmit }: {
 
 export default function DoubtsPage() {
   const [doubts, setDoubts] = useState<Doubt[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [filter, setFilter] = useState<"all" | DoubtStatus>("all");
 
   useEffect(() => {
+    setIsLoading(true);
     import("@/lib/api").then(({ getDoubts }) =>
       getDoubts().then((data: any[]) => {
         const mapped: Doubt[] = data.map((d) => ({
@@ -285,13 +329,14 @@ export default function DoubtsPage() {
           })),
         }));
         if (mapped.length > 0) setDoubts(mapped);
-      }).catch(() => {})
-    ).catch(() => {});
+        setIsLoading(false);
+      }).catch(() => { setIsLoading(false); })
+    ).catch(() => { setIsLoading(false); });
   }, []);
 
   const handleSubmit = (d: Omit<Doubt, "id" | "replies" | "createdAt" | "status">) => {
-    import("@/lib/api").then(({ submitDoubt }) =>
-      submitDoubt({ subject: d.subject, body: d.body, tag: d.tag })
+    import("@/lib/hooks").then(({ createDoubt }) =>
+      createDoubt({ subject: d.subject, body: d.body, tag: d.tag })
         .then((created: any) => {
           setDoubts((prev) => [{
             id: created._id,
@@ -302,18 +347,54 @@ export default function DoubtsPage() {
             createdAt: created.createdAt,
             replies: [],
           }, ...prev]);
+          toast.success("Doubt submitted successfully!");
         })
-        .catch(() => {
-          // Optimistic fallback
-          setDoubts((prev) => [{ ...d, id: `d${Date.now()}`, status: "pending", createdAt: new Date().toISOString(), replies: [] }, ...prev]);
+        .catch((err) => {
+          toast.error(err?.message || "Failed to submit doubt.");
         })
     ).catch(() => {
-      setDoubts((prev) => [{ ...d, id: `d${Date.now()}`, status: "pending", createdAt: new Date().toISOString(), replies: [] }, ...prev]);
+      toast.error("Failed to submit doubt.");
     });
   };
 
-  const handleResolve = (id: string) =>
-    setDoubts((prev) => prev.map((d) => d.id === id ? { ...d, status: "resolved" } : d));
+  const handleResolve = (id: string) => {
+    import("@/lib/hooks").then(({ resolveDoubt }) => {
+      // Optimistic update
+      setDoubts((prev) => prev.map((d) => d.id === id ? { ...d, status: "resolved" } : d));
+      resolveDoubt(id)
+        .then(() => toast.success("Doubt marked as resolved!"))
+        .catch((err) => {
+          toast.error(err?.message || "Failed to resolve doubt.");
+          // Revert on error
+          setDoubts((prev) => prev.map((d) => d.id === id ? { ...d, status: "answered" } : d));
+        });
+    });
+  };
+
+  const handleReply = async (id: string, body: string): Promise<void> => {
+    const res = await fetch(`/api/doubts/${id}/replies`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ body }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.error?.message || "Failed to send reply.");
+    }
+    // Optimistically append reply to local state
+    const json = await res.json();
+    const newReply: DoubtReply = {
+      id: String(Date.now()),
+      author: "student",
+      authorName: "You",
+      body,
+      sentAt: new Date().toISOString(),
+    };
+    setDoubts((prev) => prev.map((d) =>
+      d.id === id ? { ...d, replies: [...d.replies, newReply] } : d
+    ));
+  };
 
   const filtered = filter === "all" ? doubts : doubts.filter((d) => d.status === filter);
   const counts = {
@@ -322,6 +403,29 @@ export default function DoubtsPage() {
     answered: doubts.filter((d) => d.status === "answered").length,
     resolved: doubts.filter((d) => d.status === "resolved").length,
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex gap-6">
+        <div className="flex-1 min-w-0 animate-pulse">
+          <div className="h-7 bg-gray-100 rounded w-32 mb-5" />
+          <div className="flex gap-2 mb-5">
+            {[...Array(4)].map((_, i) => <div key={i} className="h-8 w-20 bg-gray-100 rounded" />)}
+          </div>
+          <div className="space-y-2">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="h-20 bg-gray-100 rounded border border-gray-200" />
+            ))}
+          </div>
+        </div>
+        <aside className="hidden lg:block w-64 shrink-0 space-y-4 animate-pulse">
+          <div className="h-36 bg-gray-100 rounded-xl" />
+          <div className="h-48 bg-gray-100 rounded-xl" />
+          <div className="h-28 bg-gray-100 rounded-xl" />
+        </aside>
+      </div>
+    );
+  }
 
   return (
     <div className="flex gap-6">
@@ -379,7 +483,7 @@ export default function DoubtsPage() {
               <p className="text-sm font-medium text-gray-400">No doubts in this category</p>
             </div>
           ) : (
-            filtered.map((d) => <DoubtCard key={d.id} doubt={d} onResolve={handleResolve} />)
+            filtered.map((d) => <DoubtCard key={d.id} doubt={d} onResolve={handleResolve} onReply={handleReply} />)
           )}
         </div>
       </div>

@@ -190,3 +190,7 @@ export async function getNotifications(): Promise<NotificationData[]> {
 export async function markNotificationRead(id: string) {
   return apiFetch<void>(`/api/faculty/notifications/${id}`, { method: "PATCH" });
 }
+
+export async function markAllNotificationsRead() {
+  return apiFetch<void>("/api/faculty/notifications/read-all", { method: "POST" });
+}

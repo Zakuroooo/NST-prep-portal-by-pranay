@@ -8,7 +8,39 @@ import { doubtRepository } from '../repositories/doubt.repository';
 import { notificationRepository } from '../repositories/notification.repository';
 import { facultyRepository } from '../repositories/faculty.repository';
 import { ApiError } from '../utils/apiError';
-import { sanitizeAndLimit, sanitizeText } from '../utils/sanitize';
+import { sanitizeAndLimit } from '../utils/sanitize';
+
+/**
+ * Smart notification cooldown: if faculty already received a doubt notification
+ * in the last DOUBT_NOTIF_COOLDOWN_MIN minutes, skip to avoid spam.
+ * This handles the "100 students raise doubts simultaneously" case.
+ */
+const DOUBT_NOTIF_COOLDOWN_MIN = 5;
+
+async function notifyFacultyAboutDoubt(
+  facultyUserId: string,
+  studentName: string,
+  subject: string
+): Promise<void> {
+  try {
+    const recent = await notificationRepository.findRecentDoubtNotif(
+      facultyUserId,
+      DOUBT_NOTIF_COOLDOWN_MIN
+    );
+    // If a doubt notification was sent in the cooldown window, skip (not spam)
+    if (recent) return;
+
+    await notificationRepository.create({
+      userId: facultyUserId,
+      type: 'doubt',
+      title: 'New doubt awaiting reply',
+      subtitle: `${studentName}: ${subject.slice(0, 80)}`,
+      iconName: 'HelpCircle',
+    });
+  } catch {
+    // Non-blocking — notification failure must never crash doubt creation
+  }
+}
 
 export const doubtService = {
   /**
@@ -35,6 +67,11 @@ export const doubtService = {
   /**
    * Create a new doubt thread.
    * Sanitizes all text input before storage.
+   *
+   * Notification strategy (BUG 4+7 FIX):
+   * - If assignedFacultyId provided: notify that one faculty
+   * - If unassigned (open pool): notify ALL active faculty, with 5-min cooldown per faculty
+   *   to prevent notification spam when many students submit at once
    */
   async createDoubt(
     studentId: string,
@@ -63,17 +100,22 @@ export const doubtService = {
       replies: [],
     });
 
-    // Notify assigned faculty if provided
     if (data.assignedFacultyId) {
-      notificationRepository
-        .create({
-          userId: data.assignedFacultyId,
-          type: 'doubt',
-          title: 'New doubt assigned to you',
-          subtitle: `${studentName}: ${sanitizedSubject.slice(0, 80)}`,
-          iconName: 'HelpCircle',
+      // Notify the specific faculty (with cooldown)
+      void notifyFacultyAboutDoubt(data.assignedFacultyId, studentName, sanitizedSubject);
+    } else {
+      // Open pool: notify ALL active faculty with spam cooldown per faculty member
+      facultyRepository
+        .findAll()
+        .then((allFaculty) => {
+          const notifyPromises = allFaculty.map((f) => {
+            const facultyUserId = f.userId?.toString();
+            if (!facultyUserId) return Promise.resolve();
+            return notifyFacultyAboutDoubt(facultyUserId, studentName, sanitizedSubject);
+          });
+          return Promise.all(notifyPromises);
         })
-        .catch(() => {}); // non-blocking
+        .catch(() => {}); // Non-blocking
     }
 
     return thread;

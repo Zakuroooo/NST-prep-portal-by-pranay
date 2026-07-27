@@ -84,7 +84,28 @@ export const sessionRepository = {
     });
   },
 
+  async getWeeklySessionCounts(weeks: number = 4): Promise<{ week: string; count: number }[]> {
+    const now = new Date();
+    const result = [];
+    for (let i = weeks - 1; i >= 0; i--) {
+      const start = new Date(now.getTime() - (i + 1) * 7 * 24 * 60 * 60 * 1000);
+      const end = new Date(now.getTime() - i * 7 * 24 * 60 * 60 * 1000);
+      const count = await SessionBooking.countDocuments({ createdAt: { $gte: start, $lt: end } });
+      result.push({ week: `W${weeks - i}`, count });
+    }
+    return result;
+  },
+
+  async getAvgSatisfaction(): Promise<number | null> {
+    const result = await SessionBooking.aggregate([
+      { $match: { status: 'completed', satisfactionScore: { $gt: 0 } } },
+      { $group: { _id: null, avg: { $avg: '$satisfactionScore' } } },
+    ]);
+    return result.length > 0 ? Math.round((result[0].avg ?? 0) * 10) / 10 : null;
+  },
+
   async deleteAllSeeded(): Promise<void> {
     await SessionBooking.deleteMany({ isSeeded: true });
   },
+
 };

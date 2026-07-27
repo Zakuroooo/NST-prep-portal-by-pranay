@@ -26,9 +26,12 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     const { students, total } = await adminService.getStudents({ page, limit, search, batch, placementStatus });
 
-    return successResponse(students, {
-      meta: { page, limit, total, totalPages: Math.ceil(total / limit) },
-    });
+    return successResponse(
+      { students, total },
+      {
+        meta: { page, limit, totalPages: Math.ceil(total / limit) },
+      }
+    );
   } catch (error) {
     return handleApiError(error);
   }

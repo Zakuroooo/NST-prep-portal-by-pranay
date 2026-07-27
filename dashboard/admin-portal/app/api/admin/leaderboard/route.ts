@@ -16,7 +16,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     await requireAdmin(request);
     const { searchParams } = new URL(request.url);
     const batch = searchParams.get('batch') || undefined;
-    const leaderboard = await studentService.getLeaderboard(batch);
+    const period = searchParams.get('period') || undefined;
+    const leaderboard = await studentService.getLeaderboard(batch, period);
     return successResponse(leaderboard);
   } catch (error) {
     return handleApiError(error);

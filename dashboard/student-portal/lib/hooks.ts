@@ -144,6 +144,12 @@ export async function createDoubt(data: {
   return result;
 }
 
+export async function resolveDoubt(id: string) {
+  const result = await apiFetch(`/api/doubts/${id}/resolve`, { method: 'PATCH' });
+  await globalMutate('/api/doubts');
+  return result;
+}
+
 // ── Sessions ───────────────────────────────────────────────────────────────
 export function useSessions() {
   return useSWR('/api/sessions', fetcher, {
@@ -163,6 +169,15 @@ export async function bookSession(data: {
   const result = await apiFetch('/api/sessions', {
     method: 'POST',
     body: JSON.stringify(data),
+  });
+  await globalMutate('/api/sessions');
+  return result;
+}
+
+export async function updateSessionStatus(id: string, action: 'accept_proposal' | 'cancel') {
+  const result = await apiFetch(`/api/sessions/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ action }),
   });
   await globalMutate('/api/sessions');
   return result;

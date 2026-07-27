@@ -19,7 +19,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     await connectDB();
     await requireAdmin(request);
     const faculty = await adminService.getFaculty();
-    return successResponse(faculty);
+    return successResponse({ faculty, total: faculty.length });
   } catch (error) {
     return handleApiError(error);
   }

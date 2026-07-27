@@ -17,10 +17,10 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 // 1. Practice consistency: problems solved vs. assigned (45%)
 // 2. Day streak score: current streak / 30 × 100 (30%)
 // 3. XP progress: xpEarned / maxXpForLevel × 100 (25%)
-function calcPrepScore(solved: number, assigned: number, streak: number, xp: number): number {
+function calcPrepScore(solved: number, assigned: number, streak: number, xp: number, targetXp: number = 5000, targetStreak: number = 30): number {
   const practiceScore = Math.min((solved / Math.max(assigned, 1)) * 100, 100) * 0.45;
-  const streakScore = Math.min((streak / 30) * 100, 100) * 0.30;
-  const xpScore = Math.min((xp / 5000) * 100, 100) * 0.25;
+  const streakScore = Math.min((streak / targetStreak) * 100, 100) * 0.30;
+  const xpScore = Math.min((xp / targetXp) * 100, 100) * 0.25;
   return Math.round(practiceScore + streakScore + xpScore);
 }
 
@@ -61,9 +61,11 @@ export default function DashboardPage() {
   const assigned  = apiData?.stats?.companiesOnRoadmap ? apiData.stats.companiesOnRoadmap * 20 : 1;
   const streak    = apiData?.stats?.currentStreakDays ?? 0;
   const xp        = apiData?.stats?.xpTotal           ?? 0;
+  const targetXp  = apiData?.stats?.targetXp          ?? 5000;
+  const targetStreak = apiData?.stats?.targetStreak   ?? 30;
   const tasks     = apiData?.roadmaps ?? [];
-  const prepScore = apiData?.stats?.prepScore ?? calcPrepScore(solved, assigned, streak, xp);
-  const studentName = apiData?.student ? "Student" : "Student";
+  const prepScore = apiData?.stats?.prepScore ?? calcPrepScore(solved, assigned, streak, xp, targetXp, targetStreak);
+  const studentName = apiData?.student?.fullName ?? apiData?.fullName ?? "Student";
   const recentExperiences = expData?.data?.experiences ?? [];
   const latestActivity = apiData?.stats?.latestActivity;
 
@@ -76,6 +78,41 @@ export default function DashboardPage() {
     const match = (apiData?.stats?.weeklyActivity || []).find((a: any) => a.date === dateStr);
     return match ? match.count : 0;
   });
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col lg:flex-row gap-6 animate-pulse">
+        <div className="flex-1 min-w-0 space-y-6">
+          {/* Activity bar skeleton */}
+          <div className="h-5 bg-gray-100 rounded w-64" />
+          {/* Company cards skeleton */}
+          <section>
+            <div className="h-5 bg-gray-100 rounded w-40 mb-4" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-gray-100 rounded-xl h-36" />
+              ))}
+            </div>
+          </section>
+          {/* Today tasks skeleton */}
+          <section>
+            <div className="h-5 bg-gray-100 rounded w-36 mb-4" />
+            <div className="space-y-3">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="h-12 bg-gray-100 rounded-xl" />
+              ))}
+            </div>
+          </section>
+        </div>
+        {/* Right sidebar skeleton */}
+        <div className="w-full lg:w-72 space-y-4">
+          <div className="h-40 bg-gray-100 rounded-2xl" />
+          <div className="h-48 bg-gray-100 rounded-2xl" />
+          <div className="h-32 bg-gray-100 rounded-2xl" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col lg:flex-row gap-6">
@@ -306,8 +343,8 @@ export default function DashboardPage() {
           <div className="space-y-2">
             {[
               { label: "Practice", val: Math.round(Math.min((solved / Math.max(assigned, 1)) * 100, 100)), color: "bg-blue-500" },
-              { label: "Streak", val: Math.round(Math.min((streak / 30) * 100, 100)), color: "bg-indigo-500" },
-              { label: "XP Progress", val: Math.round(Math.min((xp / 5000) * 100, 100)), color: "bg-violet-500" },
+              { label: "Streak", val: Math.round(Math.min((streak / targetStreak) * 100, 100)), color: "bg-indigo-500" },
+              { label: "XP Progress", val: Math.round(Math.min((xp / targetXp) * 100, 100)), color: "bg-violet-500" },
             ].map(({ label, val, color }) => (
               <div key={label}>
                 <div className="flex justify-between text-xs text-gray-500 mb-1">

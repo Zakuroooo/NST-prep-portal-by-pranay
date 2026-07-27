@@ -24,8 +24,15 @@ export const doubtRepository = {
     facultyId: string,
     status?: string
   ): Promise<IDoubtThread[]> {
+    // BUG 1 FIX: Show both specifically-assigned doubts AND unassigned (open pool).
+    // Previously only matched assignedFacultyId = facultyId → 0 results when
+    // students don't pick a specific faculty (which is the default).
     const filter: Record<string, unknown> = {
-      assignedFacultyId: new mongoose.Types.ObjectId(facultyId),
+      $or: [
+        { assignedFacultyId: new mongoose.Types.ObjectId(facultyId) },
+        { assignedFacultyId: { $exists: false } },
+        { assignedFacultyId: null },
+      ],
     };
     if (status) filter.status = status;
     return DoubtThread.find(filter).sort({ createdAt: -1 }).lean<IDoubtThread[]>();

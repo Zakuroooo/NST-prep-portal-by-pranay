@@ -31,6 +31,16 @@ export const roadmapRepository = {
     }).lean<IUserRoadmap>();
   },
 
+  async deleteByStudentAndCompany(
+    studentId: string,
+    companySlug: string
+  ): Promise<void> {
+    await UserRoadmap.findOneAndDelete({
+      studentId: new mongoose.Types.ObjectId(studentId),
+      companySlug,
+    });
+  },
+
   async create(data: Partial<IUserRoadmap>): Promise<IUserRoadmap> {
     const roadmap = new UserRoadmap(data);
     return roadmap.save() as unknown as IUserRoadmap;

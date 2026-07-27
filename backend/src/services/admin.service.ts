@@ -24,24 +24,46 @@ export const adminService = {
    * Uses repositories so all business rules (e.g. isActive filters) are respected.
    */
   async getOverview() {
+    // Run all independent DB queries in parallel — avoids sequential waterfall
     const [
       totalStudents,
       totalFaculty,
       pendingDoubts,
       totalCompanies,
       placedStudents,
+      inProgressStudents,
       weekSessions,
+      avgSatisfactionRaw,
+      // Active user counts — all 6 in one Promise.all batch (previously 8 sequential awaits)
+      onlineStudents,
+      dauStudents,
+      mauStudents,
+      onlineFaculty,
+      dauFaculty,
+      mauFaculty,
     ] = await Promise.all([
       studentRepository.count(),
       facultyRepository.count(),
       doubtRepository.countByStatus('pending'),
       companyRepository.count(),
       studentRepository.countByPlacementStatus('PLACED'),
+      studentRepository.countByPlacementStatus('IN PROGRESS'),
       sessionRepository.countByStatus('confirmed'),
+      sessionRepository.getAvgSatisfaction(),
+      userRepository.getActiveCountByRole('student', 5),
+      userRepository.getActiveCountByRole('student', 24 * 60),
+      userRepository.getActiveCountByRole('student', 30 * 24 * 60),
+      userRepository.getActiveCountByRole('faculty', 5),
+      userRepository.getActiveCountByRole('faculty', 24 * 60),
+      userRepository.getActiveCountByRole('faculty', 30 * 24 * 60),
     ]);
 
     const placementRate =
       totalStudents > 0 ? Math.round((placedStudents / totalStudents) * 100) : 0;
+    const avgSatisfaction = avgSatisfactionRaw ?? 0;
+    const activeUsers = onlineStudents + onlineFaculty; // reuse — no duplicate DB call
+    // serverLoad: derived from active user density (real infra metrics need APM integration)
+    const serverLoad = Math.min(Math.round((activeUsers / Math.max(totalStudents + totalFaculty, 1)) * 100), 100);
 
     const stats = {
       totalStudents,
@@ -49,33 +71,29 @@ export const adminService = {
       pendingDoubts,
       totalCompanies,
       placedStudents,
+      inProgressStudents,
       placementRate,
       activeStudents: totalStudents,
       inactiveStudents: 0,
       activeFaculty: totalFaculty,
       inactiveFaculty: 0,
-      currentOnlineStudents: Math.floor(totalStudents * 0.1),
-      dauStudents: Math.floor(totalStudents * 0.4),
-      mauStudents: totalStudents,
-      currentOnlineFaculty: Math.floor(totalFaculty * 0.2),
-      dauFaculty: Math.floor(totalFaculty * 0.5),
-      mauFaculty: totalFaculty,
+      currentOnlineStudents: onlineStudents,
+      dauStudents,
+      mauStudents,
+      currentOnlineFaculty: onlineFaculty,
+      dauFaculty,
+      mauFaculty,
       studentsOnRoadmap: totalStudents,
-      studentsOnRoadmapChange: 5,
+      studentsOnRoadmapChange: 0,
       doubtsRaised: pendingDoubts,
       sessionsBooked: weekSessions,
       sessionsCompleted: weekSessions,
-      avgSatisfaction: 4.8,
-      activeUsers: Math.floor((totalStudents + totalFaculty) * 0.1),
-      serverLoad: 42,
+      avgSatisfaction,
+      activeUsers,
+      serverLoad,
     };
 
-    const weeklySessions = [
-      { week: "W1", count: 10 },
-      { week: "W2", count: 15 },
-      { week: "W3", count: 8 },
-      { week: "W4", count: weekSessions },
-    ];
+    const weeklySessions = await sessionRepository.getWeeklySessionCounts(4);
 
     const upcomingSessions = await sessionRepository.findAll({ page: 1, limit: 5 });
     
@@ -107,12 +125,19 @@ export const adminService = {
   }) {
     const { profiles, total } = await studentRepository.findAll(options);
 
-    // Batch-fetch users to avoid N+1
+    // Single $in query for all users — eliminates N+1 (was: N separate findById calls)
     const userIds = profiles.map((p) => p.userId.toString());
-    const users = await Promise.all(userIds.map((id) => userRepository.findById(id)));
-    const userMap = new Map(users.filter(Boolean).map((u) => [u!._id.toString(), u]));
+    const usersArr = await userRepository.findManyByIds(userIds);
+    const userMap = new Map(usersArr.map((u) => [u._id.toString(), u]));
 
-    const enriched = profiles.map((p) => {
+    // BUG 3 FIX: DoubtThread.studentId and SessionBooking.studentId store User._id,
+    // NOT StudentProfile._id. Must use userIds here, not profileIds.
+    const [doubtCounts, sessionCounts] = await Promise.all([
+      Promise.all(userIds.map((id) => doubtRepository.countByStudentIdAndStatus(id))),
+      Promise.all(userIds.map((id) => sessionRepository.countByStudentId(id))),
+    ]);
+
+    const enriched = profiles.map((p, i) => {
       const user = userMap.get(p.userId.toString());
       return {
         id: p._id.toString(),
@@ -122,12 +147,13 @@ export const adminService = {
         batch: p.batch,
         branch: p.branch,
         progress: Math.min(Math.round((p.xpTotal || 0) / 20), 100),
-        doubts: Math.floor(Math.random() * 5), // Mock for now or fetch
-        sessions: Math.floor(Math.random() * 3), // Mock
+        doubts: doubtCounts[i] ?? 0,
+        sessions: sessionCounts[i] ?? 0,
         status: p.placementStatus,
         xpTotal: p.xpTotal,
       };
     });
+
 
     return { students: enriched, total };
   },
@@ -192,9 +218,10 @@ export const adminService = {
   async getFaculty() {
     const profiles = await facultyRepository.findAllIncludingInvited();
 
+    // Single $in query for all users — eliminates N+1 (was: N separate findById calls)
     const userIds = profiles.map((p) => p.userId.toString());
-    const users = await Promise.all(userIds.map((id) => userRepository.findById(id)));
-    const userMap = new Map(users.filter(Boolean).map((u) => [u!._id.toString(), u]));
+    const usersArr = await userRepository.findManyByIds(userIds);
+    const userMap = new Map(usersArr.map((u) => [u._id.toString(), u]));
 
     return profiles.map((p) => {
       const user = userMap.get(p.userId.toString());
@@ -278,12 +305,11 @@ export const adminService = {
     let userIds: string[] = [];
 
     if (data.targetAudience === 'students' || data.targetAudience === 'all') {
-      const { profiles } = await studentRepository.findAll({
-        page: 1,
-        limit: 10000,
-        ...(data.targetBatch ? { batch: data.targetBatch } : {}),
-      });
-      userIds.push(...profiles.map((p) => p.userId.toString()));
+      // Use projection-only query — avoids loading full student documents just for userIds
+      const studentUserIds = await studentRepository.findUserIds(
+        data.targetBatch ? { batch: data.targetBatch } : {}
+      );
+      userIds.push(...studentUserIds);
     }
 
     if (data.targetAudience === 'faculty' || data.targetAudience === 'all') {

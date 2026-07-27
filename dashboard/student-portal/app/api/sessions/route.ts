@@ -12,6 +12,11 @@ import { studentRepository } from 'placeprep-backend/src/repositories/student.re
 import { bookSessionSchema } from 'placeprep-backend/src/validators/session.validator';
 import { successResponse } from 'placeprep-backend/src/utils/apiResponse';
 import { handleApiError, ApiError } from 'placeprep-backend/src/utils/apiError';
+import {
+  checkRateLimit,
+  getClientIp,
+  RATE_LIMITS,
+} from 'placeprep-backend/src/utils/rateLimiter';
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
@@ -25,6 +30,16 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
+  // Rate limit session booking to prevent spam
+  const ip = getClientIp(request);
+  const rl = checkRateLimit(`sessions:write:${ip}`, RATE_LIMITS.WRITE);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { success: false, error: { code: 'RATE_LIMITED', message: 'Too many requests. Please wait before booking again.' } },
+      { status: 429 }
+    );
+  }
+
   try {
     await connectDB();
     const user = await requireStudent(request);

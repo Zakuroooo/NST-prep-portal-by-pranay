@@ -13,11 +13,15 @@ import { handleApiError } from 'placeprep-backend/src/utils/apiError';
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
     await connectDB();
-    await requireStudent(request);
+    const auth = await requireStudent(request);
     const { searchParams } = new URL(request.url);
     const batch = searchParams.get('batch') || undefined;
     const leaderboard = await studentService.getLeaderboard(batch);
-    return successResponse(leaderboard);
+    const withCurrentUser = leaderboard.map(entry => ({
+      ...entry,
+      isCurrentUser: entry.studentId === auth.userId
+    }));
+    return successResponse(withCurrentUser);
   } catch (error) {
     return handleApiError(error);
   }

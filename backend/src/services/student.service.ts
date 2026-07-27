@@ -8,7 +8,10 @@ import { roadmapRepository } from '../repositories/roadmap.repository';
 import { companyRepository } from '../repositories/company.repository';
 import { questionRepository } from '../repositories/question.repository';
 import { notificationRepository } from '../repositories/notification.repository';
+import { doubtRepository } from '../repositories/doubt.repository';
+import { sessionRepository } from '../repositories/session.repository';
 import QuestionCompletion from '../models/QuestionCompletion';
+import StudentProfile from '../models/StudentProfile';
 import { ApiError } from '../utils/apiError';
 import mongoose from 'mongoose';
 import type { OnboardingInput } from '../validators/student.validator';
@@ -255,18 +258,62 @@ export const studentService = {
     return { xpEarned, totalXp: 0 }; // totalXp fetched fresh by client
   },
 
-  async getLeaderboard(batch?: string) {
-    const profiles = await studentRepository.getLeaderboard(batch, 100);
-    return profiles.map((p, i) => ({
-      rank: i + 1,
-      studentId: p.userId.toString(),
-      studentName: p.fullName,
-      batch: p.batch,
-      branch: p.branch,
-      avatarUrl: p.avatarUrl,
-      xp: p.xpTotal,
-      placementStatus: p.placementStatus,
-    }));
+  async getLeaderboard(batch?: string, period?: string) {
+    // Build period filter for xpTotal aggregation if needed
+    let sinceDate: Date | undefined;
+    if (period === 'this-week') {
+      sinceDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    } else if (period === 'this-month') {
+      sinceDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+    }
+
+    let profiles;
+    if (sinceDate) {
+      // Period-filtered: rank by questions completed in the window
+      const filter: Record<string, unknown> = {};
+      if (batch) filter.batch = batch;
+      const all = await StudentProfile.find(filter).lean();
+      // Score = XP earned from question completions in the window
+      const scored = await Promise.all(
+        all.map(async (p) => {
+          const count = await QuestionCompletion.countDocuments({
+            studentId: p.userId,  // QuestionCompletion refs User, not StudentProfile
+            completedAt: { $gte: sinceDate },
+          });
+          return { profile: p, score: count };
+        })
+      );
+      scored.sort((a, b) => b.score - a.score);
+      profiles = scored.slice(0, 10).map((s) => s.profile);
+    } else {
+      profiles = await studentRepository.getLeaderboard(batch, 10);
+    }
+
+    // Batch-fetch doubts + session counts to avoid N+1
+    const profileIds = profiles.map((p) => p._id.toString());
+    const [doubtCounts, sessionCounts] = await Promise.all([
+      Promise.all(profileIds.map((id) => doubtRepository.countByStudentIdAndStatus(id))),
+      Promise.all(profileIds.map((id) => sessionRepository.countByStudentId(id))),
+    ]);
+
+    return profiles.map((p, i) => {
+      const nameParts = (p.fullName || '').trim().split(' ');
+      const initials = nameParts.length >= 2
+        ? `${nameParts[0][0]}${nameParts[nameParts.length - 1][0]}`.toUpperCase()
+        : (p.fullName?.slice(0, 2) ?? 'ST').toUpperCase();
+      return {
+        rank: i + 1,
+        studentId: p.userId.toString(),
+        name: p.fullName,
+        initials,
+        batch: p.batch,
+        branch: p.branch,
+        xp: p.xpTotal ?? 0,
+        tasksCompleted: sessionCounts[i] ?? 0,
+        doubtsRaised: doubtCounts[i] ?? 0,
+        placementStatus: p.placementStatus,
+      };
+    });
   },
 
   /**
@@ -328,6 +375,11 @@ export const studentService = {
 
   async resetRoadmap(userId: string) {
     await roadmapRepository.deleteByStudentId(userId);
+    return { success: true };
+  },
+
+  async deleteRoadmap(userId: string, companySlug: string) {
+    await roadmapRepository.deleteByStudentAndCompany(userId, companySlug);
     return { success: true };
   },
 };

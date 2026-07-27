@@ -38,7 +38,7 @@ export const facultyService = {
     const now = new Date();
     const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
     const resolvedDoubts = allDoubts.filter(d => d.status === 'resolved');
-    const doubtsSolvedThisMonth = resolvedDoubts.filter(d => d.updatedAt && new Date(d.updatedAt) >= currentMonthStart).length;
+    const doubtsSolvedThisMonth = resolvedDoubts.filter(d => d.resolvedAt && new Date(d.resolvedAt) >= currentMonthStart).length;
 
     const totalAssignedDoubts = allDoubts.length;
     const resolutionRate = totalAssignedDoubts > 0 ? Math.round((resolvedDoubts.length / totalAssignedDoubts) * 100) : 100;
@@ -94,10 +94,11 @@ export const facultyService = {
     const thread = await doubtRepository.findById(doubtId);
     if (!thread) throw ApiError.notFound('Doubt thread not found.');
 
-    // Validate that this doubt belongs to this faculty
+    // BUG 1 FOLLOW-UP: Only block if explicitly assigned to a DIFFERENT faculty.
+    // Unassigned doubts (open pool, assignedFacultyId = null) can be replied to by any faculty.
     const assignedId = thread.assignedFacultyId?.toString();
     if (assignedId && assignedId !== facultyUserId) {
-      throw ApiError.forbidden('You do not have permission to reply to this doubt.');
+      throw ApiError.forbidden('This doubt is assigned to another faculty member.');
     }
 
     const sanitizedBody = sanitizeAndLimit(body, 5000);
@@ -179,7 +180,7 @@ export const facultyService = {
         let recentMocks = sessions.filter(s => s.status === 'confirmed').slice(0, 2).map(s => ({
             topic: s.topic || 'Mock Interview',
             score: 3.5 + ((seed % 15) / 10), // We don't track score yet, so mock score for the real session
-            date: new Date(s.scheduledAt).toISOString().split('T')[0]
+            date: new Date(s.requestedDate).toISOString().split('T')[0]
         }));
         
         // If they have no real sessions, provide an empty array to reflect reality
@@ -191,7 +192,7 @@ export const facultyService = {
         const rankChange = rankChangeNum > 0 ? `↑ ${rankChangeNum}` : rankChangeNum < 0 ? `↓ ${Math.abs(rankChangeNum)}` : "—";
 
         return {
-          studentId: s.studentId || userId,
+          studentId: s.userId || userId,
           userId,
           fullName: s.fullName,
           branch: s.branch,
@@ -254,8 +255,8 @@ export const facultyService = {
 
     // Dynamic recent activity
     const merged = [
-      ...resolvedDoubts.map(d => ({ title: `Resolved doubt: ${d.subject.substring(0, 30)}`, time: d.updatedAt })),
-      ...allSessions.map(s => ({ title: `Hosted session: ${s.topic.substring(0, 30)}`, time: s.updatedAt }))
+      ...resolvedDoubts.map(d => ({ title: `Resolved doubt: ${d.subject.substring(0, 30)}`, time: d.resolvedAt ?? d.createdAt })),
+      ...allSessions.map(s => ({ title: `Hosted session: ${s.topic.substring(0, 30)}`, time: s.createdAt }))
     ]
       .filter(m => m.time)
       .sort((a, b) => new Date(b.time!).getTime() - new Date(a.time!).getTime())
@@ -436,7 +437,7 @@ export const facultyService = {
     const leaderboard = await Promise.all(faculties.map(async (f) => {
        const [doubts, sessions] = await Promise.all([
          doubtRepository.findByFacultyId(f.userId?.toString() || (f._id as mongoose.Types.ObjectId).toString()),
-         sessionRepository.getFacultySessions(f.userId?.toString() || (f._id as mongoose.Types.ObjectId).toString())
+         sessionRepository.findByFacultyId(f.userId?.toString() || (f._id as mongoose.Types.ObjectId).toString())
        ]);
        
        const doubtsSolved = doubts.filter(d => d.status === 'resolved').length;
@@ -476,7 +477,7 @@ export const facultyService = {
    */
   async getFacultyActivityHeatmap(facultyUserId: string) {
     const allDoubts = await doubtRepository.findByFacultyId(facultyUserId);
-    const resolvedDoubts = allDoubts.filter(d => d.status === 'resolved' && d.updatedAt);
+    const resolvedDoubts = allDoubts.filter(d => d.status === 'resolved' && d.resolvedAt);
 
     // Create a 365-day array
     const now = new Date();
@@ -486,8 +487,8 @@ export const facultyService = {
     const dateCounts: Record<string, number> = {};
 
     resolvedDoubts.forEach(d => {
-      if (d.updatedAt) {
-        const dDate = new Date(d.updatedAt);
+      if (d.resolvedAt) {
+        const dDate = new Date(d.resolvedAt);
         dDate.setHours(0, 0, 0, 0);
         if (dDate >= oneYearAgo) {
           const dateStr = dDate.toISOString().split('T')[0];

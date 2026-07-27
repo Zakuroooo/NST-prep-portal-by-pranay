@@ -152,7 +152,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     // Batch × Domain matrix
     const studentBatchMap = new Map<string, string>(
-      (studentBatchRaw as { userId: string; batch: string }[]).map(s => [s.userId.toString(), s.batch])
+      (studentBatchRaw as unknown as { userId: string; batch: string }[]).map(s => [s.userId.toString(), s.batch])
     );
 
     type BatchDomainRow = { batch: string; domains: Record<string, number> };

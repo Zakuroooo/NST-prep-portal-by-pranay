@@ -43,7 +43,8 @@ export default function Step4() {
       sessionStorage.removeItem("onboarding_weeks");
       
       // Force cache invalidation so the new profile loads
-      import('@/lib/hooks').then(m => m.globalMutate('/api/user/me'));
+      const { mutate } = await import('swr');
+      await mutate('/api/user/me');
 
       sessionStorage.setItem("has_onboarded", "true");
       toast.success("Roadmap created! Welcome to PlacePrep.");

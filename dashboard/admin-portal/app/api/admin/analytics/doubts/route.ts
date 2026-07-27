@@ -150,7 +150,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     // byBatch — aggregate doubts by student batch (join via studentId)
     const studentBatchMap = new Map<string, string>(
-      (studentProfiles as { userId: string; batch: string }[]).map(s => [s.userId.toString(), s.batch])
+      (studentProfiles as unknown as { userId: string; batch: string }[]).map(s => [s.userId.toString(), s.batch])
     );
 
     const byBatchRaw = await DoubtThread.aggregate([
@@ -179,7 +179,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     // byFaculty — merge with profile names
     const facultyMap = new Map<string, string>(
-      (facultyProfiles as { userId: string; fullName: string }[]).map(f => [f.userId.toString(), f.fullName])
+      (facultyProfiles as unknown as { userId: string; fullName: string }[]).map(f => [f.userId.toString(), f.fullName])
     );
     const byFaculty = (byFacultyRaw as { _id: string; total: number; resolved: number }[])
       .filter(f => f._id)

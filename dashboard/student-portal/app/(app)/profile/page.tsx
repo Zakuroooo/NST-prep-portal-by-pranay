@@ -68,6 +68,7 @@ const defaultUser = {
   { name: "Amazon",  pct: 70, logo: "https://www.amazon.com/favicon.ico" },
   { name: "Flipkart", pct: 20, logo: "https://www.flipkart.com/favicon.ico" },
  ],
+ avatarUrl: null as string | null,
 };
 
 // ── Reusable Toggle ───────────────────────────────────
@@ -930,7 +931,28 @@ export default function ProfilePage() {
   } : {}),
  };
 
- if (profileLoading || roadmapsLoading) return <div className="p-8 text-center text-gray-500">Loading profile...</div>;
+ if (profileLoading || roadmapsLoading) {
+  return (
+   <div className="max-w-5xl animate-pulse">
+    <div className="mb-6">
+     <div className="h-8 bg-gray-100 rounded w-32 mb-2" />
+     <div className="h-4 bg-gray-100 rounded w-64" />
+    </div>
+    {/* Tab bar skeleton */}
+    <div className="flex gap-1 bg-gray-100 rounded-md p-1 mb-6 w-fit">
+     {[...Array(4)].map((_, i) => <div key={i} className="h-9 w-28 bg-gray-200 rounded-lg" />)}
+    </div>
+    {/* Content area skeleton */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+     <div className="h-64 bg-gray-100 rounded-xl" />
+     <div className="lg:col-span-2 space-y-4">
+      <div className="h-40 bg-gray-100 rounded-xl" />
+      <div className="h-48 bg-gray-100 rounded-xl" />
+     </div>
+    </div>
+   </div>
+  );
+ }
 
  return (
   <div className="max-w-5xl">
