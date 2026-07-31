@@ -20,3 +20,4 @@ __pycache__/
 pipeline/_temp_repos/
 pipeline/scrapers/_temp_repos/
 pipeline/leetcode_problems.csv
+backend/.env
