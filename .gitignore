@@ -6,3 +6,17 @@
 **/dist
 **/build
 **/.next
+
+# Python / Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.env.*
+!.env.example
+
+# Pipeline specific
+pipeline/_temp_repos/
+pipeline/scrapers/_temp_repos/
+pipeline/leetcode_problems.csv

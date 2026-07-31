@@ -28,10 +28,23 @@ interface FacultyContextType {
 
 const FacultyContext = createContext<FacultyContextType | undefined>(undefined);
 
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url, { credentials: "include" }).then((r) => r.json());
+
 export function FacultyProvider({ children }: { children: ReactNode }) {
   const [facultyMembers, setFacultyMembers] = useState<FacultyMember[]>([DEFAULT_FACULTY]);
 
-  const currentFaculty = facultyMembers[0] ?? DEFAULT_FACULTY;
+  const { data } = useSWR("/api/faculty/profile", fetcher);
+  const profile = data?.data;
+
+  const currentFaculty: FacultyMember = profile ? {
+    id: profile._id || profile.userId || "current",
+    name: profile.fullName || "Faculty",
+    subjects: profile.expertises || [profile.subject] || [],
+    doubtsSolvedThisMonth: profile.stats?.doubtsSolvedThisMonth || 0,
+    doubtsSolvedAllTime: profile.stats?.totalDoubts || 0,
+  } : (facultyMembers[0] ?? DEFAULT_FACULTY);
 
   const updateFacultySolvedCount = (facultyId: string) => {
     setFacultyMembers((prev) =>

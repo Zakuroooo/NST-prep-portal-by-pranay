@@ -1,12 +1,12 @@
 # PlacePrep — Vibe Coding Pre-Build Documents
 ### 6 Documents to Continue Building the NST Interview Intelligence Portal
 
-> **How to use this document:**
-> 1. All 6 pre-build documents below are fully filled in with real PlacePrep content, derived from an exhaustive audit of the existing frontend codebase.
-> 2. Feed this entire file to your AI coding tool.
-> 3. Use the Master Prompt at the end to kick off the next phase of the build (wiring the real backend behind the three existing mocked frontends).
+> **⚠️ OUTDATED — read [CONTEXT.MD](./CONTEXT.MD) first.** This file was written when the three portals ran on mock data with no backend. That is no longer true: portals now use MongoDB via shared `placeprep-backend`, JWT auth, and real question/company data (~20k questions). Treat the content below as historical planning context; do **not** use its stack claims (Clerk, Supabase, FastAPI, "no database") as current truth.
 >
-> **Current state (important context for the AI):** PlacePrep already has three independently deployed Next.js 16 frontends (Student, Faculty, Admin), all running entirely on local mock data with no live backend, no database, and no enforced authentication. Documents 1–5 describe both what is already built and the target architecture; Document 6 is the phased plan to take it from "three mocked frontends" to a working production app.
+> **How to use this document (if still helpful):**
+> 1. Skim Documents 1–5 for product/feature intent and UI scope.
+> 2. Use [CONTEXT.MD](./CONTEXT.MD) for architecture, data reality, and known bugs.
+> 3. Document 6's phased backend-wiring plan is largely **already done** — remaining work is curriculum intelligence, more scrapers, and bug fixes listed in CONTEXT.MD.
 
 ---
 

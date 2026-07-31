@@ -378,20 +378,20 @@ function WeekQuestions({ companySlug, topic }: { companySlug: string; topic: str
                 {isDone && <CheckCircle className="w-3.5 h-3.5 text-white" />}
               </div>
               <span className={`font-semibold text-sm truncate ${isDone ? 'text-gray-400 line-through' : 'text-gray-700 group-hover:text-blue-600'}`}>
-                {q.title}
+                {q.problemSummary || q.title}
               </span>
             </div>
 
             <div className="flex items-center gap-3 shrink-0 ml-8 sm:ml-0">
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-                q.diff === 'Easy' ? 'bg-green-50 text-green-700 border-green-200' :
-                q.diff === 'Medium' ? 'bg-blue-50 text-blue-700 border-blue-200' :
+                (q.difficulty || q.diff) === 'Easy' ? 'bg-green-50 text-green-700 border-green-200' :
+                (q.difficulty || q.diff) === 'Medium' ? 'bg-blue-50 text-blue-700 border-blue-200' :
                 'bg-red-50 text-red-700 border-red-200'
               }`}>
-                {q.diff}
+                {q.difficulty || q.diff}
               </span>
               <span className="text-xs font-bold text-orange-500 flex items-center gap-0.5">
-                +{q.xp} XP
+                +{q.xpValue || q.xp} XP
               </span>
               <a 
                 href={q.leetcodeUrl || '#'} 

@@ -224,14 +224,14 @@ export default function StudentMatrixPage() {
                       <p className="text-[11px] font-bold text-gray-800 truncate max-w-[90px] sm:max-w-none">{top3[1].name}</p>
                       <p className="text-[10px] text-gray-500 font-semibold mt-0.5">{top3[1].xp.toLocaleString()} XP</p>
                     </div>
-                    <div className="w-full h-16 sm:h-20 bg-gradient-to-b from-blue-50/70 to-blue-100/30 border border-blue-150 rounded-t-lg shadow-sm flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[80px] sm:h-[100px] bg-gradient-to-b from-blue-50/70 to-blue-100/30 border border-blue-200 rounded-t-lg shadow-sm flex items-center justify-center relative overflow-hidden">
                       <div className="absolute top-0 inset-x-0 h-0.5 bg-blue-400" />
                       <span className="text-xl sm:text-2xl font-black text-blue-300/40">II</span>
                     </div>
                   </div>
 
                   {/* 1st Place */}
-                  <div className="flex flex-col items-center w-28 sm:w-36 group cursor-pointer -mt-6" onClick={() => setSelectedStudent(top3[0])}>
+                  <div className="flex flex-col items-center w-28 sm:w-36 group cursor-pointer" onClick={() => setSelectedStudent(top3[0])}>
                     <div className="relative mb-3 flex flex-col items-center">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 border-2 border-emerald-400 flex items-center justify-center font-bold text-emerald-700 text-base sm:text-lg shadow-md group-hover:scale-105 transition-transform">
                         {top3[0].initials}
@@ -242,7 +242,7 @@ export default function StudentMatrixPage() {
                       <p className="text-xs font-bold text-gray-900 truncate max-w-[90px] sm:max-w-none">{top3[0].name}</p>
                       <p className="text-[10px] text-gray-500 font-bold mt-0.5">{top3[0].xp.toLocaleString()} XP</p>
                     </div>
-                    <div className="w-full h-24 sm:h-28 bg-gradient-to-b from-emerald-50/70 to-emerald-100/30 border border-emerald-150 rounded-t-lg shadow-md flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[120px] sm:h-[140px] bg-gradient-to-b from-emerald-50/70 to-emerald-100/30 border border-emerald-200 rounded-t-lg shadow-md flex items-center justify-center relative overflow-hidden">
                       <div className="absolute top-0 inset-x-0 h-0.5 bg-emerald-400" />
                       <span className="text-2xl sm:text-3xl font-black text-emerald-300/40">I</span>
                     </div>
@@ -260,7 +260,7 @@ export default function StudentMatrixPage() {
                       <p className="text-[11px] font-bold text-gray-800 truncate max-w-[90px] sm:max-w-none">{top3[2].name}</p>
                       <p className="text-[10px] text-gray-500 font-semibold mt-0.5">{top3[2].xp.toLocaleString()} XP</p>
                     </div>
-                    <div className="w-full h-12 sm:h-16 bg-gradient-to-b from-purple-50/70 to-purple-100/30 border border-purple-150 rounded-t-lg shadow-sm flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[60px] sm:h-[80px] bg-gradient-to-b from-purple-50/70 to-purple-100/30 border border-purple-200 rounded-t-lg shadow-sm flex items-center justify-center relative overflow-hidden">
                       <div className="absolute top-0 inset-x-0 h-0.5 bg-purple-400" />
                       <span className="text-xl sm:text-2xl font-black text-purple-300/40">III</span>
                     </div>

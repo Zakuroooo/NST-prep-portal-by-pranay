@@ -1,6 +1,8 @@
-# NST Interview Prep Portal
+# NST Interview Prep Portal (PlacePrep)
 
 A unified data-driven portal with two distinct use cases — helping NST students prepare for technical interviews at specific companies, and helping faculty align the B.Tech CS & AI curriculum with what industry actually tests and hires for.
+
+> **Architecture, data state, known bugs, and local dev:** see [CONTEXT.MD](./CONTEXT.MD) — the single source of truth for how this repo actually works.
 
 ## Live Deployments
 
@@ -14,7 +16,7 @@ A unified data-driven portal with two distinct use cases — helping NST student
 
 ## Project Overview
 
-Both use cases are powered by the same underlying data infrastructure: structured datasets about technical interview questions, hiring patterns, and in-demand skills scraped and curated from public sources.
+Both use cases share MongoDB-backed company and question data. **Today:** ~678 companies and ~20,372 LeetCode-style questions ingested via the Python pipeline (GitHub CSV repos). The source list below is the **target** inventory — only one scraper/parser is built so far; see [CONTEXT.MD](./CONTEXT.MD).
 
 ### Use Case 1: Company-Specific Interview Prep Portal (Student-Facing)
 
@@ -33,10 +35,9 @@ Concretely, this means mapping structured interview data — topics, skills, pro
 
 ---
 
-## Data Sources
+## Data Sources (Target Inventory)
 
-> **Students — we need your help expanding this list!**
-> Found a useful source not listed here? Open a PR and add it to the appropriate table below. See [Contributing a Data Source](#contributing-a-data-source) at the bottom of this page.
+> **Currently ingested:** GitHub LeetCode company-wise CSV repos only (`pipeline/`). Everything below is aspirational — help us expand. See [scrapers/README.md](./scrapers/README.md) and [CONTEXT.MD](./CONTEXT.MD).
 
 ### DSA & Coding Problem Platforms
 
@@ -129,121 +130,61 @@ Concretely, this means mapping structured interview data — topics, skills, pro
 ## Technical Pipeline
 
 ```mermaid
-flowchart TD
-    subgraph SOURCES["Data Sources (35+)"]
-        S1[GeeksForGeeks]
-        S2[LeetCode Discuss]
-        S3[AmbitionBox]
-        S4[Glassdoor]
-        S5[InterviewBit]
-        S6[Coding Ninjas / PrepInsta]
-        S7[LinkedIn / Naukri]
-        S8[Reddit / Quora]
-        S9[GitHub Repos]
+flowchart LR
+    subgraph INGEST["Ingestion (built)"]
+        GH[GitHub LeetCode CSV repos]
+        P[pipeline/ Python ETL]
+        GH --> P
     end
 
-    subgraph STAGE1["Week 1 — Source Discovery & Extraction"]
-        A1[/"Check ToS & robots.txt"/]
-        A2["Assess Scrapability
-Static HTML vs JS-rendered"]
-        A3["Build Scrapers & Parsers
-BeautifulSoup · Selenium · Playwright
-GraphQL APIs · REST APIs"]
-        A4[("Raw JSON Dumps
-per source")]
+    subgraph STORE["Storage"]
+        M[(MongoDB Atlas)]
+        P --> M
     end
 
-    subgraph STAGE2["Week 2 — Ingestion & Schema"]
-        B1["Schema Design
-companies · roles · topics
-questions · question_topics"]
-        B2["Supabase / PostgreSQL
-Migrations & Setup"]
-        B3["ETL Pipeline
-Parse JSON → Load to DB
-Deduplication"]
+    subgraph APP["Application (built)"]
+        B[backend/ shared TS services]
+        SP[student-portal]
+        FP[faculty-portal]
+        AP[admin-portal]
+        M --> B
+        B --> SP
+        B --> FP
+        B --> AP
     end
 
-    subgraph STAGE3["Week 3 — Cleaning & Classification"]
-        C1["Data Cleaning
-Normalize company names
-Fix encoding · Remove HTML"]
-        C2["Claude API Classification
-Tag: topic · difficulty
-round type · skill area"]
-        C3["Syllabus Mapping
-Map topics → B.Tech CS & AI
-course categories"]
+    subgraph PLANNED["Planned / partial"]
+        SCR[scrapers/ 35+ sources]
+        CUR[Curriculum gap + syllabus mapping]
+        SCR -.-> P
+        M -.-> CUR
     end
-
-    subgraph STAGE4["Week 4 — Student Portal"]
-        D1["FastAPI Backend
-/companies · /topics · /questions"]
-        D2["Next.js Frontend
-Search · Filter · Cards"]
-        D3[["Deployed on Vercel
-Student Interview Prep Portal"]]
-    end
-
-    subgraph STAGE5["Week 5 — Faculty Dashboard"]
-        E1["Gap Analysis Logic
-Industry topics vs Syllabus topics"]
-        E2["Recharts / Chart.js
-Heatmaps · Bar charts"]
-        E3["Supabase Auth
-Faculty-only access"]
-        E4[["Curriculum Intelligence
-Dashboard"]]
-    end
-
-    SOURCES --> A1
-    A1 --> A2
-    A2 --> A3
-    A3 --> A4
-    A4 --> B1
-    B1 --> B2
-    B2 --> B3
-    B3 --> C1
-    C1 --> C2
-    C2 --> C3
-    C3 --> D1
-    C3 --> E1
-    D1 --> D2
-    D2 --> D3
-    E1 --> E2
-    E2 --> E3
-    E3 --> E4
-
-    style SOURCES fill:#1e293b,stroke:#475569,color:#e2e8f0
-    style STAGE1 fill:#172554,stroke:#3b82f6,color:#e2e8f0
-    style STAGE2 fill:#14532d,stroke:#22c55e,color:#e2e8f0
-    style STAGE3 fill:#431407,stroke:#f97316,color:#e2e8f0
-    style STAGE4 fill:#4a1d96,stroke:#a855f7,color:#e2e8f0
-    style STAGE5 fill:#7f1d1d,stroke:#ef4444,color:#e2e8f0
 ```
 
 | Stage | Description | Status |
 |-------|-------------|--------|
-| 1. Source Discovery | Identify relevant websites, assess scrapability, check ToS and robots.txt | Week 1 |
-| 2. Data Extraction | Build scrapers/parsers, extract raw HTML/JSON data | Week 1 |
-| 3. Ingestion Pipeline | Load raw data into a staging area (files/database) | Week 2 |
-| 4. Schema Design | Define structured schema for normalized interview data | Week 2 |
-| 5. Data Transformation | Clean, normalize, and structure raw data | Week 2–3 |
-| 6. Classification & Tagging | Tag by topic/company/role/difficulty; map to course syllabus | TBD |
-| 7. Product Layer | Build views/dashboards for Use Case 1 and Use Case 2 | TBD |
+| GitHub CSV ingestion | Clone repos, parse company-wise LeetCode CSVs | ✅ Done |
+| MongoDB ETL | Ingest → dedupe → transform → classify → promote | ✅ Done |
+| Student / faculty / admin portals | Next.js apps + API routes → backend → MongoDB | ✅ Deployed |
+| Additional scrapers (35+ sources) | `scrapers/` folder — not built yet | 🔲 Planned |
+| Curriculum intelligence (Use Case 2) | Heuristic gap preview only; full syllabus mapping TBD | 🟡 Partial |
+
+Full stack and data details: [CONTEXT.MD](./CONTEXT.MD). Pipeline run order: [pipeline/README.md](./pipeline/README.md).
 
 ---
 
 ## Repository Structure
 
 ```
-NST-Interview-Prep-Portal/
-├── scrapers/          # Source-specific scrapers and parsers
-├── data/              # Raw and processed data
-├── pipeline/          # Ingestion and transformation scripts
-├── schema/            # Schema definitions
-├── dashboard/         # Product layer — student and faculty views
-└── docs/              # Documentation and analysis
+PlacePrep/
+├── backend/           # Shared TS service layer (Mongoose models, services — no HTTP server)
+├── dashboard/         # student-portal, faculty-portal, admin-portal (Next.js + API routes)
+├── pipeline/          # Working Python MongoDB ETL (GitHub LeetCode CSV repos)
+├── scrapers/          # README only — planned scrapers, not built
+├── schema/            # README only — planned PostgreSQL design, not used
+├── data/              # README only — planned local data folders
+├── docs/              # Documentation and analysis
+└── CONTEXT.MD         # Source of truth for architecture & project state
 ```
 
 ---
@@ -253,9 +194,10 @@ NST-Interview-Prep-Portal/
 ```bash
 git clone https://github.com/edusatyaki/NST-Interview-Prep-Portal.git
 cd NST-Interview-Prep-Portal
+npm install
 ```
 
-More setup instructions will be added as the project develops.
+See [CONTEXT.MD](./CONTEXT.MD) for env vars, portal dev commands, and pipeline setup.
 
 ---
 

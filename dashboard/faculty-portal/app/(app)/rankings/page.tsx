@@ -142,8 +142,9 @@ export default function RankingsPage() {
                       {/* Rank */}
                       <td className="py-4 px-6 text-center">
                         {index < 3 ? (
-                          <span className={`text-xs font-black ${index === 0 ? "text-amber-500" : index === 1 ? "text-gray-400" : "text-amber-700"}`}>
-                            {index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉"}
+                          <span className={`text-xs font-black flex items-center justify-center gap-1 ${index === 0 ? "text-amber-500" : index === 1 ? "text-gray-400" : "text-amber-700"}`}>
+                            <span>{index === 0 ? "🥇" : index === 1 ? "🥈" : "🥉"}</span>
+                            <span>#{index + 1}</span>
                           </span>
                         ) : (
                           <span className="text-xs text-gray-400 font-semibold">#{index + 1}</span>

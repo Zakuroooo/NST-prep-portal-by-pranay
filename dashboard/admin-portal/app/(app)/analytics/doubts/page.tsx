@@ -157,7 +157,7 @@ export default function DoubtsIntelPage() {
         <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
           <h2 className="text-sm font-semibold text-gray-800 mb-3">Batch-wise Doubt Solving Rate</h2>
           <ResponsiveContainer width="100%" height={180}>
-            <BarChart data={data.byBatch} layout="vertical" margin={{ top: 0, right: 20, left: 10, bottom: 0 }}>
+            <BarChart data={data.byBatch.map((d: any) => ({ ...d, resolved: Math.min(d.resolved, d.raised) }))} layout="vertical" margin={{ top: 0, right: 20, left: 10, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" horizontal={false} />
               <XAxis type="number" tick={{ fontSize: 9 }} />
               <YAxis type="category" dataKey="batch" tick={{ fontSize: 10 }} width={40} />

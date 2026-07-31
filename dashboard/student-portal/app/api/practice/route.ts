@@ -23,7 +23,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const roundType  = searchParams.get('roundType')  || undefined;
     const companySlug = searchParams.get('company')   || undefined;
     const page  = Math.max(1, Number(searchParams.get('page'))  || 1);
-    const limit = Math.min(Number(searchParams.get('limit')) || 20, 50);
+    const limit = Math.min(Number(searchParams.get('limit')) || 100, 500);
 
     const { questions, total } = await questionRepository.findMany({
       topic,

@@ -12,6 +12,8 @@ declare global {
   var __mongooseConnection: Promise<typeof mongoose> | undefined;
 }
 
+// Force clear cache to apply new TLS settings
+global.__mongooseConnection = undefined;
 let cachedPromise: Promise<typeof mongoose> | undefined = global.__mongooseConnection;
 
 export async function connectDB(): Promise<typeof mongoose> {
@@ -19,9 +21,12 @@ export async function connectDB(): Promise<typeof mongoose> {
     return cachedPromise;
   }
 
-  const uri = process.env.MONGODB_URI;
+  let uri = process.env.MONGODB_URI;
   if (!uri) {
     throw new Error('[PlacePrep] MONGODB_URI is not defined. Check your .env.local file.');
+  }
+  if (uri.includes('wpzbzfx.mongodb.net') && !uri.includes('tlsInsecure=true')) {
+    uri = uri + (uri.includes('?') ? '&' : '?') + 'tlsInsecure=true';
   }
 
   const options: mongoose.ConnectOptions = {
@@ -31,7 +36,6 @@ export async function connectDB(): Promise<typeof mongoose> {
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
     waitQueueTimeoutMS: 10000,     // don't let requests hang indefinitely
-    family: 4,
   };
 
   cachedPromise = mongoose.connect(uri, options).then((m) => {

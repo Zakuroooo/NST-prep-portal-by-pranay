@@ -1,34 +1,35 @@
 # Faculty Portal
 
-This is the Faculty Portal for PlacePrep, designed to track industry trends, curriculum gaps, and student session requests.
+Next.js app for NST faculty — student monitoring, doubt replies, session management, rankings, and curriculum preview.
+
+> **Architecture, data state, and known issues:** see [CONTEXT.MD](../../CONTEXT.MD) at the repo root.
 
 ## Pages
-- `/` - **Dashboard Home**: KPI overview, gap matrix preview, and live insights feed.
-- `/requests` - **Session Requests**: View, confirm, or propose new times for student mock interviews.
-- `/doubts` - **Doubts & Questions**: Answer student doubts organized by topic tags.
-- `/curriculum` - **Curriculum Gap Matrix**: Heatmap visualization of syllabus coverage against industry demand.
-- `/trends` - **Industry Trends**: Charting topic frequency and a feed of recent hiring trends.
-- `/rankings` - **Company Rankings**: Sortable table of companies ranked by curriculum alignment.
-- `/reports` - **Export Reports**: Generate and download PDF exports of the dashboard analytics.
 
-## Data Layer (Mock)
-All data is stored in `lib/data/`:
-- `types.ts` - Shared TypeScript interfaces used across all data files.
-- `curriculumCoverage.ts` - Data for the gap matrix heatmap and summary cards.
-- `trendAlerts.ts` - Data for the insights feed on the dashboard and trends pages.
-- `sessionRequests.ts` - Student session requests (pending, confirmed, etc.).
-- `doubts.ts` - Threaded student questions and faculty replies.
-- `companies.ts` - Company ranking data adapted from the main student portal.
-- `reports.ts` - History of previously generated reports.
+- `/` — Dashboard (KPIs, curriculum preview, industry trends from API)
+- `/requests` — Session requests (accept / propose / decline)
+- `/doubts` — Student doubts & replies
+- `/students` — Student matrix
+- `/rankings` — Company rankings
+- `/leaderboard`, `/reports`, `/profile`, `/notifications`
 
-## Running Locally
-The portal runs on port `3001` (if run concurrently with the student portal which uses `3000`).
+**Disabled:** `/curriculum` and `/trends` routes return 404 (`notFound()`); UI exists only as commented code. Curriculum-gap API uses a heuristic formula — not full syllabus mapping.
+
+## Data Layer
+
+**Not mock.** Pages fetch from Next.js API routes → `placeprep-backend` → MongoDB. Some displayed metrics are still hardcoded (mock interview scores, avg response time) — see [CONTEXT.MD](../../CONTEXT.MD).
+
+## Run Locally
+
 ```bash
-npm run dev
+cd dashboard/faculty-portal && npm run dev
 ```
 
-## Implementation Notes
-- The **Dashboard Home** (`/`) and **Curriculum Gap Matrix** (`/curriculum`) were built against specific visual mockups provided by Stitch:
-  - `dashboard/student-portal/stitch_placeprep_nst_interview_intelligence_portal/faculty_dashboard_placeprep/`
-  - `dashboard/student-portal/stitch_placeprep_nst_interview_intelligence_portal/curriculum_gap_matrix_placeprep/`
-- The **Session Requests** (`/requests`) and **Doubts & Questions** (`/doubts`) mirror the exact data models and UI styling patterns of the Student Portal equivalents (`dashboard/student-portal/app/(app)/sessions/page.tsx` and `doubts/page.tsx`).
+Default port `3001` when run alongside the student portal on `3000`.
+
+## Design References
+
+Stitch HTML mockups (not wired into the app):
+
+- `dashboard/student-portal/stitch_placeprep_nst_interview_intelligence_portal/faculty_dashboard_placeprep/`
+- `dashboard/student-portal/stitch_placeprep_nst_interview_intelligence_portal/curriculum_gap_matrix_placeprep/`

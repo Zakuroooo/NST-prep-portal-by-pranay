@@ -32,8 +32,8 @@ async function clearSeeded() {
     User.deleteMany({ isSeeded: true }),
     StudentProfile.deleteMany({ isSeeded: true }),
     FacultyProfile.deleteMany({ isSeeded: true }),
-    Company.deleteMany({ isSeeded: true }),
-    Question.deleteMany({ isSeeded: true }),
+    // Company.deleteMany({ isSeeded: true }),
+    // Question.deleteMany({ isSeeded: true }),
     UserRoadmap.deleteMany({ isSeeded: true }),
     QuestionCompletion.deleteMany({ isSeeded: true }),
     DoubtThread.deleteMany({ isSeeded: true }),
@@ -421,24 +421,16 @@ async function seed() {
     console.log(`  Created faculty: ${f.email} / Faculty@2024`);
   }
 
-  // ── Companies (10) ──
-  console.log('\nSeeding companies...');
-  const companyDocs: ICompany[] = [];
-  for (const c of COMPANIES) {
-    const doc = await Company.create(c as any);
-    companyDocs.push(doc.toObject() as ICompany);
-  }
-  console.log(`  Created ${companyDocs.length} companies.`);
 
-  // ── Questions (10 per company = 100 total) ──
-  console.log('\nSeeding questions...');
-  const allQuestions: IQuestion[] = [];
-  for (const company of companyDocs) {
-    const qs = makeQuestions(company._id as mongoose.Types.ObjectId, company.slug, company.name);
-    const created = await Question.insertMany(qs);
-    allQuestions.push(...(created as unknown as IQuestion[]));
-  }
-  console.log(`  Created ${allQuestions.length} questions.`);
+  // ── Companies (FETCH REAL DATA) ──
+  console.log('\nFetching real companies...');
+  const companyDocs = await Company.find({}).lean() as unknown as ICompany[];
+  console.log(`  Fetched ${companyDocs.length} real companies.`);
+
+  // ── Questions (FETCH REAL DATA) ──
+  console.log('\nFetching real questions...');
+  const allQuestions = await Question.find({}).limit(500).lean() as unknown as IQuestion[];
+  console.log(`  Fetched ${allQuestions.length} real questions for testing.`);
 
   const googleCompany  = companyDocs.find(c => c.slug === 'google')!;
   const microsoftComp  = companyDocs.find(c => c.slug === 'microsoft')!;

@@ -12,7 +12,16 @@ export const companyRepository = {
     const query: Record<string, unknown> = {};
     if (filter?.category) query.category = filter.category;
     if (filter?.hiringStatus) query.hiringStatus = filter.hiringStatus;
-    return Company.find(query).sort({ name: 1 }).lean<ICompany[]>();
+    return Company.aggregate([
+      { $match: query },
+      { $lookup: { from: 'questions', localField: 'slug', foreignField: 'companySlug', as: '_questions' } },
+      { $addFields: { 
+          questionCount: { $size: '$_questions' },
+          topTopic: { $arrayElemAt: ['$topicFrequency.topicName', 0] }
+      }},
+      { $project: { _questions: 0 } },
+      { $sort: { name: 1 } }
+    ]);
   },
 
   async findBySlug(slug: string): Promise<ICompany | null> {

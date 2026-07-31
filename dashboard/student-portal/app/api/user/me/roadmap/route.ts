@@ -83,15 +83,20 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       currentWeek: 1,
       pctComplete: 0,
       isActive: true,
-      weeks: [
-        {
-          weekNumber: 1,
-          topicLabel: 'Arrays & Strings',
+      weeks: Array.from({ length: Math.min(Math.max(Number(preparationWeeks) || 12, 4), 52) }).map((_, i) => {
+        const topTopics = company.topicFrequency?.map(t => t.topicName) || [];
+        const fallbackTopics = ["Arrays", "Strings", "Dynamic Programming", "Graphs", "Trees", "Sorting", "Greedy", "Hash Table", "Binary Search", "Two Pointers"];
+        const topic = topTopics.length > 0 
+          ? topTopics[i % topTopics.length] 
+          : fallbackTopics[i % fallbackTopics.length];
+        return {
+          weekNumber: i + 1,
+          topicLabel: topic,
           totalQuestions: 10,
           doneQuestions: 0,
-          status: 'active',
-        },
-      ],
+          status: i === 0 ? 'active' : 'locked',
+        };
+      }),
     } as any);
 
     return NextResponse.json(

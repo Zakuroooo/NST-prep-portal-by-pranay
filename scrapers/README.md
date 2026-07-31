@@ -1,8 +1,12 @@
 # Scrapers
 
-Source-specific scrapers and parsers for extracting raw interview data from 35+ public platforms.
+> **Not yet built.** This folder contains documentation only — no scraper scripts exist here.
+>
+> **What works today:** GitHub LeetCode company-wise CSV ingestion lives in `pipeline/01_ingestion/scrapers/github_repos.py`. See [pipeline/README.md](../pipeline/README.md) and [CONTEXT.MD](../CONTEXT.MD).
 
-## Structure
+The structure below describes the **planned** layout for 35+ source-specific scrapers. Only the GitHub repos parser has been implemented (under `pipeline/`, not here).
+
+## Planned Structure (not implemented)
 
 ```
 scrapers/
@@ -17,25 +21,16 @@ scrapers/
 ├── naukri.py            # Naukri.com job listings
 ├── linkedin.py          # LinkedIn Jobs (API / scraper)
 ├── reddit.py            # Reddit (r/cscareerquestions, r/developersIndia)
-├── github_repos.py      # GitHub curated repos (REST API)
+├── github_repos.py      # → implemented in pipeline/ instead
 └── utils/
-    ├── browser.py       # Shared Selenium/Playwright setup
-    ├── rate_limiter.py  # Polite crawling delays
-    └── tos_check.py     # robots.txt compliance checker
+    ├── browser.py
+    ├── rate_limiter.py
+    └── tos_check.py
 ```
 
-## Tech Stack
+## Planned Output Format
 
-| Tool | Purpose |
-|------|---------|
-| `requests` + `BeautifulSoup` | Static HTML pages |
-| `Selenium` / `Playwright` | JS-rendered pages |
-| GraphQL / REST APIs | LeetCode, GitHub |
-| `fake_useragent` | Rotate user agents |
-
-## Output Format
-
-Each scraper outputs a JSON file to `../data/raw/<source_name>/`:
+Each scraper would output JSON to `data/raw/<source_name>/`:
 
 ```json
 {
@@ -56,30 +51,21 @@ Each scraper outputs a JSON file to `../data/raw/<source_name>/`:
 }
 ```
 
-## Before Running Any Scraper
-
-1. Check `tos_check.py` output for the source
-2. Confirm the source is in the approved list in `../docs/source_audit.md`
-3. Use rate limiting — do not hammer any server
-4. Never scrape behind a login wall without explicit permission
-
-## Running a Scraper
-
-```bash
-pip install -r requirements.txt
-python scrapers/gfg.py --company google --pages 10
-```
-
-## Status
+## Planned Scraper Status
 
 | Scraper | Status | Notes |
 |---------|--------|-------|
+| GitHub LeetCode CSV repos | ✅ Built | In `pipeline/01_ingestion/scrapers/github_repos.py` |
 | GeeksForGeeks | 🔲 Not started | |
-| LeetCode Discuss | 🔲 Not started | GraphQL endpoint available |
+| LeetCode Discuss | 🔲 Not started | |
 | InterviewBit | 🔲 Not started | |
-| AmbitionBox | 🔲 Not started | JS-rendered, needs Playwright |
-| Glassdoor | 🔲 Not started | May require login |
-| Coding Ninjas | 🔲 Not started | |
-| PrepInsta | 🔲 Not started | |
-| Reddit | 🔲 Not started | Use Reddit API (PRAW) |
-| GitHub Repos | 🔲 Not started | REST API available |
+| AmbitionBox | 🔲 Not started | |
+| Glassdoor | 🔲 Not started | |
+| All others in root README source list | 🔲 Not started | Aspirational — see root README |
+
+## Before Building New Scrapers
+
+1. Check ToS and robots.txt for the source
+2. Use rate limiting — do not hammer any server
+3. Never scrape behind a login wall without explicit permission
+4. Wire output into `pipeline/` ingestion (see `pipeline/README.md`)

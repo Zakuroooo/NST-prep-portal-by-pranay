@@ -315,7 +315,7 @@ export default function RequestsPage() {
 
             {/* Tab pill layout */}
             <div className="flex flex-wrap items-center gap-1.5">
-              {(["All", "pending", "confirmed", "proposed", "completed"] as const).map(
+              {(["All", "pending", "confirmed", "proposed", "completed", "cancelled"] as const).map(
                 (tab) => {
                   const isActive = activeTab === tab;
                   const count =
@@ -329,6 +329,7 @@ export default function RequestsPage() {
                     else if (tab === "pending") tabStyle = "bg-amber-500 text-white shadow-sm shadow-amber-500/20";
                     else if (tab === "confirmed") tabStyle = "bg-emerald-600 text-white shadow-sm shadow-emerald-500/20";
                     else if (tab === "proposed") tabStyle = "bg-indigo-600 text-white shadow-sm shadow-indigo-500/20";
+                    else if (tab === "cancelled") tabStyle = "bg-rose-600 text-white shadow-sm shadow-rose-500/20";
                     else tabStyle = "bg-slate-600 text-white shadow-sm shadow-slate-500/20";
                   }
                   

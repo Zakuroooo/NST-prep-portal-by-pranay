@@ -71,12 +71,27 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     process.env.NEXT_PUBLIC_STUDENT_URL || 'http://localhost:3000',
     process.env.NEXT_PUBLIC_FACULTY_URL || 'http://localhost:3001',
     process.env.NEXT_PUBLIC_ADMIN_URL   || 'http://localhost:3002',
+    process.env.NEXT_PUBLIC_STUDENT_PORTAL_URL,
+    process.env.NEXT_PUBLIC_FACULTY_PORTAL_URL,
+    process.env.NEXT_PUBLIC_ADMIN_PORTAL_URL,
     'http://192.168.0.127:3000',
     'http://192.168.0.127:3001',
     'http://192.168.0.127:3002'
   ];
 
   if (pathname.startsWith('/api') && origin && allowedOrigins.includes(origin)) {
+    if (request.method === 'OPTIONS') {
+      return new NextResponse(null, {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': origin,
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization, Cookie',
+        }
+      });
+    }
+    
     response.headers.set('Access-Control-Allow-Origin', origin);
     response.headers.set('Access-Control-Allow-Credentials', 'true');
     response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');

@@ -16,7 +16,7 @@ export const questionRepository = {
     limit?: number;
   }): Promise<{ questions: IQuestion[]; total: number }> {
     const query: Record<string, unknown> = {};
-    if (filter.companySlug) query.companySlug = filter.companySlug;
+    if (filter.companySlug) query.companySlug = filter.companySlug.toLowerCase();
     if (filter.companyId) query.companyId = new mongoose.Types.ObjectId(filter.companyId);
     if (filter.difficulty) query.difficulty = filter.difficulty;
     if (filter.roundType) query.roundType = filter.roundType;

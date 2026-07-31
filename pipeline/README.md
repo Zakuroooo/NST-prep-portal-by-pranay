@@ -1,90 +1,39 @@
-# Pipeline
+# PlacePrep Data Pipeline
 
-Ingestion, transformation, and export scripts that move data from raw JSON dumps into a clean, queryable Supabase database.
+This pipeline ingests, deduplicates, cleans, classifies, and promotes LeetCode questions from **GitHub LeetCode company-wise CSV repos** into MongoDB (`companies`, `questions`) for the portals. **Status: working** for that one source (~678 companies, ~20,372 questions loaded).
 
-## Structure
-
-```
-pipeline/
-├── ingest.py              # Load raw JSON from data/raw/ into staging DB table
-├── deduplicate.py         # Remove duplicate questions across sources
-├── transform.py           # Clean and normalize staging records
-├── classify.py            # Claude API classification — topic, difficulty, round type
-├── export.py              # Export classified data to data/exports/
-├── run_all.py             # End-to-end pipeline runner
-└── config.py              # DB connection, paths, constants
-```
-
-## Pipeline Flow
-
-```
-data/raw/
-    ↓  ingest.py
-  staging DB table
-    ↓  deduplicate.py
-  deduplicated records
-    ↓  transform.py
-  cleaned & normalized
-    ↓  classify.py (Claude API)
-  tagged records → Supabase DB
-    ↓  export.py
-  data/exports/ → Dashboard
-```
-
-## Running the Pipeline
-
-```bash
-# Step 1 — ingest raw data into staging
-python pipeline/ingest.py --source geeksforgeeks
-
-# Step 2 — deduplicate across all sources
-python pipeline/deduplicate.py
-
-# Step 3 — clean and normalize
-python pipeline/transform.py
-
-# Step 4 — classify with Claude API
-python pipeline/classify.py
-
-# Or run everything at once
-python pipeline/run_all.py
-```
+> **Architecture & data state:** see [CONTEXT.MD](../CONTEXT.MD) at the repo root.
 
 ## Environment Setup
-
-Create a `.env` file in the project root:
-
-```env
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-anon-key
-ANTHROPIC_API_KEY=your-claude-api-key
-DB_STAGING_TABLE=raw_questions
-DB_CLEAN_TABLE=questions
+Make sure you have a `.env` file in this directory with the following variables before running any scripts:
+```
+MONGO_URI="mongodb+srv://..."
+MONGO_DB_NAME="placeprep_staging"
 ```
 
-## Deduplication Strategy
+## Pipeline Execution Order
 
-Two records are considered duplicates if they share:
-- Same `company` + `round_type` + `problem_summary` (fuzzy match >= 90%)
-- Or same `source_url`
+The scripts are organized sequentially by stage. All scripts should be run from their respective directories or from the root `pipeline/` directory (e.g., `python 01_ingestion/ingest.py`).
 
-When duplicates are found, the record with the higher `frequency_score` is kept and sources are merged.
+### Stage 1: Setup
+Run these once to configure the database schema and initial data.
+1. `python setup/setup_mongo_schema.py` - Sets up MongoDB collections, validation rules, and indexes.
+2. `python setup/bootstrap_companies.py` - Seeds the `companies` collection from unique company slugs found in the raw scraped CSVs.
 
-## Classification (Claude API)
+### Stage 2: Ingestion
+1. `python 01_ingestion/ingest.py` - Reads raw scraped CSV files, validates them using Pydantic, and bulk-inserts them into the `raw_scraped_data` collection.
 
-`classify.py` sends each record to Claude and extracts:
-- **Topic** — e.g., Dynamic Programming, System Design, SQL
-- **Difficulty** — Easy / Medium / Hard (where not already present)
-- **Round type** — coding, system_design, hr, managerial
-- **Syllabus mapping** — which B.Tech course this maps to
+### Stage 3: Processing
+1. `python 02_processing/deduplicate.py` - Finds exact duplicate questions across different sources and marks them with `status: "duplicate"`.
+2. `python 02_processing/transform.py` - Links raw records to their proper `companyId` in the `companies` collection and marks them as `status: "clean"`.
 
-## Status
+### Stage 4: Classification
+1. `python 03_classification/classify_from_kaggle.py` - Matches clean records against the official Kaggle LeetCode dataset to attach real topic tags (e.g., "Arrays", "Hash Tables") for free, marking them `status: "classified"`.
 
-| Script | Status |
-|--------|--------|
-| `ingest.py` | 🔲 Not started |
-| `deduplicate.py` | 🔲 Not started |
-| `transform.py` | 🔲 Not started |
-| `classify.py` | 🔲 Not started |
-| `export.py` | 🔲 Not started |
-| `run_all.py` | 🔲 Not started |
+### Stage 5: Promotion & Aggregation
+1. `python 04_promotion/promote.py` - Copies every "classified" record into the final `questions` collection matching the exact backend schema.
+2. `python 04_promotion/aggregate.py` - Recalculates `topicFrequency` and `difficultyDistribution` on every company document based on its promoted questions.
+
+---
+
+*Note: The `tests/` and helper classification scripts (`export_for_classification.py`, `merge_classification_results.py`, `classify.py`) are kept for fallback manual/AI labeling of unmatched records.*

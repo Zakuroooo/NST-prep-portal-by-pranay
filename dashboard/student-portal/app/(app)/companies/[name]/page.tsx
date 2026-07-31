@@ -88,30 +88,30 @@ function QuestionRow({ q }: { q: any }) {
   return (
     <div className="flex items-center gap-3 px-5 py-3 hover:bg-gray-50 transition-colors group">
       {/* Title */}
-      <span className="flex-1 text-sm font-medium text-gray-900 truncate">{q.title}</span>
+      <span className="flex-1 text-sm font-medium text-gray-900 truncate">{q.problemSummary || q.title}</span>
 
       {/* Topic chip */}
       <span className="hidden sm:inline text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded shrink-0">
-        {q.topic}
+        {q.topics && q.topics.length > 0 ? q.topics[0] : q.topic}
       </span>
 
       {/* Difficulty */}
-      <span className={`text-xs font-medium px-2 py-0.5 rounded shrink-0 ${diffBadge(q.diff)}`}>
-        {q.diff}
+      <span className={`text-xs font-medium px-2 py-0.5 rounded shrink-0 ${diffBadge(q.difficulty || q.diff)}`}>
+        {q.difficulty || q.diff}
       </span>
 
       {/* Frequency */}
-      {q.frequency !== undefined && (
+      {(q.frequencyScore !== undefined || q.frequency !== undefined) && (
         <span className="hidden md:inline text-xs text-gray-400 shrink-0 w-12 text-right">
-          {q.frequency}%
+          {q.frequencyScore !== undefined ? Math.round(q.frequencyScore * 100) : q.frequency}%
         </span>
       )}
 
       {/* Hot */}
-      {q.hot && <Flame className="w-4 h-4 text-orange-500 shrink-0" />}
+      {(q.isHot || q.hot) && <Flame className="w-4 h-4 text-orange-500 shrink-0" />}
 
       {/* XP */}
-      <span className="text-xs text-amber-600 font-medium shrink-0">+{q.xp} XP</span>
+      <span className="text-xs text-amber-600 font-medium shrink-0">+{q.xpValue || q.xp} XP</span>
 
       {/* External link */}
       {q.leetcodeUrl ? (

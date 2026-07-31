@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Eye, EyeOff, Loader2, BookOpenCheck, MessageCircle, Calendar, BarChart3 } from "lucide-react";
+import { Eye, EyeOff, Loader2, GraduationCap, User } from "lucide-react";
 
 // Faculty portal calls the student portal login endpoint (shared cookie domain)
 const STUDENT_LOGIN_URL =
@@ -16,17 +16,20 @@ export default function FacultyLoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  async function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleLogin(e?: React.FormEvent, isGuest = false) {
+    if (e) e.preventDefault();
     setError("");
     setLoading(true);
+
+    const loginEmail = isGuest ? "priya.nair@newtonschool.co" : email.trim().toLowerCase();
+    const loginPassword = isGuest ? "Faculty@2024" : password;
 
     try {
       const res = await fetch(`${STUDENT_LOGIN_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
+        body: JSON.stringify({ email: loginEmail, password: loginPassword }),
       });
 
       const data = await res.json();
@@ -50,87 +53,69 @@ export default function FacultyLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex bg-[#070b18]">
+    <div className="min-h-screen flex bg-gray-50">
       {/* ── Left brand panel ── */}
-      <div className="hidden lg:flex flex-col justify-between w-[45%] relative overflow-hidden p-14">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f1a35] via-[#091228] to-[#070b18]" />
-        <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-600/15 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-
-        <div className="relative z-10 flex items-center gap-2.5">
-          <div className="bg-indigo-600 rounded-lg px-2.5 py-1.5 text-white font-bold text-sm">NST</div>
-          <span className="font-bold text-white text-lg">PlacePrep</span>
+      <div className="hidden lg:flex flex-col justify-between w-1/2 bg-[#3341c2] p-16">
+        
+        <div className="flex items-center gap-3">
+          <div className="bg-white/20 rounded px-2 py-1 text-white font-bold text-xs">NST</div>
+          <span className="font-bold text-white text-sm">PlacePrep</span>
         </div>
 
-        <div className="relative z-10 space-y-8">
-          <div>
-            <h1 className="text-4xl font-bold text-white leading-tight mb-4">
-              Faculty
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                Command Center
-              </span>
-            </h1>
-            <p className="text-gray-400 text-base leading-relaxed max-w-xs">
-              Mentor students, resolve doubts in real-time, and track
-              placement readiness across your cohort.
-            </p>
-          </div>
+        <div className="max-w-md">
+          <h1 className="text-[40px] font-bold text-white leading-tight mb-4 tracking-tight">
+            Faculty Portal
+          </h1>
+          <p className="text-blue-100/90 text-base leading-relaxed mb-12">
+            Curriculum intelligence and student engagement. Manage your sessions, track student progress, and answer doubts.
+          </p>
 
-          <div className="space-y-4">
-            {[
-              { icon: MessageCircle, label: "Doubt Resolution", sub: "Answer student queries instantly" },
-              { icon: Calendar, label: "1:1 Sessions", sub: "Jitsi Meet links auto-generated" },
-              { icon: BarChart3, label: "Student Analytics", sub: "XP, streak, and prep score data" },
-            ].map(({ icon: Icon, label, sub }) => (
-              <div key={label} className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-indigo-400" />
-                </div>
-                <div>
-                  <div className="text-white text-sm font-semibold">{label}</div>
-                  <div className="text-gray-500 text-xs">{sub}</div>
-                </div>
-              </div>
-            ))}
+          <div className="space-y-6">
+            <div className="flex items-center gap-6">
+              <span className="text-white font-bold text-lg w-20">3</span>
+              <span className="text-blue-100/90 text-sm">Smart Curriculum Insights</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="text-white font-bold text-lg w-20">Real-time</span>
+              <span className="text-blue-100/90 text-sm">Student Doubt Resolution</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="text-white font-bold text-lg w-20">Full</span>
+              <span className="text-blue-100/90 text-sm">Session Management</span>
+            </div>
           </div>
         </div>
 
-        <div className="relative z-10">
-          <p className="text-gray-600 text-xs">Newton School of Technology · Faculty Access</p>
+        <div className="opacity-0">
+          {/* Spacer for bottom alignment */}
+          <p>Newton School of Technology</p>
         </div>
       </div>
 
       {/* ── Right login panel ── */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 py-12">
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 bg-white">
         <div className="flex items-center gap-2 mb-10 lg:hidden">
-          <div className="bg-indigo-600 rounded-lg px-2.5 py-1.5 text-white font-bold text-sm">NST</div>
-          <span className="font-bold text-white text-lg">PlacePrep</span>
+          <div className="bg-blue-600 rounded px-2 py-1 text-white font-bold text-xs">NST</div>
+          <span className="font-bold text-gray-900 text-sm">PlacePrep</span>
         </div>
 
-        <div className="w-full max-w-sm">
-          <div className="mb-8">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600/15 border border-indigo-500/30 flex items-center justify-center">
-                <BookOpenCheck className="w-4 h-4 text-indigo-400" />
-              </div>
-              <span className="text-xs font-semibold text-indigo-400 tracking-widest uppercase">
-                Faculty Portal
-              </span>
-            </div>
-            <h2 className="text-2xl font-bold text-white mb-1.5">Faculty Sign In</h2>
-            <p className="text-gray-500 text-sm">Access your academic dashboard</p>
+        <div className="w-full max-w-[360px]">
+          <div className="mb-8 text-center sm:text-left">
+            <h2 className="text-2xl font-bold text-gray-900 mb-1.5 tracking-tight">Faculty Sign In</h2>
+            <p className="text-gray-500 text-xs">Access your academic dashboard</p>
           </div>
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm px-4 py-3 rounded-xl mb-6">
+            <div className="bg-red-50 border border-red-200 text-red-600 text-xs px-4 py-3 rounded-lg mb-6">
               {error}
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={(e) => handleLogin(e, false)} className="space-y-5">
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-gray-400 uppercase tracking-wider">Email</label>
+              <label className="text-[11px] font-bold text-gray-700 tracking-wide">
+                Email
+              </label>
               <input
                 type="email"
                 value={email}
@@ -138,26 +123,28 @@ export default function FacultyLoginPage() {
                 placeholder="faculty@newtonschool.co"
                 required
                 disabled={loading}
-                className="w-full bg-white/5 border border-white/10 text-white placeholder-gray-600 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-indigo-500/60 transition-all"
+                className="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 px-4 py-3.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-gray-400 uppercase tracking-wider">Password</label>
+              <label className="text-[11px] font-bold text-gray-700 tracking-wide">
+                Password
+              </label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password"
+                  placeholder="••••••••"
                   required
                   disabled={loading}
-                  className="w-full bg-white/5 border border-white/10 text-white placeholder-gray-600 px-4 py-3 pr-11 rounded-xl text-sm focus:outline-none focus:border-indigo-500/60 transition-all"
+                  className="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 px-4 py-3.5 pr-11 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -167,34 +154,35 @@ export default function FacultyLoginPage() {
             <button
               type="submit"
               disabled={loading || !email || !password}
-              className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 mt-2"
+              className="w-full bg-[#1d4ed8] hover:bg-[#1e40af] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg text-xs transition-all duration-200 flex items-center justify-center gap-2 mt-2 shadow-sm"
             >
               {loading ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Signing in...
-                </>
+                <Loader2 className="w-4 h-4 animate-spin" />
               ) : (
-                "Sign In to Faculty Portal"
+                <GraduationCap className="w-4 h-4" />
               )}
+              Sign In to Faculty Portal
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-white/5">
-            <p className="text-center text-xs text-gray-600">
-              Faculty access only. Contact admin if you cannot log in.
-            </p>
+          <div className="relative my-7">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-100"></div>
+            </div>
+            <div className="relative flex justify-center text-[10px] font-medium uppercase tracking-widest text-gray-400">
+              <span className="bg-white px-3">Or</span>
+            </div>
           </div>
 
-          <div className="mt-6 flex justify-center gap-4 text-xs text-gray-700">
-            <a href={`${STUDENT_LOGIN_URL}/login`} className="hover:text-gray-500 transition-colors">
-              Student Portal
-            </a>
-            <span>·</span>
-            <a href={`${STUDENT_LOGIN_URL.replace("3000", "3002")}/login`} className="hover:text-gray-500 transition-colors">
-              Admin Portal
-            </a>
-          </div>
+          <button
+            type="button"
+            onClick={() => handleLogin(undefined, true)}
+            disabled={loading}
+            className="w-full bg-gray-50 border border-gray-100 hover:bg-gray-100 text-gray-700 font-semibold py-3 rounded-lg text-xs transition-all duration-200 flex items-center justify-center gap-2"
+          >
+            <User className="w-4 h-4 text-gray-500" />
+            Guest Access (Demo Mode)
+          </button>
         </div>
       </div>
     </div>

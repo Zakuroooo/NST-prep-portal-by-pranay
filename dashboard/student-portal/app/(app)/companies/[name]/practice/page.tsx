@@ -61,7 +61,7 @@ export default function CompanyPracticePage({
     }
     if (search.trim()) {
       const qLower = search.toLowerCase();
-      list = list.filter((q) => q.title?.toLowerCase().includes(qLower));
+      list = list.filter((q) => (q.problemSummary || q.title)?.toLowerCase().includes(qLower));
     }
 
     if (weekFilter !== "" && activeRoadmap) {
@@ -219,27 +219,27 @@ export default function CompanyPracticePage({
                 <span className="text-xs text-gray-400 font-mono w-6 shrink-0">{idx + 1}</span>
 
                 <div className="flex-1 min-w-0">
-                  <div className="font-medium text-sm text-gray-900 truncate">{q.title}</div>
+                  <div className="font-medium text-sm text-gray-900 truncate">{q.problemSummary || q.title}</div>
                   <div className="flex items-center gap-2 mt-0.5 flex-wrap">
-                    <span className="text-xs text-gray-500">{q.topic}</span>
-                    {q.hot && <span className="text-xs bg-red-50 text-red-600 rounded px-1.5 py-0.5"><Flame className="w-3 h-3 mr-1 inline-block" /> Hot</span>}
-                    {q.frequency && (
-                      <span className="text-xs text-gray-400">Asked in {q.frequency}% of interviews</span>
+                    <span className="text-xs text-gray-500">{q.topics && q.topics.length > 0 ? q.topics[0] : q.topic}</span>
+                    {(q.isHot || q.hot) && <span className="text-xs bg-red-50 text-red-600 rounded px-1.5 py-0.5"><Flame className="w-3 h-3 mr-1 inline-block" /> Hot</span>}
+                    {(q.frequencyScore !== undefined || q.frequency !== undefined) && (
+                      <span className="text-xs text-gray-400">Asked in {q.frequencyScore !== undefined ? Math.round(q.frequencyScore * 100) : q.frequency}% of interviews</span>
                     )}
                   </div>
                 </div>
 
                 {/* Round badge */}
                 <span className={`text-xs font-semibold rounded-full px-2.5 py-1 shrink-0 ${roundColors[q.roundType] ?? "bg-gray-100 text-gray-700"}`}>
-                  {q.roundType}
+                  {q.roundType || 'Coding'}
                 </span>
 
                 {/* Difficulty badge */}
-                <span className={`text-xs font-semibold rounded-full border px-2.5 py-1 shrink-0 ${diffBadge(q.diff)}`}>
-                  {q.diff}
+                <span className={`text-xs font-semibold rounded-full border px-2.5 py-1 shrink-0 ${diffBadge(q.difficulty || q.diff)}`}>
+                  {q.difficulty || q.diff}
                 </span>
 
-                <span className="text-xs font-bold text-amber-600 shrink-0">+{q.xp} XP</span>
+                <span className="text-xs font-bold text-amber-600 shrink-0">+{q.xpValue || q.xp} XP</span>
 
                 {q.leetcodeUrl ? (
                   <a

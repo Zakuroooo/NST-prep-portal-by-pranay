@@ -1,26 +1,21 @@
 # Schema
 
-Database schema definitions, migration files, and the Entity Relationship Diagram for the normalized interview data model.
+> **Not yet built.** This folder contains documentation only — no migration files, seed SQL, or ERD on disk.
+>
+> **Actual database:** MongoDB Atlas with Mongoose models in `backend/src/models/`. See [CONTEXT.MD](../CONTEXT.MD).
 
-## Structure
+The SQL below is a **planned** normalized relational design from early project planning (originally intended for Supabase/PostgreSQL). It is **not** the running schema.
+
+## Planned Structure (not implemented)
 
 ```
 schema/
-├── migrations/
-│   ├── 001_create_companies.sql
-│   ├── 002_create_roles.sql
-│   ├── 003_create_topics.sql
-│   ├── 004_create_questions.sql
-│   ├── 005_create_question_topics.sql
-│   ├── 006_create_courses.sql
-│   └── 007_create_syllabus_topics.sql
-├── seed/
-│   ├── companies.sql        # Seed known company names
-│   └── topics.sql           # Seed standard topic taxonomy
-└── erd.md                   # Entity Relationship Diagram
+├── migrations/     # planned — does not exist
+├── seed/           # planned — does not exist
+└── erd.md          # planned — does not exist
 ```
 
-## Core Tables
+## Planned Core Tables (reference only)
 
 ```sql
 -- Companies
@@ -82,33 +77,7 @@ CREATE TABLE syllabus_topics (
 );
 ```
 
-## Entity Relationship Diagram
-
-```
-companies ──< questions >── roles
-                  │
-            question_topics
-                  │
-               topics
-                  │
-          syllabus_topics
-                  │
-               courses
-```
-
-## Running Migrations
-
-```bash
-# Using Supabase CLI
-supabase db push
-
-# Or directly via psql
-psql $DATABASE_URL -f schema/migrations/001_create_companies.sql
-```
-
-## Topic Taxonomy
-
-Standard categories used across the project:
+## Topic Taxonomy (reference)
 
 | Category | Topics |
 |----------|--------|
