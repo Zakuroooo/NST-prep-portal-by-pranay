@@ -157,13 +157,13 @@ export default function DoubtsIntelPage() {
         <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
           <h2 className="text-sm font-semibold text-gray-800 mb-3">Batch-wise Doubt Solving Rate</h2>
           <ResponsiveContainer width="100%" height={180}>
-            <BarChart data={data.byBatch} layout="vertical" margin={{ top: 0, right: 20, left: 10, bottom: 0 }}>
+            <BarChart data={data.byBatch} layout="vertical" margin={{ top: 0, right: 20, left: 10, bottom: 0 }} barGap="-100%">
               <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" horizontal={false} />
               <XAxis type="number" tick={{ fontSize: 9 }} />
               <YAxis type="category" dataKey="batch" tick={{ fontSize: 10 }} width={40} />
               <Tooltip contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }} />
               <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 10 }} />
-              <Bar dataKey="raised"   name="Raised"   fill="#2563eb" radius={[0, 3, 3, 0]} maxBarSize={10} />
+              <Bar dataKey="raised"   name="Raised"   fill="#e0e7ff" radius={[0, 3, 3, 0]} maxBarSize={10} />
               <Bar dataKey="resolved" name="Resolved" fill="#6366f1" radius={[0, 3, 3, 0]} maxBarSize={10} />
             </BarChart>
           </ResponsiveContainer>
