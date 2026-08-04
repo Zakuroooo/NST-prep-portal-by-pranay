@@ -3,7 +3,7 @@
 import { usePracticeData } from "@/lib/hooks";
 import {
   BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip,
-  ResponsiveContainer, CartesianGrid, Legend,
+  ResponsiveContainer, CartesianGrid, Legend, Cell
 } from "recharts";
 import { Dumbbell, Users, BookOpen, TrendingUp } from "lucide-react";
 
@@ -91,7 +91,7 @@ export default function PracticeZonePage() {
             <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 10 }} />
             <Bar dataKey="questionsSolved" name="Questions Solved" radius={[4, 4, 0, 0]} maxBarSize={36}>
               {(data.byDomain as { domain: string; questionsSolved: number; uniqueStudents: number }[]).map((entry) => (
-                <rect key={entry.domain} fill={DOMAIN_COLORS[entry.domain] || "#2563eb"} />
+                <Cell key={entry.domain} fill={DOMAIN_COLORS[entry.domain] || "#2563eb"} />
               ))}
             </Bar>
             <Bar dataKey="uniqueStudents" name="Unique Students" fill="#a5b4fc" radius={[4, 4, 0, 0]} maxBarSize={36} />
